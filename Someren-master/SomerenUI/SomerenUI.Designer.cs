@@ -49,11 +49,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_Students = new System.Windows.Forms.Label();
             this.pnlTeachers = new System.Windows.Forms.Panel();
-            this.lbl_Teachers = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.listViewTeachers = new System.Windows.Forms.ListView();
             this.teacherID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.teacherName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lbl_Teachers = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgDashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
@@ -84,7 +84,7 @@
             this.roomsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1283, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1283, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -239,28 +239,7 @@
             this.pnlTeachers.Name = "pnlTeachers";
             this.pnlTeachers.Size = new System.Drawing.Size(1251, 576);
             this.pnlTeachers.TabIndex = 6;
-         
-            // 
-            // lbl_Teachers
-            // 
-            this.lbl_Teachers.AutoSize = true;
-            this.lbl_Teachers.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
-            this.lbl_Teachers.Location = new System.Drawing.Point(37, 40);
-            this.lbl_Teachers.Name = "lbl_Teachers";
-            this.lbl_Teachers.Size = new System.Drawing.Size(137, 33);
-            this.lbl_Teachers.TabIndex = 0;
-            this.lbl_Teachers.Text = "Teachers";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(1078, -1);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(173, 151);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            
             // 
             // listViewTeachers
             // 
@@ -283,6 +262,27 @@
             // teacherName
             // 
             this.teacherName.Text = "Name";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
+            this.pictureBox2.Location = new System.Drawing.Point(1078, -1);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(173, 151);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // lbl_Teachers
+            // 
+            this.lbl_Teachers.AutoSize = true;
+            this.lbl_Teachers.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
+            this.lbl_Teachers.Location = new System.Drawing.Point(37, 40);
+            this.lbl_Teachers.Name = "lbl_Teachers";
+            this.lbl_Teachers.Size = new System.Drawing.Size(137, 33);
+            this.lbl_Teachers.TabIndex = 0;
+            this.lbl_Teachers.Text = "Teachers";
             // 
             // SomerenUI
             // 

@@ -44,7 +44,6 @@ namespace SomerenUI
                 //show teachers
                 pnlTeachers.Show();
 
-
                 try
                 {
                     // fill the students listview within the students panel with a list of students
@@ -52,12 +51,12 @@ namespace SomerenUI
                     List<Teacher> TeacherList = teachService.GetTeachers(); ;
 
                     // clear the listview before filling it again
-                    //listViewTeachers.Clear();
+                    listViewTeachers.Items.Clear();
 
-                    foreach (Teacher s in TeacherList)
+                    foreach (Teacher t in TeacherList)
                     {
-                        ListViewItem li = new ListViewItem(s.Number.ToString());
-                        li.SubItems.Add(s.Name);
+                        ListViewItem li = new ListViewItem(t.Number.ToString());
+                        li.SubItems.Add(t.Name);
                         listViewTeachers.Items.Add(li);
                     }
                 }
@@ -83,15 +82,17 @@ namespace SomerenUI
                     List<Student> studentList = studService.GetStudents(); ;
 
                     // clear the listview before filling it again
-                    //listViewStudents.Clear();
 
+                    listViewStudents.Items.Clear();
                     foreach (Student s in studentList)
                     {
+         
                         ListViewItem li = new ListViewItem(s.Number.ToString());
                         li.SubItems.Add(s.Name);
                         li.SubItems.Add(s.BirthDate.ToString("dd/MM/yyyy"));
                         listViewStudents.Items.Add(li);
                     }
+                   
                 }
                 catch (Exception e)
                 {
@@ -135,6 +136,6 @@ namespace SomerenUI
             showPanel("Lectures");
         }
 
-   
+
     }
 }
