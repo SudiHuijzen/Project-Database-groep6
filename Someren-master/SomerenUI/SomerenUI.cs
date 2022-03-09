@@ -31,16 +31,47 @@ namespace SomerenUI
             {
                 // hide all other panels
                 pnlStudents.Hide();
-
+                pnlTeachers.Hide();
                 // show dashboard
                 pnlDashboard.Show();
                 imgDashboard.Show();
+            }else if(panelName == "Lectures")
+            {
+                pnlDashboard.Hide();
+                imgDashboard.Hide();
+                pnlStudents.Hide();
+
+                //show teachers
+                pnlTeachers.Show();
+
+
+                try
+                {
+                    // fill the students listview within the students panel with a list of students
+                    TeacherService teachService = new TeacherService(); ;
+                    List<Teacher> TeacherList = teachService.GetTeachers(); ;
+
+                    // clear the listview before filling it again
+                    //listViewTeachers.Clear();
+
+                    foreach (Teacher s in TeacherList)
+                    {
+                        ListViewItem li = new ListViewItem(s.Number.ToString());
+                        li.SubItems.Add(s.Name);
+                        listViewTeachers.Items.Add(li);
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Something went wrong while loading the Teacher: " + e.Message);
+                }
             }
             else if (panelName == "Students")
             {
                 // hide all other panels
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
+                pnlTeachers.Hide();
 
                 // show students
                 pnlStudents.Show();
@@ -98,5 +129,12 @@ namespace SomerenUI
         {
             showPanel("Students");
         }
+
+        private void lecturersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Lectures");
+        }
+
+   
     }
 }
