@@ -11,5 +11,15 @@ namespace SomerenModel
         public int Number { get; set; } // RoomNumber, e.g. 206
         public int Capacity { get; set; } // number of beds, either 4,6,8,12 or 16
         public bool Type { get; set; } // student = false, teacher = true
+
+        public string PrintRoom()
+        {
+            // prints Teacher or Student in the RoomType collumn
+            if (Type == true)
+            {
+                return "Yes";
+            }
+            return "No";
+        }
     }
 }

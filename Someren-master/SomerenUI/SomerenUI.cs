@@ -32,14 +32,52 @@ namespace SomerenUI
                 // hide all other panels
                 pnlStudents.Hide();
                 pnlTeachers.Hide();
+                pnlRooms.Hide();
                 // show dashboard
                 pnlDashboard.Show();
                 imgDashboard.Show();
-            }else if(panelName == "Lectures")
+            }
+            else if (panelName == "Rooms")
+            {
+                // hide all other panels
+                pnlDashboard.Hide();
+                imgDashboard.Hide();
+                pnlTeachers.Hide();
+                pnlStudents.Hide();
+
+                // show rooms
+                pnlRooms.Show();
+
+                try
+                {
+                    // fill the rooms listview within the rooms panel with a list of rooms
+                    RoomService roomService = new RoomService(); ;
+                    List<Room> roomList = roomService.GetRooms(); ;
+
+                    // clear the listview before filling it again
+
+                    listViewRooms.Items.Clear();
+                    foreach (Room r in roomList)
+                    {
+
+                        ListViewItem li = new ListViewItem(r.Number.ToString());
+                        li.SubItems.Add(r.Capacity.ToString());
+                        li.SubItems.Add(r.PrintRoom()); // shows whether or not the room is a teacher room
+                        listViewRooms.Items.Add(li);
+                    }
+
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Something went wrong while loading the students: " + e.Message);
+                }
+            }
+            else if (panelName == "Lectures")
             {
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlStudents.Hide();
+                pnlRooms.Hide();
 
                 //show teachers
                 pnlTeachers.Show();
@@ -55,7 +93,7 @@ namespace SomerenUI
 
                     foreach (Teacher t in TeacherList)
                     {
-                      
+
                         ListViewItem li = new ListViewItem(t.Number.ToString());
                         li.SubItems.Add(t.FirstName);
                         li.SubItems.Add(t.LastName);
@@ -74,6 +112,7 @@ namespace SomerenUI
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlTeachers.Hide();
+                pnlRooms.Hide();
 
                 // show students
                 pnlStudents.Show();
@@ -89,20 +128,21 @@ namespace SomerenUI
                     listViewStudents.Items.Clear();
                     foreach (Student s in studentList)
                     {
-         
+
                         ListViewItem li = new ListViewItem(s.Number.ToString());
                         li.SubItems.Add(s.FirstName);
                         li.SubItems.Add(s.LastName);
                         li.SubItems.Add(s.BirthDate.ToString("dd/MM/yyyy"));
                         listViewStudents.Items.Add(li);
                     }
-                   
+
                 }
                 catch (Exception e)
                 {
                     MessageBox.Show("Something went wrong while loading the students: " + e.Message);
                 }
             }
+
         }
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
@@ -120,11 +160,6 @@ namespace SomerenUI
             showPanel("Dashboard");
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void imgDashboard_Click(object sender, EventArgs e)
         {
             MessageBox.Show("What happens in Someren, stays in Someren!");
@@ -140,5 +175,9 @@ namespace SomerenUI
             showPanel("Lectures");
         }
 
+        private void roomsToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            showPanel("Rooms");
+        }
     }
 }
