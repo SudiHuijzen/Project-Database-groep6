@@ -50,13 +50,16 @@ namespace SomerenUI
                     TeacherService teachService = new TeacherService(); ;
                     List<Teacher> TeacherList = teachService.GetTeachers(); ;
 
-                    // clear the listview before filling it again
+                    // clear the items in the listview before filling it again
                     listViewTeachers.Items.Clear();
 
                     foreach (Teacher t in TeacherList)
                     {
+                      
                         ListViewItem li = new ListViewItem(t.Number.ToString());
-                        li.SubItems.Add(t.Name);
+                        li.SubItems.Add(t.firstName);
+                        li.SubItems.Add(t.lastName);
+                        li.SubItems.Add(t.PrintSupervisor());   // shows whether or not teacher is supervicor when true
                         listViewTeachers.Items.Add(li);
                     }
                 }
@@ -135,7 +138,6 @@ namespace SomerenUI
         {
             showPanel("Lectures");
         }
-
 
     }
 }
