@@ -7,9 +7,35 @@ using System.Threading.Tasks;
 namespace SomerenModel
 {
     public class Student
-    { 
-        public string Name { get; set; }
+    {
+        DateTime birthDate;
+        Room room;
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }    
         public int Number { get; set; } // StudentNumber, e.g. 474791
-        public DateTime BirthDate { get; set; } 
+        public DateTime BirthDate
+        {
+            get => this.birthDate;
+            set
+            {
+                if(value < DateTime.Now)
+                {
+                    this.birthDate = value;
+                }
+            }
+        }
+        public int RoomNR
+        {
+            get { return this.room.Number; }
+            set
+            {
+                // allow only a roomnumber of the type teachers room
+                if (this.room.Type == true)
+                {
+                    this.room.Number = value;
+                }
+            }
+        }
     }
 }

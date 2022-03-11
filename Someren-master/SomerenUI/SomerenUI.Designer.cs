@@ -44,7 +44,7 @@
             this.pnlStudents = new System.Windows.Forms.Panel();
             this.listViewStudents = new System.Windows.Forms.ListView();
             this.studentID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.studentName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.studentFirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.studentDOB = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_Students = new System.Windows.Forms.Label();
@@ -52,10 +52,11 @@
             this.listViewTeachers = new System.Windows.Forms.ListView();
             this.teacherID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.teacherFirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TeacherLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TeacherIsSupervisor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbl_Teachers = new System.Windows.Forms.Label();
-            this.TeacherLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.TeacherIsSupervicor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.studentLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.imgDashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
@@ -89,7 +90,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(1283, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
-            
             // 
             // dashboardToolStripMenuItem
             // 
@@ -183,7 +183,8 @@
             // 
             this.listViewStudents.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.studentID,
-            this.studentName,
+            this.studentFirstName,
+            this.studentLastName,
             this.studentDOB});
             this.listViewStudents.GridLines = true;
             this.listViewStudents.HideSelection = false;
@@ -200,10 +201,11 @@
             this.studentID.Tag = "";
             this.studentID.Text = "ID";
             // 
-            // studentName
+            // studentFirstName
             // 
-            this.studentName.Tag = "";
-            this.studentName.Text = "Name";
+            this.studentFirstName.Tag = "";
+            this.studentFirstName.Text = "Firstname";
+            this.studentFirstName.Width = 100;
             // 
             // studentDOB
             // 
@@ -238,7 +240,7 @@
             this.pnlTeachers.Controls.Add(this.listViewTeachers);
             this.pnlTeachers.Controls.Add(this.pictureBox2);
             this.pnlTeachers.Controls.Add(this.lbl_Teachers);
-            this.pnlTeachers.Location = new System.Drawing.Point(16, 31);
+            this.pnlTeachers.Location = new System.Drawing.Point(16, 30);
             this.pnlTeachers.Name = "pnlTeachers";
             this.pnlTeachers.Size = new System.Drawing.Size(1251, 576);
             this.pnlTeachers.TabIndex = 6;
@@ -250,7 +252,7 @@
             this.teacherID,
             this.teacherFirstName,
             this.TeacherLastName,
-            this.TeacherIsSupervicor});
+            this.TeacherIsSupervisor});
             this.listViewTeachers.GridLines = true;
             this.listViewTeachers.HideSelection = false;
             this.listViewTeachers.Location = new System.Drawing.Point(24, 56);
@@ -266,9 +268,18 @@
             // 
             // teacherFirstName
             // 
-            this.teacherFirstName.DisplayIndex = 2;
             this.teacherFirstName.Text = "Firstname";
             this.teacherFirstName.Width = 80;
+            // 
+            // TeacherLastName
+            // 
+            this.TeacherLastName.Text = "Lastname";
+            this.TeacherLastName.Width = 100;
+            // 
+            // TeacherIsSupervisor
+            // 
+            this.TeacherIsSupervisor.Text = "Supervisor";
+            this.TeacherIsSupervisor.Width = 100;
             // 
             // pictureBox2
             // 
@@ -291,16 +302,10 @@
             this.lbl_Teachers.TabIndex = 0;
             this.lbl_Teachers.Text = "Teachers";
             // 
-            // TeacherLastName
+            // studentLastName
             // 
-            this.TeacherLastName.DisplayIndex = 1;
-            this.TeacherLastName.Text = "Lastname";
-            this.TeacherLastName.Width = 100;
-            // 
-            // TeacherIsSupervicor
-            // 
-            this.TeacherIsSupervicor.Text = "Supervicor";
-            this.TeacherIsSupervicor.Width = 100;
+            this.studentLastName.Text = "Lastname";
+            this.studentLastName.Width = 100;
             // 
             // SomerenUI
             // 
@@ -353,7 +358,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ListView listViewStudents;
         private System.Windows.Forms.ColumnHeader studentID;
-        private System.Windows.Forms.ColumnHeader studentName;
+        private System.Windows.Forms.ColumnHeader studentFirstName;
         private System.Windows.Forms.ColumnHeader studentDOB;
         private System.Windows.Forms.Panel pnlTeachers;
         private System.Windows.Forms.ListView listViewTeachers;
@@ -362,7 +367,8 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lbl_Teachers;
         private System.Windows.Forms.ColumnHeader TeacherLastName;
-        private System.Windows.Forms.ColumnHeader TeacherIsSupervicor;
+        private System.Windows.Forms.ColumnHeader TeacherIsSupervisor;
+        private System.Windows.Forms.ColumnHeader studentLastName;
     }
 }
 

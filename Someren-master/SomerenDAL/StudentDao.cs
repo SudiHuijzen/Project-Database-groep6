@@ -14,7 +14,7 @@ namespace SomerenDAL
     {      
         public List<Student> GetAllStudents()
         {
-            string query = "SELECT student_id, name, birthdate FROM [Student]";
+            string query = "SELECT student_id, firstName, lastName, birthdate FROM [Student]";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
@@ -28,7 +28,8 @@ namespace SomerenDAL
                 Student student = new Student()
                 {
                     Number = (int)dr["student_id"],
-                    Name = (string)(dr["name"].ToString()),
+                    FirstName = (string)(dr["firstName"].ToString()),
+                    LastName = (string)(dr["lastName"].ToString()),
                     BirthDate = (DateTime)dr["birthdate"]
                 };
                 students.Add(student);

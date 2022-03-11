@@ -57,8 +57,8 @@ namespace SomerenUI
                     {
                       
                         ListViewItem li = new ListViewItem(t.Number.ToString());
-                        li.SubItems.Add(t.firstName);
-                        li.SubItems.Add(t.lastName);
+                        li.SubItems.Add(t.FirstName);
+                        li.SubItems.Add(t.LastName);
                         li.SubItems.Add(t.PrintSupervisor());   // shows whether or not teacher is supervicor when true
                         listViewTeachers.Items.Add(li);
                     }
@@ -91,7 +91,8 @@ namespace SomerenUI
                     {
          
                         ListViewItem li = new ListViewItem(s.Number.ToString());
-                        li.SubItems.Add(s.Name);
+                        li.SubItems.Add(s.FirstName);
+                        li.SubItems.Add(s.LastName);
                         li.SubItems.Add(s.BirthDate.ToString("dd/MM/yyyy"));
                         listViewStudents.Items.Add(li);
                     }

@@ -10,21 +10,21 @@ namespace SomerenModel
   
     public class Teacher
     {
-        private Room roomNr;
-        public string firstName { get; set; }
-        public string lastName { get; set; }
+        private Room room;
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public int Number { get; set; } // LecturerNumber, e.g. 47198
         public bool isSupervisor { get; set; } // sets whether or not a teacher is in supervisor role
 
         public int RoomNR 
         {
-            get { return this.roomNr.Number; }
+            get { return this.room.Number; }
             set
             {
                 // allow only a roomnumber of the type teachers room
-                if (this.roomNr.Type == true)
+                if (this.room.Type == true)
                 {
-                    this.roomNr.Number = value;
+                    this.room.Number = value;
                 }
             }
         }

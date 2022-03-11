@@ -28,8 +28,8 @@ namespace SomerenDAL
                 Teacher teacher = new Teacher()
                 {
                     Number = (int)dr["teacher_id"],
-                    firstName = (string)(dr["firstName"].ToString()),
-                    lastName = (string)(dr["lastName"]).ToString(),
+                    FirstName = (string)(dr["firstName"].ToString()),
+                    LastName = (string)(dr["lastName"]).ToString(),
                     isSupervisor = (bool)(dr["isSupervisor"]),
                     //RoomNR = (int)dr["room_nr"]
                 };
