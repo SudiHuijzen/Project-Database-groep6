@@ -290,5 +290,12 @@ namespace SomerenUI
         {
             
         }
+
+        private void revenueButton_Click_1(object sender, EventArgs e)
+        {
+            string date = monthCalendarRevenue.SelectionRange.Start.ToShortDateString();
+
+
+        }
     }
 }
