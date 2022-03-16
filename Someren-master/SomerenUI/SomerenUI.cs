@@ -34,6 +34,7 @@ namespace SomerenUI
                 pnlTeachers.Hide();
                 pnlRooms.Hide();
                 pnlRegister.Hide();
+                pnlRevenueReport.Hide();
 
                 // show dashboard
                 pnlDashboard.Show();
@@ -47,6 +48,7 @@ namespace SomerenUI
                 pnlTeachers.Hide();
                 pnlStudents.Hide();
                 pnlRegister.Hide();
+                pnlRevenueReport.Hide();
 
                 // show rooms
                 pnlRooms.Show();
@@ -82,6 +84,7 @@ namespace SomerenUI
                 pnlStudents.Hide();
                 pnlRooms.Hide();
                 pnlRegister.Hide();
+                pnlRevenueReport.Hide();
 
                 //show teachers
                 pnlTeachers.Show();
@@ -118,6 +121,7 @@ namespace SomerenUI
                 pnlTeachers.Hide();
                 pnlRooms.Hide();
                 pnlRegister.Hide();
+                pnlRevenueReport.Hide();
 
                 // show students
                 pnlStudents.Show();
@@ -155,6 +159,7 @@ namespace SomerenUI
                 pnlTeachers.Hide();
                 pnlRooms.Hide();
                 pnlStudents.Hide();
+                pnlRevenueReport.Hide();
 
                 // show register
                 pnlRegister.Show();
@@ -181,6 +186,43 @@ namespace SomerenUI
                     MessageBox.Show("Something went wrong while loading the students: " + e.Message);
                 }
 
+            }
+            else if (panelName == "Revenue Report")
+            {
+                pnlDashboard.Hide();
+                imgDashboard.Hide();
+                pnlTeachers.Hide();
+                pnlRooms.Hide();
+                pnlStudents.Hide();
+                pnlRegister.Hide();
+
+                // show register
+                pnlRevenueReport.Show();
+
+                try
+                {
+                    // fill the students listview within the students panel with a list of students
+                    StudentService studService = new StudentService(); ;
+                    List<Student> studentList = studService.GetStudents(); ;
+
+                    // clear the listview before filling it again
+                    listViewStudents.Items.Clear();
+
+                    foreach (Student s in studentList)
+                    {
+
+                        ListViewItem li = new ListViewItem(s.Number.ToString());
+                        li.SubItems.Add(s.FirstName);
+                        li.SubItems.Add(s.LastName);
+                        li.SubItems.Add(s.BirthDate.ToString("dd/MM/yyyy"));
+                        listViewStudents.Items.Add(li);
+                    }
+
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Something went wrong while loading the students: " + e.Message);
+                }
             }
 
         }
@@ -232,6 +274,21 @@ namespace SomerenUI
 
             listBoxStudents.ClearSelected();
             //listBoxDrinks.ClearSelected();
+        }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+
+        }
+
+        private void reveneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Revenue Report");
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
