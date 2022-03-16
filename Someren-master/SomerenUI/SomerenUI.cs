@@ -165,14 +165,28 @@ namespace SomerenUI
                     StudentService studService = new StudentService(); ;
                     List<Student> studentList = studService.GetStudents(); ;
 
-                    // clear the listbox before filling it again
-                    listBoxStudents.Items.Clear();
+                    DrinkService drinkService = new DrinkService(); ;
+                    List<Drink> drinkList = drinkService.GetDrinks(); ;
 
-                    //show the students and drinks in de listboxes
+                    // clear the listviews before filling it again
+                    listViewRegisterStudents.Items.Clear();
+                    listViewRegisterDrinks.Items.Clear();
+
+                    //show the students and drinks in de listviews
                     foreach (Student s in studentList)
                     {
-                        listBoxStudents.Items.Add($"{s.FirstName} {s.LastName}");
-                        //listBoxDrinks.Items.Add
+                        ListViewItem li = new ListViewItem(s.Number.ToString());
+                        li.SubItems.Add($"{s.FirstName} {s.LastName}");
+                        listViewRegisterStudents.Items.Add(li);
+                    }
+
+                    foreach (Drink d in drinkList)
+                    {
+                        ListViewItem list = new ListViewItem(d.DrinkId.ToString());
+                        list.SubItems.Add(d.DrinkName);
+                        list.SubItems.Add(d.DrinkPrice.ToString());
+                        list.SubItems.Add(d.DrinkStock.ToString());
+                        listViewRegisterDrinks.Items.Add(list);
                     }
 
                 }
@@ -227,11 +241,17 @@ namespace SomerenUI
 
         private void btn_Checkout_Click(object sender, EventArgs e)
         {
-            string studentName = listBoxStudents.SelectedItem.ToString();
-            //string drink = listBoxDrinks.SelectedItem.ToString();
+            //clear the selected items after clicking the checkout button
+            listViewRegisterStudents.SelectedItems.Clear();
+            listViewRegisterDrinks.SelectedItems.Clear();
 
-            listBoxStudents.ClearSelected();
-            //listBoxDrinks.ClearSelected();
+            //use the selected items to create a new object
+            Student student = new Student(int.Parse(listViewRegisterStudents.SelectedItems[0].SubItems[0].Text));
+            Drink drink = new Drink(int.Parse(listViewRegisterDrinks.SelectedItems[0].SubItems[0].Text));
+
+            //get the values to the logic layer
+            DrinkService drinkService = new DrinkService();
+            drinkService.AddSale(student, drink);
         }
     }
 }

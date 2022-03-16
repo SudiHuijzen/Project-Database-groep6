@@ -37,5 +37,14 @@ namespace SomerenModel
                 }
             }
         }
+
+        public Student(int number)
+        {
+            Number = number;
+        }
+
+        public Student()
+        {
+        }
     }
 }

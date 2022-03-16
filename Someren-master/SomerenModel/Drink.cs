@@ -10,23 +10,10 @@ namespace SomerenModel
     {
        
         private int drinkStock;
-        private bool drinkType;
-        private float drinkPrice;
 
         public int DrinkId { get; set; }
         public string DrinkName { get; set; }
-        public float DrinkPrice {
-            get {
-                if (drinkType == true)
-                {
-                    return (drinkPrice + (drinkPrice * (float)0.21));
-                }
-             
-                    return drinkPrice + (drinkPrice * (float)0.06);
-                
-                }
-            set => drinkPrice = value;
-        }
+        public int DrinkPrice {get; set; }
 
         public int DrinkStock { 
             
@@ -43,5 +30,13 @@ namespace SomerenModel
         
         public bool DrinkType {get; set; } // if true drink is alcoholic
 
+
+        public Drink(int drinkId)
+        {
+            DrinkId = drinkId;
+        }
+
+        public Drink()
+        {}
     }
 }

@@ -14,7 +14,7 @@ namespace SomerenDAL
     {
         public List<Drink> GetAll()
         {
-            string query = "SELECT drink_id, drinkName, drinkPrice FROM [Drink]";
+            string query = "SELECT drink_id, drinkName, drink_price, stock.stock_amount FROM [Drink] JOIN [Stock] ON Drink.stock_id = Stock.stock_id";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
@@ -29,12 +29,23 @@ namespace SomerenDAL
                 {
                     DrinkId = (int)dr["drink_id"],
                     DrinkName = (string)(dr["drinkName"]),
-                    DrinkPrice = (float)(dr["drink_price"]),
-                    DrinkType = (bool)(dr["isAlcoholic"])
+                    DrinkPrice = (int)(dr["drink_price"]),
+                   // DrinkType = (bool)(dr["isAlcoholic"]),
+                   // DrinkStock = (int)(dr["Stock.stock_amount"])
                 };
                 drinks.Add(drink);
             }
             return drinks;
+        }
+
+        public void AddSale(Student student, Drink drink)
+        {
+            SqlCommand command = new SqlCommand("INSERT INTO RegisterScreen (drink_id, student_id, sales_date)" + 
+                "VALUES (@drink_id, @student_id, @sales_date)");
+            command.Parameters.AddWithValue("@drink_id", drink.DrinkId);
+            command.Parameters.AddWithValue("@student_id", student.Number);
+            command.Parameters.AddWithValue("@sales_date", DateTime.Now);
+            command.ExecuteNonQuery();
         }
     }
 }
