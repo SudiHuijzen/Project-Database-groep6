@@ -39,6 +39,18 @@ namespace SomerenUI
                 pnlDashboard.Show();
                 imgDashboard.Show();
             }
+            else if(panelName == "DrinkSupply")
+            {
+                pnlDashboard.Hide();
+                imgDashboard.Hide();
+                pnlTeachers.Hide();
+                pnlStudents.Hide();
+                pnlRegister.Hide();
+                pnlRooms.Hide();
+
+                pnlDrinkSupply.Show();
+                
+            }
             else if (panelName == "Rooms")
             {
                 // hide all other panels
@@ -155,7 +167,7 @@ namespace SomerenUI
                 pnlTeachers.Hide();
                 pnlRooms.Hide();
                 pnlStudents.Hide();
-
+                pnlDrinkSupply.Hide();
                 // show register
                 pnlRegister.Show();
 
@@ -219,7 +231,10 @@ namespace SomerenUI
         {
             showPanel("Rooms");
         }
-
+        private void drinkToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("DrinkSupply");
+        }
         private void registerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showPanel("Register");
@@ -233,5 +248,7 @@ namespace SomerenUI
             listBoxStudents.ClearSelected();
             //listBoxDrinks.ClearSelected();
         }
+
+   
     }
 }
