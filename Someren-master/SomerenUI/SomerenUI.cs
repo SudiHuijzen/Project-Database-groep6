@@ -33,6 +33,8 @@ namespace SomerenUI
                 pnlStudents.Hide();
                 pnlTeachers.Hide();
                 pnlRooms.Hide();
+                pnlRegister.Hide();
+
                 // show dashboard
                 pnlDashboard.Show();
                 imgDashboard.Show();
@@ -44,6 +46,7 @@ namespace SomerenUI
                 imgDashboard.Hide();
                 pnlTeachers.Hide();
                 pnlStudents.Hide();
+                pnlRegister.Hide();
 
                 // show rooms
                 pnlRooms.Show();
@@ -78,6 +81,7 @@ namespace SomerenUI
                 imgDashboard.Hide();
                 pnlStudents.Hide();
                 pnlRooms.Hide();
+                pnlRegister.Hide();
 
                 //show teachers
                 pnlTeachers.Show();
@@ -113,6 +117,7 @@ namespace SomerenUI
                 imgDashboard.Hide();
                 pnlTeachers.Hide();
                 pnlRooms.Hide();
+                pnlRegister.Hide();
 
                 // show students
                 pnlStudents.Show();
@@ -124,8 +129,8 @@ namespace SomerenUI
                     List<Student> studentList = studService.GetStudents(); ;
 
                     // clear the listview before filling it again
-
                     listViewStudents.Items.Clear();
+
                     foreach (Student s in studentList)
                     {
 
@@ -141,6 +146,41 @@ namespace SomerenUI
                 {
                     MessageBox.Show("Something went wrong while loading the students: " + e.Message);
                 }
+            }
+            else if (panelName == "Register")
+            {
+                // hide all other panels
+                pnlDashboard.Hide();
+                imgDashboard.Hide();
+                pnlTeachers.Hide();
+                pnlRooms.Hide();
+                pnlStudents.Hide();
+
+                // show register
+                pnlRegister.Show();
+
+                try
+                {
+                    // fill the students listview within the students panel with a list of students
+                    StudentService studService = new StudentService(); ;
+                    List<Student> studentList = studService.GetStudents(); ;
+
+                    // clear the listbox before filling it again
+                    listBoxStudents.Items.Clear();
+
+                    //show the students and drinks in de listboxes
+                    foreach (Student s in studentList)
+                    {
+                        listBoxStudents.Items.Add($"{s.FirstName} {s.LastName}");
+                        //listBoxDrinks.Items.Add
+                    }
+
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Something went wrong while loading the students: " + e.Message);
+                }
+
             }
 
         }
@@ -178,6 +218,20 @@ namespace SomerenUI
         private void roomsToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             showPanel("Rooms");
+        }
+
+        private void registerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Register");
+        }
+
+        private void btn_Checkout_Click(object sender, EventArgs e)
+        {
+            string studentName = listBoxStudents.SelectedItem.ToString();
+            //string drink = listBoxDrinks.SelectedItem.ToString();
+
+            listBoxStudents.ClearSelected();
+            //listBoxDrinks.ClearSelected();
         }
     }
 }
