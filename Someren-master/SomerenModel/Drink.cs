@@ -19,10 +19,10 @@ namespace SomerenModel
             get {
                 if (drinkType == true)
                 {
-                    return (drinkPrice + (drinkPrice * (float)0.21));
+                    return (drinkPrice + (drinkPrice * 0.21f));
                 }
              
-                    return drinkPrice + (drinkPrice * (float)0.06);
+                    return drinkPrice + (drinkPrice * 0.06f);
                 
                 }
             set => drinkPrice = value;
