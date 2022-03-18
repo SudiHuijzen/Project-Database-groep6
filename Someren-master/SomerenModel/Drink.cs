@@ -39,5 +39,14 @@ namespace SomerenModel
             }
             return "Is";
         }
+
+        public Drink(int drinkId)
+        {
+            DrinkId = drinkId;
+        }
+
+        public Drink()
+        {
+        }
     }
 }

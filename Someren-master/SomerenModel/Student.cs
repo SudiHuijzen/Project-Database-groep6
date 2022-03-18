@@ -42,5 +42,9 @@ namespace SomerenModel
         {
             Number = number;
         }
+
+        public Student()
+        {
+        }
     }
 }

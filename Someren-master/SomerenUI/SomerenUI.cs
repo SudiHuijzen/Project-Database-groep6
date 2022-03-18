@@ -295,11 +295,24 @@ namespace SomerenUI
             listViewRegisterDrinks.SelectedItems.Clear();
 
             //use the selected items to create a new object
-            Student student = new Student(int.Parse(listViewRegisterStudents.SelectedItems[0].SubItems[0].Text));
-            Drink drink = new Drink()
+            Student student = new Student();
+            Drink drink = new Drink();
+
+            for(int i = 0; i < listViewRegisterStudents.Items.Count; i++)
             {
-                DrinkId = int.Parse(listViewRegisterDrinks.SelectedItems[0].SubItems[0].Text)
-            };
+                if(listViewRegisterStudents.Items[i].Selected)
+                {
+                    student = new Student(int.Parse(listViewRegisterStudents.Items[i].Text));
+                }
+            }
+
+            for (int i = 0; i < listViewRegisterDrinks.Items.Count; i++)
+            {
+                if (listViewRegisterDrinks.Items[i].Selected)
+                {
+                    drink = new Drink(int.Parse(listViewRegisterDrinks.Items[i].Text));
+                }
+            }
 
             //get the values to the logic layer
             DrinkService drinkService = new DrinkService();

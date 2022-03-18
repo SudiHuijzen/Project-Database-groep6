@@ -23,11 +23,12 @@ namespace SomerenDAL
 
         public void AddSale(Student student, Drink drink)
         {
-            SqlCommand command = new SqlCommand("INSERT INTO RegisterScreen (drink_id, student_id, sales_date)" +
-                "VALUES (@drink_id, @student_id, @sales_date)", OpenConnection());
+            SqlCommand command = new SqlCommand("INSERT INTO RegisterScreen (drink_id, student_id, sales_date, stock_id)" + 
+                "VALUES (@drink_id, @student_id, @sales_date, @stock_id)", OpenConnection());
             command.Parameters.AddWithValue("@drink_id", drink.DrinkId);
             command.Parameters.AddWithValue("@student_id", student.Number);
-            command.Parameters.AddWithValue("@sales_date", DateTime.Now);
+            command.Parameters.AddWithValue("@sales_date", DateTime.Now.ToString("yyyy/MM/dd"));
+            command.Parameters.AddWithValue("@stock_id", drink.DrinkId);
             command.ExecuteNonQuery();
         }
         public void AddDrink(Drink drink)
