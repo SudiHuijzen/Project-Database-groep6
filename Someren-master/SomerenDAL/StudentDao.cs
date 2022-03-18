@@ -25,9 +25,8 @@ namespace SomerenDAL
 
             foreach (DataRow dr in dataTable.Rows)
             {
-                Student student = new Student()
+                Student student = new Student((int)dr["student_id"])
                 {
-                    Number = (int)dr["student_id"],
                     FirstName = (string)(dr["firstName"].ToString()),
                     LastName = (string)(dr["lastName"].ToString()),
                     BirthDate = (DateTime)dr["birthdate"]

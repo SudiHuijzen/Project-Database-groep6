@@ -26,5 +26,25 @@ namespace SomerenLogic
         {
             drinkdb.AddSale(student, drink);
         }
+
+        public void AddDrink(Drink drink)
+        {
+            drinkdb.AddDrink(drink);
+        }
+
+        public void AddDrinkStock(Drink id)
+        {
+            drinkdb.AddDrinkStock(id);
+        }
+
+        public void AddNewStock(Drink id)
+        {
+            drinkdb.AddNewStock(id);
+        }
+
+        public void RemoveDrinkStock(Drink id)
+        {
+            drinkdb.RemoveDrinkStock(id);
+        }
     }
 }
