@@ -39,6 +39,43 @@ namespace SomerenUI
                 pnlDashboard.Show();
                 imgDashboard.Show();
             }
+            else if(panelName == "DrinkSupply")
+            {
+                pnlStudents.Hide();
+                pnlTeachers.Hide();
+                pnlRooms.Hide();
+                pnlRegister.Hide();
+                pnlDashboard.Hide();
+                imgDashboard.Hide();
+                
+
+                pnlDrinkSupply.Show();
+
+                try
+                {
+                    // fill the rooms listview within the rooms panel with a list of rooms
+                    DrinkService drinkService = new DrinkService(); ;
+                    List<Drink> drinks = drinkService.GetDrinks(); ;
+
+                    // clear the listview before filling it again
+
+                    listViewDrinkSupply.Items.Clear();
+                    foreach (Drink drink in drinks)
+                    {
+
+                        ListViewItem li = new ListViewItem(drink.DrinkId.ToString());
+                        li.SubItems.Add(drink.DrinkName);
+                        li.SubItems.Add(drink.AlcoholCheck());
+                        li.SubItems.Add(drink.DrinkStock.ToString());
+                        listViewDrinkSupply.Items.Add(li);
+                    }
+
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Something went wrong while loading the drink supply: " + e.Message);
+                }
+            }
             else if (panelName == "Rooms")
             {
                 // hide all other panels
@@ -47,7 +84,7 @@ namespace SomerenUI
                 pnlTeachers.Hide();
                 pnlStudents.Hide();
                 pnlRegister.Hide();
-
+                pnlDrinkSupply.Hide();
                 // show rooms
                 pnlRooms.Show();
 
@@ -82,7 +119,7 @@ namespace SomerenUI
                 pnlStudents.Hide();
                 pnlRooms.Hide();
                 pnlRegister.Hide();
-
+                pnlDrinkSupply.Hide();
                 //show teachers
                 pnlTeachers.Show();
 
@@ -118,7 +155,7 @@ namespace SomerenUI
                 pnlTeachers.Hide();
                 pnlRooms.Hide();
                 pnlRegister.Hide();
-
+                pnlDrinkSupply.Hide();  
                 // show students
                 pnlStudents.Show();
 
@@ -155,23 +192,20 @@ namespace SomerenUI
                 pnlTeachers.Hide();
                 pnlRooms.Hide();
                 pnlStudents.Hide();
-
+                pnlDrinkSupply.Hide();
                 // show register
                 pnlRegister.Show();
 
                 try
                 {
                     // fill the students listview within the students panel with a list of students
-                    StudentService studService = new StudentService(); ;
-                    List<Student> studentList = studService.GetStudents(); ;
+                    StudentService studService = new StudentService(); 
+                    List<Student> studentList = studService.GetStudents(); 
 
-                    DrinkService drinkService = new DrinkService(); ;
-                    List<Drink> drinkList = drinkService.GetDrinks(); ;
-
+              
                     // clear the listviews before filling it again
                     listViewRegisterStudents.Items.Clear();
-                    listViewRegisterDrinks.Items.Clear();
-
+               
                     //show the students and drinks in de listviews
                     foreach (Student s in studentList)
                     {
@@ -179,7 +213,18 @@ namespace SomerenUI
                         li.SubItems.Add($"{s.FirstName} {s.LastName}");
                         listViewRegisterStudents.Items.Add(li);
                     }
+             
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Something went wrong while loading the Students: " + e.Message);
+                }
 
+                try
+                {
+                    DrinkService drinkService = new DrinkService(); 
+                    List<Drink> drinkList = drinkService.GetDrinks(); 
+                    listViewRegisterDrinks.Items.Clear();
                     foreach (Drink d in drinkList)
                     {
                         ListViewItem list = new ListViewItem(d.DrinkId.ToString());
@@ -188,11 +233,10 @@ namespace SomerenUI
                         list.SubItems.Add(d.DrinkStock.ToString());
                         listViewRegisterDrinks.Items.Add(list);
                     }
-
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Something went wrong while loading the students: " + e.Message);
+                    MessageBox.Show("Something went wrong while loading the Drinks: " + e.Message);
                 }
 
             }
@@ -239,6 +283,11 @@ namespace SomerenUI
             showPanel("Register");
         }
 
+        private void drinkToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("DrinkSupply");
+        }
+
         private void btn_Checkout_Click(object sender, EventArgs e)
         {
             //clear the selected items after clicking the checkout button
@@ -247,11 +296,67 @@ namespace SomerenUI
 
             //use the selected items to create a new object
             Student student = new Student(int.Parse(listViewRegisterStudents.SelectedItems[0].SubItems[0].Text));
-            Drink drink = new Drink(int.Parse(listViewRegisterDrinks.SelectedItems[0].SubItems[0].Text));
+            Drink drink = new Drink()
+            {
+                DrinkId = int.Parse(listViewRegisterDrinks.SelectedItems[0].SubItems[0].Text)
+            };
 
             //get the values to the logic layer
             DrinkService drinkService = new DrinkService();
             drinkService.AddSale(student, drink);
+        }
+
+        private void RemoveStockButton_Click(object sender, EventArgs e)
+        {
+            Drink drink = new Drink()
+            {
+                DrinkId = int.Parse(listViewRegisterDrinks.SelectedItems[0].SubItems[0].Text)
+            };
+            DrinkService drinkService = new DrinkService();
+            drinkService.RemoveDrinkStock(drink);
+        }
+
+        private void AddStockButton_Click(object sender, EventArgs e)
+        {
+            Drink drink = new Drink()
+            {
+                DrinkId = int.Parse(listViewRegisterDrinks.SelectedItems[0].SubItems[0].Text)
+            };
+            DrinkService drinkService = new DrinkService();
+            drinkService.AddDrinkStock(drink);
+        }
+
+        private void changeNameButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void changePriceButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddDrinkButton_Click(object sender, EventArgs e)
+        {
+            DrinkService drinkService1 = new DrinkService();
+            Drink drink = new Drink()
+            {
+                DrinkName = DrinkNameTextBox.Text,
+                DrinkType = false,
+                DrinkStock = 0
+            };
+            if (alcoholicRadioButton.Checked)
+            {
+                drink.DrinkType = true;
+            }
+            drinkService1.AddNewStock(drink);
+            drinkService1.AddDrink(drink);
+            
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

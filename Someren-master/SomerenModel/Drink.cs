@@ -13,7 +13,7 @@ namespace SomerenModel
 
         public int DrinkId { get; set; }
         public string DrinkName { get; set; }
-        public int DrinkPrice {get; set; }
+        public decimal DrinkPrice {get; set; }
 
         public int DrinkStock { 
             
@@ -21,7 +21,7 @@ namespace SomerenModel
 
             set 
             { 
-                if (this.drinkStock > value)
+                if (this.drinkStock >= 0)
                 {
                     this.drinkStock = value;
                 }
@@ -31,12 +31,13 @@ namespace SomerenModel
         public bool DrinkType {get; set; } // if true drink is alcoholic
 
 
-        public Drink(int drinkId)
+        public string AlcoholCheck()
         {
-            DrinkId = drinkId;
+            if(DrinkType == false) // shows Non or Is alcoholic in the list
+            {
+                return "Non ";
+            }
+            return "Is";
         }
-
-        public Drink()
-        {}
     }
 }
