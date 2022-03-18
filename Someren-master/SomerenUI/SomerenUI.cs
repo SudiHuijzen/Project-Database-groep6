@@ -34,6 +34,7 @@ namespace SomerenUI
                 pnlTeachers.Hide();
                 pnlRooms.Hide();
                 pnlRegister.Hide();
+                pnlRevenueReport.Hide();
 
                 // show dashboard
                 pnlDashboard.Show();
@@ -47,6 +48,7 @@ namespace SomerenUI
                 pnlTeachers.Hide();
                 pnlStudents.Hide();
                 pnlRegister.Hide();
+                pnlRevenueReport.Hide();
 
                 // show rooms
                 pnlRooms.Show();
@@ -82,6 +84,7 @@ namespace SomerenUI
                 pnlStudents.Hide();
                 pnlRooms.Hide();
                 pnlRegister.Hide();
+                pnlRevenueReport.Hide();
 
                 //show teachers
                 pnlTeachers.Show();
@@ -118,6 +121,7 @@ namespace SomerenUI
                 pnlTeachers.Hide();
                 pnlRooms.Hide();
                 pnlRegister.Hide();
+                pnlRevenueReport.Hide();
 
                 // show students
                 pnlStudents.Show();
@@ -155,6 +159,7 @@ namespace SomerenUI
                 pnlTeachers.Hide();
                 pnlRooms.Hide();
                 pnlStudents.Hide();
+                pnlRevenueReport.Hide();
 
                 // show register
                 pnlRegister.Show();
@@ -195,6 +200,21 @@ namespace SomerenUI
                     MessageBox.Show("Something went wrong while loading the students: " + e.Message);
                 }
 
+            }
+            else if (panelName == "Revenue Report")
+            {
+                // hide all other panels
+                pnlDashboard.Hide();
+                imgDashboard.Hide();
+                pnlTeachers.Hide();
+                pnlRooms.Hide();
+                pnlStudents.Hide();
+                pnlRegister.Hide();
+
+                // show register
+                pnlRevenueReport.Show();
+
+                
             }
 
         }
@@ -252,6 +272,16 @@ namespace SomerenUI
             //get the values to the logic layer
             DrinkService drinkService = new DrinkService();
             drinkService.AddSale(student, drink);
+        }
+
+        private void pnlRevenueReport_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void reveneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Revenue Report");
         }
     }
 }
