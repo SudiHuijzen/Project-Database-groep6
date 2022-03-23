@@ -14,11 +14,9 @@ namespace SomerenDAL
     {
         public List<Drink> GetAll()
         {
-            string query = "SELECT drink_id, drinkName, drink_price, isAlcoholic FROM [Drink]";
-            string secondquery = "SELECT stock_amount FROM Stock";
+            string query = "SELECT drink_id, drinkName, drink_price, isAlcoholic, stock_id FROM [Drink]";
             SqlParameter[] sqlParameters = new SqlParameter[0];
-            SqlParameter[] sqlParameters2 = new SqlParameter[0];
-            return ReadTables(ExecuteSelectQuery(query, sqlParameters), ExecuteSelectQuery(secondquery, sqlParameters2));
+            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
         public void AddSale(Student student, Drink drink)
@@ -32,7 +30,6 @@ namespace SomerenDAL
         }
         public void AddDrink(Drink drink)
         {
-
             SqlCommand command = new SqlCommand("INSERT INTO dbo.Drink (drinkName, isAlcoholic, Drink.stock_id)" +
                 "VALUES (@DrinkName, @isAlcoholic, @stockId);", OpenConnection());
             command.Parameters.AddWithValue("@DrinkName", drink.DrinkName);
@@ -40,52 +37,30 @@ namespace SomerenDAL
             command.Parameters.AddWithValue("@stockId", drink.DrinkId);
             command.ExecuteNonQuery();
         }  
-        public void AddNewStock(Drink drink)
-        {
-            
-            SqlCommand command = new SqlCommand("INSERT INTO Stock (stock_amount)" +
-              "VALUES (@Stock_amount);", OpenConnection());
-            command.Parameters.AddWithValue("@Stock_amount", drink.DrinkStock);
-            command.ExecuteNonQuery();
-            
-            
-        }
-        public void AddDrinkStock(Drink drink)
-        {
-            SqlCommand command = new SqlCommand("UPDATE Stock SET stock_amout = stock_amount + 1 " +
-                "FROM Stock WHERE stock_id = @id", OpenConnection());
-            command.Parameters.AddWithValue("@id", drink.DrinkId);
-            command.ExecuteNonQuery();
-        }  
-        public void RemoveDrinkStock(Drink drink)
-        {
-            
-            SqlCommand command = new SqlCommand("UPDATE Stock SET stock_amount = stock_amount - 1 " +
-                "FROM Stock WHERE stock_id = @id");
-            command.Parameters.AddWithValue("@id", drink.DrinkId);
-            command.ExecuteNonQuery();
-        }
 
-        private List<Drink> ReadTables(DataTable dataTable, DataTable secondDataTable)
+        private List<Drink> ReadTables(DataTable dataTable)
         {
             List<Drink> drinks = new List<Drink>();
+            StockDao stockDao = new StockDao();
+            List<Stock> stock = stockDao.GetAll();
 
             foreach (DataRow dr in dataTable.Rows)
             {
-                foreach (DataRow st in secondDataTable.Rows)
-                {
                     Drink drink = new Drink()
                     {
                         DrinkId = (int)dr["drink_id"],
                         DrinkName = (string)(dr["drinkName"]),
                         DrinkPrice = (decimal)(dr["drink_price"]),
                         DrinkType = (bool)(dr["isAlcoholic"]),
-                        DrinkStock = (int)(st["stock_amount"])
+                        DrinkStockId = (int)(dr["stock_id"])
                     };
                     drinks.Add(drink);
-                }
             }
-          
+
+            for (int i = 0; i < drinks.Count; i++)
+            {
+                drinks[i].DrinkStock = stock[i].StockAmount;
+            }
             return drinks;
         } 
     }

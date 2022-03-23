@@ -50,31 +50,8 @@ namespace SomerenUI
                 
 
                 pnlDrinkSupply.Show();
-
-                try
-                {
-                    // fill the rooms listview within the rooms panel with a list of rooms
-                    DrinkService drinkService = new DrinkService(); ;
-                    List<Drink> drinks = drinkService.GetDrinks(); ;
-
-                    // clear the listview before filling it again
-
-                    listViewDrinkSupply.Items.Clear();
-                    foreach (Drink drink in drinks)
-                    {
-
-                        ListViewItem li = new ListViewItem(drink.DrinkId.ToString());
-                        li.SubItems.Add(drink.DrinkName);
-                        li.SubItems.Add(drink.AlcoholCheck());
-                        li.SubItems.Add(drink.DrinkStock.ToString());
-                        listViewDrinkSupply.Items.Add(li);
-                    }
-
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show("Something went wrong while loading the drink supply: " + e.Message);
-                }
+                LoadSupplyList();
+               
             }
             else if (panelName == "Rooms")
             {
@@ -87,30 +64,8 @@ namespace SomerenUI
                 pnlDrinkSupply.Hide();
                 // show rooms
                 pnlRooms.Show();
-
-                try
-                {
-                    // fill the rooms listview within the rooms panel with a list of rooms
-                    RoomService roomService = new RoomService(); ;
-                    List<Room> roomList = roomService.GetRooms(); ;
-
-                    // clear the listview before filling it again
-
-                    listViewRooms.Items.Clear();
-                    foreach (Room r in roomList)
-                    {
-
-                        ListViewItem li = new ListViewItem(r.Number.ToString());
-                        li.SubItems.Add(r.Capacity.ToString());
-                        li.SubItems.Add(r.PrintRoom()); // shows whether or not the room is a teacher room
-                        listViewRooms.Items.Add(li);
-                    }
-
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show("Something went wrong while loading the students: " + e.Message);
-                }
+                LoadRoomList();
+  
             }
             else if (panelName == "Lectures")
             {
@@ -122,30 +77,8 @@ namespace SomerenUI
                 pnlDrinkSupply.Hide();
                 //show teachers
                 pnlTeachers.Show();
-
-                try
-                {
-                    // fill the students listview within the students panel with a list of students
-                    TeacherService teachService = new TeacherService(); ;
-                    List<Teacher> TeacherList = teachService.GetTeachers(); ;
-
-                    // clear the items in the listview before filling it again
-                    listViewTeachers.Items.Clear();
-
-                    foreach (Teacher t in TeacherList)
-                    {
-
-                        ListViewItem li = new ListViewItem(t.Number.ToString());
-                        li.SubItems.Add(t.FirstName);
-                        li.SubItems.Add(t.LastName);
-                        li.SubItems.Add(t.PrintSupervisor());   // shows whether or not teacher is supervicor when true
-                        listViewTeachers.Items.Add(li);
-                    }
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show("Something went wrong while loading the Teacher: " + e.Message);
-                }
+                LoadTeacherList();
+          
             }
             else if (panelName == "Students")
             {
@@ -158,31 +91,7 @@ namespace SomerenUI
                 pnlDrinkSupply.Hide();  
                 // show students
                 pnlStudents.Show();
-
-                try
-                {
-                    // fill the students listview within the students panel with a list of students
-                    StudentService studService = new StudentService(); ;
-                    List<Student> studentList = studService.GetStudents(); ;
-
-                    // clear the listview before filling it again
-                    listViewStudents.Items.Clear();
-
-                    foreach (Student s in studentList)
-                    {
-
-                        ListViewItem li = new ListViewItem(s.Number.ToString());
-                        li.SubItems.Add(s.FirstName);
-                        li.SubItems.Add(s.LastName);
-                        li.SubItems.Add(s.BirthDate.ToString("dd/MM/yyyy"));
-                        listViewStudents.Items.Add(li);
-                    }
-
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show("Something went wrong while loading the students: " + e.Message);
-                }
+                LoadStudentList();
             }
             else if (panelName == "Register")
             {
@@ -195,52 +104,8 @@ namespace SomerenUI
                 pnlDrinkSupply.Hide();
                 // show register
                 pnlRegister.Show();
-
-                try
-                {
-                    // fill the students listview within the students panel with a list of students
-                    StudentService studService = new StudentService(); 
-                    List<Student> studentList = studService.GetStudents(); 
-
-              
-                    // clear the listviews before filling it again
-                    listViewRegisterStudents.Items.Clear();
-               
-                    //show the students and drinks in de listviews
-                    foreach (Student s in studentList)
-                    {
-                        ListViewItem li = new ListViewItem(s.Number.ToString());
-                        li.SubItems.Add($"{s.FirstName} {s.LastName}");
-                        listViewRegisterStudents.Items.Add(li);
-                    }
-             
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show("Something went wrong while loading the Students: " + e.Message);
-                }
-
-                try
-                {
-                    DrinkService drinkService = new DrinkService(); 
-                    List<Drink> drinkList = drinkService.GetDrinks(); 
-                    listViewRegisterDrinks.Items.Clear();
-                    foreach (Drink d in drinkList)
-                    {
-                        ListViewItem list = new ListViewItem(d.DrinkId.ToString());
-                        list.SubItems.Add(d.DrinkName);
-                        list.SubItems.Add(d.DrinkPrice.ToString());
-                        list.SubItems.Add(d.DrinkStock.ToString());
-                        listViewRegisterDrinks.Items.Add(list);
-                    }
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show("Something went wrong while loading the Drinks: " + e.Message);
-                }
-
+                LoadRegisterList();
             }
-
         }
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
@@ -321,22 +186,18 @@ namespace SomerenUI
 
         private void RemoveStockButton_Click(object sender, EventArgs e)
         {
-            Drink drink = new Drink()
-            {
-                DrinkId = int.Parse(listViewRegisterDrinks.SelectedItems[0].SubItems[0].Text)
-            };
-            DrinkService drinkService = new DrinkService();
-            drinkService.RemoveDrinkStock(drink);
+            int id = int.Parse(EditDrinkIdtextBox.Text);
+            StockService stockService = new StockService();
+            stockService.RemoveDrinkStock(id);
+            LoadSupplyList();
         }
 
         private void AddStockButton_Click(object sender, EventArgs e)
         {
-            Drink drink = new Drink()
-            {
-                DrinkId = int.Parse(listViewRegisterDrinks.SelectedItems[0].SubItems[0].Text)
-            };
-            DrinkService drinkService = new DrinkService();
-            drinkService.AddDrinkStock(drink);
+            int id = int.Parse(EditDrinkIdtextBox.Text);
+            StockService stockService = new StockService();
+            stockService.AddDrinkStock(id);
+            LoadSupplyList();
         }
 
         private void changeNameButton_Click(object sender, EventArgs e)
@@ -362,7 +223,7 @@ namespace SomerenUI
             {
                 drink.DrinkType = true;
             }
-            drinkService1.AddNewStock(drink);
+            //drinkService1.AddNewStock(drink);
             drinkService1.AddDrink(drink);
             
         }
@@ -370,6 +231,164 @@ namespace SomerenUI
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void LoadSupplyList()
+        {
+            try
+            {
+                // fill the rooms listview within the rooms panel with a list of rooms
+                DrinkService drinkService = new DrinkService(); ;
+                List<Drink> drinks = drinkService.GetDrinks(); ;
+
+
+                // clear the listview before filling it again
+
+                listViewDrinkSupply.Items.Clear();
+                foreach (Drink drink in drinks)
+                {
+
+                    ListViewItem li = new ListViewItem(drink.DrinkId.ToString());
+                    li.SubItems.Add(drink.DrinkName);
+                    li.SubItems.Add(drink.AlcoholCheck());
+                    li.SubItems.Add(drink.DrinkStock.ToString());
+                    listViewDrinkSupply.Items.Add(li);
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the drink supply: " + e.Message);
+            }
+
+        }
+
+        private void LoadStudentList()
+        {
+            try
+            {
+                // fill the students listview within the students panel with a list of students
+                StudentService studService = new StudentService(); ;
+                List<Student> studentList = studService.GetStudents(); ;
+
+                // clear the listview before filling it again
+                listViewStudents.Items.Clear();
+
+                foreach (Student s in studentList)
+                {
+
+                    ListViewItem li = new ListViewItem(s.Number.ToString());
+                    li.SubItems.Add(s.FirstName);
+                    li.SubItems.Add(s.LastName);
+                    li.SubItems.Add(s.BirthDate.ToString("dd/MM/yyyy"));
+                    listViewStudents.Items.Add(li);
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the students: " + e.Message);
+            }
+        }
+
+        private void LoadTeacherList()
+        {
+            try
+            {
+                // fill the students listview within the students panel with a list of students
+                TeacherService teachService = new TeacherService(); ;
+                List<Teacher> TeacherList = teachService.GetTeachers(); ;
+
+                // clear the items in the listview before filling it again
+                listViewTeachers.Items.Clear();
+
+                foreach (Teacher t in TeacherList)
+                {
+
+                    ListViewItem li = new ListViewItem(t.Number.ToString());
+                    li.SubItems.Add(t.FirstName);
+                    li.SubItems.Add(t.LastName);
+                    li.SubItems.Add(t.PrintSupervisor());   // shows whether or not teacher is supervicor when true
+                    listViewTeachers.Items.Add(li);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the Teacher: " + e.Message);
+            }
+        }
+
+        private void LoadRoomList()
+        {
+            try
+            {
+                // fill the rooms listview within the rooms panel with a list of rooms
+                RoomService roomService = new RoomService(); ;
+                List<Room> roomList = roomService.GetRooms(); ;
+
+                // clear the listview before filling it again
+
+                listViewRooms.Items.Clear();
+                foreach (Room r in roomList)
+                {
+
+                    ListViewItem li = new ListViewItem(r.Number.ToString());
+                    li.SubItems.Add(r.Capacity.ToString());
+                    li.SubItems.Add(r.PrintRoom()); // shows whether or not the room is a teacher room
+                    listViewRooms.Items.Add(li);
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the students: " + e.Message);
+            }
+        }
+
+        private void LoadRegisterList()
+        {
+            try
+            {
+                // fill the students listview within the students panel with a list of students
+                StudentService studService = new StudentService();
+                List<Student> studentList = studService.GetStudents();
+
+
+                // clear the listviews before filling it again
+                listViewRegisterStudents.Items.Clear();
+
+                //show the students and drinks in de listviews
+                foreach (Student s in studentList)
+                {
+                    ListViewItem li = new ListViewItem(s.Number.ToString());
+                    li.SubItems.Add($"{s.FirstName} {s.LastName}");
+                    listViewRegisterStudents.Items.Add(li);
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the Students: " + e.Message);
+            }
+
+            try
+            {
+                DrinkService drinkService = new DrinkService();
+                List<Drink> drinkList = drinkService.GetDrinks();
+                listViewRegisterDrinks.Items.Clear();
+                foreach (Drink d in drinkList)
+                {
+                    ListViewItem list = new ListViewItem(d.DrinkId.ToString());
+                    list.SubItems.Add(d.DrinkName);
+                    list.SubItems.Add(d.DrinkPrice.ToString());
+                    list.SubItems.Add(d.DrinkStock.ToString());
+                    listViewRegisterDrinks.Items.Add(list);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the Drinks: " + e.Message);
+            }
         }
     }
 }

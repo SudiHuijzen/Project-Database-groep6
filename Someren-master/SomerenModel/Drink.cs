@@ -9,24 +9,11 @@ namespace SomerenModel
     public class Drink
     {
        
-        private int drinkStock;
-
         public int DrinkId { get; set; }
+        public int DrinkStockId { get; set; }
         public string DrinkName { get; set; }
         public decimal DrinkPrice {get; set; }
-
-        public int DrinkStock { 
-            
-            get => this.drinkStock;
-
-            set 
-            { 
-                if (this.drinkStock >= 0)
-                {
-                    this.drinkStock = value;
-                }
-            } 
-        }
+        public int DrinkStock { get; set; }
         
         public bool DrinkType {get; set; } // if true drink is alcoholic
 
