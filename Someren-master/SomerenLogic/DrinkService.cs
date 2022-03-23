@@ -32,6 +32,9 @@ namespace SomerenLogic
             drinkdb.AddDrink(drink);
         }
 
-      
+        public void ChangeDrinkName(String name, int id)
+        {
+            drinkdb.ChangeDrinkName(name, id);
+        }
     }
 }

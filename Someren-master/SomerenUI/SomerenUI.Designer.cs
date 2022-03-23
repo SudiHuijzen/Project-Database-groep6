@@ -106,6 +106,7 @@
             this.columnHeaderSufficient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.EditDrinkIdtextBox = new System.Windows.Forms.TextBox();
             this.AddDrinkIdtextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgDashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
@@ -676,15 +677,16 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.AddDrinkIdtextBox);
             this.groupBox1.Controls.Add(this.nonAlcoholRadioButton);
             this.groupBox1.Controls.Add(this.alcoholicRadioButton);
             this.groupBox1.Controls.Add(this.AddDrinkButton);
             this.groupBox1.Controls.Add(this.DrinkNameTextBox);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(977, 66);
+            this.groupBox1.Location = new System.Drawing.Point(933, 30);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(220, 293);
+            this.groupBox1.Size = new System.Drawing.Size(283, 408);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Drink";
@@ -692,7 +694,7 @@
             // nonAlcoholRadioButton
             // 
             this.nonAlcoholRadioButton.AutoSize = true;
-            this.nonAlcoholRadioButton.Location = new System.Drawing.Point(59, 152);
+            this.nonAlcoholRadioButton.Location = new System.Drawing.Point(32, 243);
             this.nonAlcoholRadioButton.Name = "nonAlcoholRadioButton";
             this.nonAlcoholRadioButton.Size = new System.Drawing.Size(101, 20);
             this.nonAlcoholRadioButton.TabIndex = 4;
@@ -703,7 +705,7 @@
             // 
             this.alcoholicRadioButton.AutoSize = true;
             this.alcoholicRadioButton.Checked = true;
-            this.alcoholicRadioButton.Location = new System.Drawing.Point(59, 126);
+            this.alcoholicRadioButton.Location = new System.Drawing.Point(32, 217);
             this.alcoholicRadioButton.Name = "alcoholicRadioButton";
             this.alcoholicRadioButton.Size = new System.Drawing.Size(73, 20);
             this.alcoholicRadioButton.TabIndex = 3;
@@ -713,7 +715,7 @@
             // 
             // AddDrinkButton
             // 
-            this.AddDrinkButton.Location = new System.Drawing.Point(50, 191);
+            this.AddDrinkButton.Location = new System.Drawing.Point(89, 302);
             this.AddDrinkButton.Name = "AddDrinkButton";
             this.AddDrinkButton.Size = new System.Drawing.Size(118, 66);
             this.AddDrinkButton.TabIndex = 2;
@@ -723,7 +725,7 @@
             // 
             // DrinkNameTextBox
             // 
-            this.DrinkNameTextBox.Location = new System.Drawing.Point(42, 87);
+            this.DrinkNameTextBox.Location = new System.Drawing.Point(28, 174);
             this.DrinkNameTextBox.Name = "DrinkNameTextBox";
             this.DrinkNameTextBox.Size = new System.Drawing.Size(143, 22);
             this.DrinkNameTextBox.TabIndex = 1;
@@ -731,7 +733,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(56, 53);
+            this.label3.Location = new System.Drawing.Point(27, 140);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 16);
             this.label3.TabIndex = 0;
@@ -798,18 +800,27 @@
             // 
             // AddDrinkIdtextBox
             // 
-            this.AddDrinkIdtextBox.Location = new System.Drawing.Point(14, 35);
+            this.AddDrinkIdtextBox.Location = new System.Drawing.Point(134, 78);
             this.AddDrinkIdtextBox.Name = "AddDrinkIdtextBox";
             this.AddDrinkIdtextBox.Size = new System.Drawing.Size(36, 22);
             this.AddDrinkIdtextBox.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(25, 81);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 16);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Enter new id";
             // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 622);
-            this.Controls.Add(this.pnlDashboard);
             this.Controls.Add(this.pnlDrinkSupply);
+            this.Controls.Add(this.pnlDashboard);
             this.Controls.Add(this.pnlRegister);
             this.Controls.Add(this.pnlRooms);
             this.Controls.Add(this.pnlTeachers);
@@ -929,6 +940,7 @@
         private System.Windows.Forms.RadioButton alcoholicRadioButton;
         private System.Windows.Forms.TextBox EditDrinkIdtextBox;
         private System.Windows.Forms.TextBox AddDrinkIdtextBox;
+        private System.Windows.Forms.Label label6;
     }
 }
 

@@ -14,7 +14,8 @@ namespace SomerenDAL
     {
         public List<Drink> GetAll()
         {
-            string query = "SELECT drink_id, drinkName, drink_price, isAlcoholic, stock_id FROM [Drink]";
+            string query = "SELECT drink_id, drinkName, drink_price, isAlcoholic, Drink.Stock_id, Stock_amount FROM [Drink]" +
+                "JOIN Stock ON Drink.stock_id = STOCK.stock_id";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
@@ -38,12 +39,19 @@ namespace SomerenDAL
             command.ExecuteNonQuery();
         }  
 
+        public void ChangeDrinkName(string newNAme, int id)
+        { 
+                 SqlCommand command = new SqlCommand("UPDATE dbo.Drink SET COLUMN drinkName = '@NewName' " +
+                     "WHERE drink_id = @DrinkID", OpenConnection());
+            command.Parameters.AddWithValue("@NewName", newNAme);
+            command.Parameters.AddWithValue("@DrinkID", id);
+            command.ExecuteNonQuery();
+        }
+
         private List<Drink> ReadTables(DataTable dataTable)
         {
             List<Drink> drinks = new List<Drink>();
-            StockDao stockDao = new StockDao();
-            List<Stock> stock = stockDao.GetAll();
-
+          
             foreach (DataRow dr in dataTable.Rows)
             {
                     Drink drink = new Drink()
@@ -52,14 +60,10 @@ namespace SomerenDAL
                         DrinkName = (string)(dr["drinkName"]),
                         DrinkPrice = (decimal)(dr["drink_price"]),
                         DrinkType = (bool)(dr["isAlcoholic"]),
-                        DrinkStockId = (int)(dr["stock_id"])
+                        DrinkStockId = (int)(dr["stock_id"]),
+                        DrinkStock = (int)(dr["stock_amount"])
                     };
                     drinks.Add(drink);
-            }
-
-            for (int i = 0; i < drinks.Count; i++)
-            {
-                drinks[i].DrinkStock = stock[i].StockAmount;
             }
             return drinks;
         } 

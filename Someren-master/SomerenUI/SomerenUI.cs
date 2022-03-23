@@ -212,9 +212,10 @@ namespace SomerenUI
 
         private void AddDrinkButton_Click(object sender, EventArgs e)
         {
-            DrinkService drinkService1 = new DrinkService();
+            DrinkService drinkService = new DrinkService();
             Drink drink = new Drink()
             {
+                DrinkId = int.Parse(AddDrinkIdtextBox.Text),
                 DrinkName = DrinkNameTextBox.Text,
                 DrinkType = false,
                 DrinkStock = 0
@@ -224,8 +225,8 @@ namespace SomerenUI
                 drink.DrinkType = true;
             }
             //drinkService1.AddNewStock(drink);
-            drinkService1.AddDrink(drink);
-            
+            drinkService.AddDrink(drink);
+            LoadSupplyList();
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
