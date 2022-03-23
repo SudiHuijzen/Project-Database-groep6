@@ -108,6 +108,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pnlDrinkSupply = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.EditDrinkIdtextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.changePriceButton = new System.Windows.Forms.Button();
@@ -118,6 +119,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.changeNameTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.AddDrinkIdtextBox = new System.Windows.Forms.TextBox();
             this.nonAlcoholRadioButton = new System.Windows.Forms.RadioButton();
             this.alcoholicRadioButton = new System.Windows.Forms.RadioButton();
             this.AddDrinkButton = new System.Windows.Forms.Button();
@@ -130,7 +132,23 @@
             this.columnHeaderIsAlcoholic = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderStock = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderSufficient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+<<<<<<< Updated upstream
 >>>>>>> 9cbf7bd94abe0c9d090a41ae4920a22712f640ca
+=======
+            this.pnlActivities = new System.Windows.Forms.Panel();
+            this.listViewActivities = new System.Windows.Forms.ListView();
+            this.activity_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.StartTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.EndTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnSelectActivity = new System.Windows.Forms.Button();
+            this.pnlAlterActivities = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.listViewActivityStudent = new System.Windows.Forms.ListView();
+            this.student_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.student_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+>>>>>>> Stashed changes
             ((System.ComponentModel.ISupportInitialize)(this.imgDashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
@@ -149,7 +167,12 @@
             this.pnlDrinkSupply.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+<<<<<<< Updated upstream
 >>>>>>> 9cbf7bd94abe0c9d090a41ae4920a22712f640ca
+=======
+            this.pnlActivities.SuspendLayout();
+            this.pnlAlterActivities.SuspendLayout();
+>>>>>>> Stashed changes
             this.SuspendLayout();
             // 
             // imgDashboard
@@ -173,11 +196,14 @@
             this.barToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+<<<<<<< Updated upstream
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(949, 24);
+=======
+            this.menuStrip1.Size = new System.Drawing.Size(1283, 28);
+>>>>>>> Stashed changes
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // dashboardToolStripMenuItem
             // 
@@ -186,7 +212,11 @@
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
+<<<<<<< Updated upstream
             this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+=======
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
+>>>>>>> Stashed changes
             this.dashboardToolStripMenuItem.Text = "Application";
             this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
             // 
@@ -212,27 +242,44 @@
             // studentsToolStripMenuItem
             // 
             this.studentsToolStripMenuItem.Name = "studentsToolStripMenuItem";
+<<<<<<< Updated upstream
             this.studentsToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+=======
+            this.studentsToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
+>>>>>>> Stashed changes
             this.studentsToolStripMenuItem.Text = "Students";
             this.studentsToolStripMenuItem.Click += new System.EventHandler(this.studentsToolStripMenuItem_Click);
             // 
             // lecturersToolStripMenuItem
             // 
             this.lecturersToolStripMenuItem.Name = "lecturersToolStripMenuItem";
+<<<<<<< Updated upstream
             this.lecturersToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+=======
+            this.lecturersToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
+>>>>>>> Stashed changes
             this.lecturersToolStripMenuItem.Text = "Lecturers";
             this.lecturersToolStripMenuItem.Click += new System.EventHandler(this.lecturersToolStripMenuItem_Click);
             // 
             // activitiesToolStripMenuItem
             // 
             this.activitiesToolStripMenuItem.Name = "activitiesToolStripMenuItem";
+<<<<<<< Updated upstream
             this.activitiesToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+=======
+            this.activitiesToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
+>>>>>>> Stashed changes
             this.activitiesToolStripMenuItem.Text = "Activities";
+            this.activitiesToolStripMenuItem.Click += new System.EventHandler(this.activitiesToolStripMenuItem_Click);
             // 
             // roomsToolStripMenuItem
             // 
             this.roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
+<<<<<<< Updated upstream
             this.roomsToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+=======
+            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
+>>>>>>> Stashed changes
             this.roomsToolStripMenuItem.Text = "Rooms";
             this.roomsToolStripMenuItem.Click += new System.EventHandler(this.roomsToolStripMenuItem_Click_1);
             // 
@@ -243,7 +290,11 @@
             this.registerToolStripMenuItem,
             this.reveneToolStripMenuItem});
             this.barToolStripMenuItem.Name = "barToolStripMenuItem";
+<<<<<<< Updated upstream
             this.barToolStripMenuItem.Size = new System.Drawing.Size(36, 20);
+=======
+            this.barToolStripMenuItem.Size = new System.Drawing.Size(45, 24);
+>>>>>>> Stashed changes
             this.barToolStripMenuItem.Text = "Bar";
             // 
             // drinkToolStripMenuItem
@@ -293,7 +344,11 @@
             this.lbl_Dashboard.AutoSize = true;
             this.lbl_Dashboard.Location = new System.Drawing.Point(13, 13);
             this.lbl_Dashboard.Name = "lbl_Dashboard";
+<<<<<<< Updated upstream
             this.lbl_Dashboard.Size = new System.Drawing.Size(185, 13);
+=======
+            this.lbl_Dashboard.Size = new System.Drawing.Size(243, 17);
+>>>>>>> Stashed changes
             this.lbl_Dashboard.TabIndex = 1;
             this.lbl_Dashboard.Text = "Welcome to the Someren Application!";
             // 
@@ -493,7 +548,11 @@
             this.lbl_Rooms.Location = new System.Drawing.Point(14, 22);
             this.lbl_Rooms.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Rooms.Name = "lbl_Rooms";
+<<<<<<< Updated upstream
             this.lbl_Rooms.Size = new System.Drawing.Size(90, 29);
+=======
+            this.lbl_Rooms.Size = new System.Drawing.Size(104, 32);
+>>>>>>> Stashed changes
             this.lbl_Rooms.TabIndex = 0;
             this.lbl_Rooms.Text = "Rooms";
             // 
@@ -899,6 +958,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Edit Drink";
             // 
+            // EditDrinkIdtextBox
+            // 
+            this.EditDrinkIdtextBox.Location = new System.Drawing.Point(31, 35);
+            this.EditDrinkIdtextBox.Name = "EditDrinkIdtextBox";
+            this.EditDrinkIdtextBox.Size = new System.Drawing.Size(36, 22);
+            this.EditDrinkIdtextBox.TabIndex = 12;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -995,6 +1061,13 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Drink";
+            // 
+            // AddDrinkIdtextBox
+            // 
+            this.AddDrinkIdtextBox.Location = new System.Drawing.Point(14, 35);
+            this.AddDrinkIdtextBox.Name = "AddDrinkIdtextBox";
+            this.AddDrinkIdtextBox.Size = new System.Drawing.Size(36, 22);
+            this.AddDrinkIdtextBox.TabIndex = 13;
             // 
             // nonAlcoholRadioButton
             // 
@@ -1095,7 +1168,120 @@
             // 
             this.columnHeaderSufficient.Text = "Stock Sufficient";
             this.columnHeaderSufficient.Width = 110;
+<<<<<<< Updated upstream
 >>>>>>> 9cbf7bd94abe0c9d090a41ae4920a22712f640ca
+=======
+            // 
+            // pnlActivities
+            // 
+            this.pnlActivities.Controls.Add(this.btnSelectActivity);
+            this.pnlActivities.Controls.Add(this.listViewActivities);
+            this.pnlActivities.Controls.Add(this.label6);
+            this.pnlActivities.Location = new System.Drawing.Point(3, 27);
+            this.pnlActivities.Name = "pnlActivities";
+            this.pnlActivities.Size = new System.Drawing.Size(1277, 583);
+            this.pnlActivities.TabIndex = 2;
+            // 
+            // listViewActivities
+            // 
+            this.listViewActivities.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.activity_id,
+            this.Description,
+            this.StartTime,
+            this.EndTime});
+            this.listViewActivities.FullRowSelect = true;
+            this.listViewActivities.GridLines = true;
+            this.listViewActivities.HideSelection = false;
+            this.listViewActivities.Location = new System.Drawing.Point(21, 67);
+            this.listViewActivities.Name = "listViewActivities";
+            this.listViewActivities.Scrollable = false;
+            this.listViewActivities.Size = new System.Drawing.Size(497, 408);
+            this.listViewActivities.TabIndex = 1;
+            this.listViewActivities.UseCompatibleStateImageBehavior = false;
+            this.listViewActivities.View = System.Windows.Forms.View.Details;
+            // 
+            // activity_id
+            // 
+            this.activity_id.Text = "activity_id";
+            this.activity_id.Width = 71;
+            // 
+            // Description
+            // 
+            this.Description.Text = "Description";
+            this.Description.Width = 117;
+            // 
+            // StartTime
+            // 
+            this.StartTime.Text = "StartTime";
+            this.StartTime.Width = 80;
+            // 
+            // EndTime
+            // 
+            this.EndTime.Text = "EndTime";
+            this.EndTime.Width = 214;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
+            this.label6.Location = new System.Drawing.Point(17, 31);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(132, 33);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Activities";
+            // 
+            // btnSelectActivity
+            // 
+            this.btnSelectActivity.Location = new System.Drawing.Point(695, 241);
+            this.btnSelectActivity.Name = "btnSelectActivity";
+            this.btnSelectActivity.Size = new System.Drawing.Size(142, 36);
+            this.btnSelectActivity.TabIndex = 2;
+            this.btnSelectActivity.Text = "Select Activity";
+            this.btnSelectActivity.UseVisualStyleBackColor = true;
+            this.btnSelectActivity.Click += new System.EventHandler(this.btnSelectActivity_Click);
+            // 
+            // pnlAlterActivities
+            // 
+            this.pnlAlterActivities.Controls.Add(this.listViewActivityStudent);
+            this.pnlAlterActivities.Controls.Add(this.label7);
+            this.pnlAlterActivities.Location = new System.Drawing.Point(0, 27);
+            this.pnlAlterActivities.Name = "pnlAlterActivities";
+            this.pnlAlterActivities.Size = new System.Drawing.Size(1280, 528);
+            this.pnlAlterActivities.TabIndex = 3;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(34, 43);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(222, 17);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "List of students for chosen activity";
+            // 
+            // listViewActivityStudent
+            // 
+            this.listViewActivityStudent.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.student_id,
+            this.student_name});
+            this.listViewActivityStudent.GridLines = true;
+            this.listViewActivityStudent.HideSelection = false;
+            this.listViewActivityStudent.Location = new System.Drawing.Point(37, 76);
+            this.listViewActivityStudent.Name = "listViewActivityStudent";
+            this.listViewActivityStudent.Size = new System.Drawing.Size(277, 225);
+            this.listViewActivityStudent.TabIndex = 1;
+            this.listViewActivityStudent.UseCompatibleStateImageBehavior = false;
+            this.listViewActivityStudent.View = System.Windows.Forms.View.Details;
+            // 
+            // student_id
+            // 
+            this.student_id.Text = "student_id";
+            this.student_id.Width = 118;
+            // 
+            // student_name
+            // 
+            this.student_name.Text = "student_name";
+            this.student_name.Width = 123;
+>>>>>>> Stashed changes
             // 
             // SomerenUI
             // 
@@ -1106,6 +1292,8 @@
             this.Controls.Add(this.pnlRevenueReport);
 =======
             this.ClientSize = new System.Drawing.Size(1283, 622);
+            this.Controls.Add(this.pnlAlterActivities);
+            this.Controls.Add(this.pnlActivities);
             this.Controls.Add(this.pnlDashboard);
             this.Controls.Add(this.pnlDrinkSupply);
 >>>>>>> 9cbf7bd94abe0c9d090a41ae4920a22712f640ca
@@ -1148,7 +1336,14 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+<<<<<<< Updated upstream
 >>>>>>> 9cbf7bd94abe0c9d090a41ae4920a22712f640ca
+=======
+            this.pnlActivities.ResumeLayout(false);
+            this.pnlActivities.PerformLayout();
+            this.pnlAlterActivities.ResumeLayout(false);
+            this.pnlAlterActivities.PerformLayout();
+>>>>>>> Stashed changes
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1246,7 +1441,25 @@
         private System.Windows.Forms.ColumnHeader columnHeaderSufficient;
         private System.Windows.Forms.RadioButton nonAlcoholRadioButton;
         private System.Windows.Forms.RadioButton alcoholicRadioButton;
+<<<<<<< Updated upstream
 >>>>>>> 9cbf7bd94abe0c9d090a41ae4920a22712f640ca
+=======
+        private System.Windows.Forms.TextBox EditDrinkIdtextBox;
+        private System.Windows.Forms.TextBox AddDrinkIdtextBox;
+        private System.Windows.Forms.Panel pnlActivities;
+        private System.Windows.Forms.ListView listViewActivities;
+        private System.Windows.Forms.ColumnHeader activity_id;
+        private System.Windows.Forms.ColumnHeader Description;
+        private System.Windows.Forms.ColumnHeader StartTime;
+        private System.Windows.Forms.ColumnHeader EndTime;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnSelectActivity;
+        private System.Windows.Forms.Panel pnlAlterActivities;
+        private System.Windows.Forms.ListView listViewActivityStudent;
+        private System.Windows.Forms.ColumnHeader student_id;
+        private System.Windows.Forms.ColumnHeader student_name;
+        private System.Windows.Forms.Label label7;
+>>>>>>> Stashed changes
     }
 }
 

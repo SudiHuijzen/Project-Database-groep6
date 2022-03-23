@@ -34,7 +34,12 @@ namespace SomerenUI
                 pnlTeachers.Hide();
                 pnlRooms.Hide();
                 pnlRegister.Hide();
+<<<<<<< Updated upstream
                 pnlRevenueReport.Hide();
+=======
+                pnlActivities.Hide();
+                pnlAlterActivities.Hide();
+>>>>>>> Stashed changes
 
                 // show dashboard
                 pnlDashboard.Show();
@@ -48,7 +53,9 @@ namespace SomerenUI
                 pnlRegister.Hide();
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
-                
+                pnlActivities.Hide();
+                pnlAlterActivities.Hide();
+
 
                 pnlDrinkSupply.Show();
 
@@ -90,7 +97,11 @@ namespace SomerenUI
 
 =======
                 pnlDrinkSupply.Hide();
+<<<<<<< Updated upstream
 >>>>>>> 9cbf7bd94abe0c9d090a41ae4920a22712f640ca
+=======
+                pnlActivities.Hide();
+>>>>>>> Stashed changes
                 // show rooms
                 pnlRooms.Show();
 
@@ -130,7 +141,12 @@ namespace SomerenUI
 
 =======
                 pnlDrinkSupply.Hide();
+<<<<<<< Updated upstream
 >>>>>>> 9cbf7bd94abe0c9d090a41ae4920a22712f640ca
+=======
+                pnlActivities.Hide();
+                pnlAlterActivities.Hide();
+>>>>>>> Stashed changes
                 //show teachers
                 pnlTeachers.Show();
 
@@ -166,12 +182,18 @@ namespace SomerenUI
                 pnlTeachers.Hide();
                 pnlRooms.Hide();
                 pnlRegister.Hide();
+<<<<<<< Updated upstream
 <<<<<<< HEAD
                 pnlRevenueReport.Hide();
 
 =======
                 pnlDrinkSupply.Hide();  
 >>>>>>> 9cbf7bd94abe0c9d090a41ae4920a22712f640ca
+=======
+                pnlDrinkSupply.Hide();
+                pnlActivities.Hide();
+                pnlAlterActivities.Hide();
+>>>>>>> Stashed changes
                 // show students
                 pnlStudents.Show();
 
@@ -213,7 +235,12 @@ namespace SomerenUI
 
 =======
                 pnlDrinkSupply.Hide();
+<<<<<<< Updated upstream
 >>>>>>> 9cbf7bd94abe0c9d090a41ae4920a22712f640ca
+=======
+                pnlActivities.Hide();
+                pnlAlterActivities.Hide();
+>>>>>>> Stashed changes
                 // show register
                 pnlRegister.Show();
 
@@ -276,7 +303,44 @@ namespace SomerenUI
 
                 
             }
+<<<<<<< Updated upstream
 
+=======
+            else if (panelName == "Activities")
+            {
+                // hide all other panels
+                pnlDashboard.Hide();
+                imgDashboard.Hide();
+                pnlTeachers.Hide();
+                pnlRooms.Hide();
+                pnlStudents.Hide();
+                pnlDrinkSupply.Hide();
+                pnlRegister.Hide();
+                pnlAlterActivities.Hide();
+
+                // show activities
+
+                pnlActivities.Show();
+                LoadAcitvityList();
+            }
+            else if (panelName == "AlterActivities")
+            {
+                // hide all other panels
+                pnlDashboard.Hide();
+                imgDashboard.Hide();
+                pnlTeachers.Hide();
+                pnlRooms.Hide();
+                pnlStudents.Hide();
+                pnlDrinkSupply.Hide();
+                pnlRegister.Hide();
+                pnlActivities.Hide();
+
+                // show activities
+
+                pnlAlterActivities.Show();
+                LoadAlterActivitiesList();
+            }
+>>>>>>> Stashed changes
         }
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
@@ -412,10 +476,235 @@ namespace SomerenUI
             
         }
 
+<<<<<<< Updated upstream
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
 >>>>>>> 9cbf7bd94abe0c9d090a41ae4920a22712f640ca
+=======
+        private void LoadSupplyList()
+        {
+            try
+            {
+                // fill the rooms listview within the rooms panel with a list of rooms
+                DrinkService drinkService = new DrinkService(); ;
+                List<Drink> drinks = drinkService.GetDrinks(); ;
+
+
+                // clear the listview before filling it again
+
+                listViewDrinkSupply.Items.Clear();
+                foreach (Drink drink in drinks)
+                {
+
+                    ListViewItem li = new ListViewItem(drink.DrinkId.ToString());
+                    li.SubItems.Add(drink.DrinkName);
+                    li.SubItems.Add(drink.AlcoholCheck());
+                    li.SubItems.Add(drink.DrinkStock.ToString());
+                    listViewDrinkSupply.Items.Add(li);
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the drink supply: " + e.Message);
+            }
+
+        }
+
+        private void LoadStudentList()
+        {
+            try
+            {
+                // fill the students listview within the students panel with a list of students
+                StudentService studService = new StudentService(); ;
+                List<Student> studentList = studService.GetStudents(); ;
+
+                // clear the listview before filling it again
+                listViewStudents.Items.Clear();
+
+                foreach (Student s in studentList)
+                {
+
+                    ListViewItem li = new ListViewItem(s.Number.ToString());
+                    li.SubItems.Add(s.FirstName);
+                    li.SubItems.Add(s.LastName);
+                    li.SubItems.Add(s.BirthDate.ToString("dd/MM/yyyy"));
+                    listViewStudents.Items.Add(li);
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the students: " + e.Message);
+            }
+        }
+
+        private void LoadTeacherList()
+        {
+            try
+            {
+                // fill the students listview within the students panel with a list of students
+                TeacherService teachService = new TeacherService(); ;
+                List<Teacher> TeacherList = teachService.GetTeachers(); ;
+
+                // clear the items in the listview before filling it again
+                listViewTeachers.Items.Clear();
+
+                foreach (Teacher t in TeacherList)
+                {
+
+                    ListViewItem li = new ListViewItem(t.Number.ToString());
+                    li.SubItems.Add(t.FirstName);
+                    li.SubItems.Add(t.LastName);
+                    li.SubItems.Add(t.PrintSupervisor());   // shows whether or not teacher is supervicor when true
+                    listViewTeachers.Items.Add(li);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the Teacher: " + e.Message);
+            }
+        }
+
+        private void LoadRoomList()
+        {
+            try
+            {
+                // fill the rooms listview within the rooms panel with a list of rooms
+                RoomService roomService = new RoomService(); ;
+                List<Room> roomList = roomService.GetRooms(); ;
+
+                // clear the listview before filling it again
+
+                listViewRooms.Items.Clear();
+                foreach (Room r in roomList)
+                {
+
+                    ListViewItem li = new ListViewItem(r.Number.ToString());
+                    li.SubItems.Add(r.Capacity.ToString());
+                    li.SubItems.Add(r.PrintRoom()); // shows whether or not the room is a teacher room
+                    listViewRooms.Items.Add(li);
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the students: " + e.Message);
+            }
+        }
+
+        private void LoadRegisterList()
+        {
+            try
+            {
+                // fill the students listview within the students panel with a list of students
+                StudentService studService = new StudentService();
+                List<Student> studentList = studService.GetStudents();
+
+
+                // clear the listviews before filling it again
+                listViewRegisterStudents.Items.Clear();
+
+                //show the students and drinks in de listviews
+                foreach (Student s in studentList)
+                {
+                    ListViewItem li = new ListViewItem(s.Number.ToString());
+                    li.SubItems.Add($"{s.FirstName} {s.LastName}");
+                    listViewRegisterStudents.Items.Add(li);
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the Students: " + e.Message);
+            }
+
+            try
+            {
+                DrinkService drinkService = new DrinkService();
+                List<Drink> drinkList = drinkService.GetDrinks();
+                listViewRegisterDrinks.Items.Clear();
+                foreach (Drink d in drinkList)
+                {
+                    ListViewItem list = new ListViewItem(d.DrinkId.ToString());
+                    list.SubItems.Add(d.DrinkName);
+                    list.SubItems.Add(d.DrinkPrice.ToString());
+                    list.SubItems.Add(d.DrinkStock.ToString());
+                    listViewRegisterDrinks.Items.Add(list);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the Drinks: " + e.Message);
+            }
+>>>>>>> Stashed changes
+        }
+
+        private void LoadAcitvityList()
+        {
+            try
+            {
+                // fill the activity listview with the activities
+                ActivityService activityService = new ActivityService();
+                List<Activity> activityList = activityService.GetActivities();
+
+
+                // clear the listviews before filling it again
+                listViewActivities.Items.Clear();
+
+                //show the activities in the listview
+                foreach (Activity a in activityList)
+                {
+                    ListViewItem li = new ListViewItem(a.ActivityId.ToString());
+                    li.SubItems.Add(a.Description);
+                    li.SubItems.Add(a.BeginTime.ToString("HH:mm"));
+                    li.SubItems.Add(a.EndTime.ToString("HH:mm"));
+                    listViewActivities.Items.Add(li);
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the Activities: " + e.Message);
+            }
+        }
+
+        private void activitiesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Activities");
+        }
+
+        private void btnSelectActivity_Click(object sender, EventArgs e)
+        {
+            string activity = listViewActivities.SelectedItems[0].SubItems[0].Text;
+            showPanel("AlterActivities");
+
+        }
+
+        private void LoadAlterActivitiesList()
+        {
+            try
+            {
+                // fill the students listview within the students panel with a list of students
+                StudentService studService = new StudentService();
+                List<Student> studentList = studService.GetActivityStudents();
+
+
+                // clear the listview before filling it again
+                listViewActivityStudent.Items.Clear();
+
+                foreach (Student s in studentList)
+                {
+                    ListViewItem li = new ListViewItem(s.Number.ToString());
+                    li.SubItems.Add(s.FirstName);
+                    listViewActivityStudent.Items.Add(li);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the Activities: " + e.Message);
+            }
         }
     }
 }
