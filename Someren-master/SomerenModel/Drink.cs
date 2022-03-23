@@ -14,7 +14,6 @@ namespace SomerenModel
         public string DrinkName { get; set; }
         public decimal DrinkPrice {get; set; }
         public int DrinkStock { get; set; }
-        
         public bool DrinkType {get; set; } // if true drink is alcoholic
 
 
