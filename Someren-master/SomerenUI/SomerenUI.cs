@@ -14,6 +14,7 @@ namespace SomerenUI
 {
     public partial class SomerenUI : Form
     {
+        ErrorLogService logError;
         public SomerenUI()
         {
             InitializeComponent();
@@ -34,6 +35,7 @@ namespace SomerenUI
                 pnlTeachers.Hide();
                 pnlRooms.Hide();
                 pnlRegister.Hide();
+                pnlErrorList.Hide();
 
                 // show dashboard
                 pnlDashboard.Show();
@@ -47,7 +49,7 @@ namespace SomerenUI
                 pnlRegister.Hide();
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
-                
+                pnlErrorList.Hide();
 
                 pnlDrinkSupply.Show();
                 LoadSupplyList();
@@ -62,6 +64,7 @@ namespace SomerenUI
                 pnlStudents.Hide();
                 pnlRegister.Hide();
                 pnlDrinkSupply.Hide();
+                pnlErrorList.Hide();
                 // show rooms
                 pnlRooms.Show();
                 LoadRoomList();
@@ -75,6 +78,7 @@ namespace SomerenUI
                 pnlRooms.Hide();
                 pnlRegister.Hide();
                 pnlDrinkSupply.Hide();
+                pnlErrorList.Hide();
                 //show teachers
                 pnlTeachers.Show();
                 LoadTeacherList();
@@ -88,7 +92,8 @@ namespace SomerenUI
                 pnlTeachers.Hide();
                 pnlRooms.Hide();
                 pnlRegister.Hide();
-                pnlDrinkSupply.Hide();  
+                pnlDrinkSupply.Hide();
+                pnlErrorList.Hide();
                 // show students
                 pnlStudents.Show();
                 LoadStudentList();
@@ -102,9 +107,22 @@ namespace SomerenUI
                 pnlRooms.Hide();
                 pnlStudents.Hide();
                 pnlDrinkSupply.Hide();
+                pnlErrorList.Hide();
                 // show register
                 pnlRegister.Show();
                 LoadRegisterList();
+            }
+            else if(panelName == "ErrorLog")
+            {
+                pnlDashboard.Hide();
+                imgDashboard.Hide();
+                pnlTeachers.Hide();
+                pnlRooms.Hide();
+                pnlStudents.Hide();
+                pnlDrinkSupply.Hide();
+                pnlRegister.Hide();
+
+                pnlErrorList.Show();
             }
         }
 
@@ -151,6 +169,11 @@ namespace SomerenUI
         private void drinkToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showPanel("DrinkSupply");
+        }
+
+        private void errorLogToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("ErrorLog");
         }
 
         private void btn_Checkout_Click(object sender, EventArgs e)
@@ -244,6 +267,35 @@ namespace SomerenUI
 
         }
 
+        private void LoadErrorList()
+        {
+            try
+            {
+                // fill the rooms listview within the rooms panel with a list of rooms
+                ErrorLogService errorLogService = new ErrorLogService(); ;
+                List<ErrorLog> errorLogs = errorLogService.GetErrorLogs(); ;
+
+
+                // clear the listview before filling it again
+
+                listViewErrorLog.Items.Clear();
+                foreach (ErrorLog error in errorLogs)
+                {
+
+                    ListViewItem li = new ListViewItem(error.ErrorId.ToString());
+                    li.SubItems.Add(error.TimeStamp.ToString("f"));
+                    li.SubItems.Add(error.ErrorMessage);
+                    listViewDrinkSupply.Items.Add(li);
+                }
+
+            }
+            catch (Exception e)
+            {
+                string message = "Something went wrong while loading the Error Log: " + e.Message;
+                logError.AddErroLog(message);
+                MessageBox.Show(message);
+            }
+        }
         private void LoadSupplyList()
         {
             try
@@ -269,7 +321,9 @@ namespace SomerenUI
             }
             catch (Exception e)
             {
-                MessageBox.Show("Something went wrong while loading the drink supply: " + e.Message);
+                string message = "Something went wrong while loading the Drinks Supply: " + e.Message;
+                logError.AddErroLog(message);
+                MessageBox.Show(message);
             }
 
         }
@@ -298,7 +352,9 @@ namespace SomerenUI
             }
             catch (Exception e)
             {
-                MessageBox.Show("Something went wrong while loading the students: " + e.Message);
+                string message = "Something went wrong while loading the Students: " + e.Message;
+                logError.AddErroLog(message);
+                MessageBox.Show(message);
             }
         }
 
@@ -325,7 +381,9 @@ namespace SomerenUI
             }
             catch (Exception e)
             {
-                MessageBox.Show("Something went wrong while loading the Teacher: " + e.Message);
+                string message = "Something went wrong while loading the Teachers: " + e.Message;
+                logError.AddErroLog(message);
+                MessageBox.Show(message);
             }
         }
 
@@ -352,12 +410,15 @@ namespace SomerenUI
             }
             catch (Exception e)
             {
-                MessageBox.Show("Something went wrong while loading the students: " + e.Message);
+                string message = "Something went wrong while loading the Rooms: " + e.Message;
+                logError.AddErroLog(message);
+                MessageBox.Show(message);
             }
         }
 
         private void LoadRegisterList()
         {
+           
             try
             {
                 // fill the students listview within the students panel with a list of students
@@ -379,7 +440,9 @@ namespace SomerenUI
             }
             catch (Exception e)
             {
-                MessageBox.Show("Something went wrong while loading the Students: " + e.Message);
+                string message = "Something went wrong while loading the Students: " + e.Message;
+                logError.AddErroLog(message);
+                MessageBox.Show(message);
             }
 
             try
@@ -398,8 +461,12 @@ namespace SomerenUI
             }
             catch (Exception e)
             {
-                MessageBox.Show("Something went wrong while loading the Drinks: " + e.Message);
+                string message = "Something went wrong while loading the Drinks: " + e.Message;
+                logError.AddErroLog(message);
+                MessageBox.Show(message);
             }
         }
+
+    
     }
 }
