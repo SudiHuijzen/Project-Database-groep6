@@ -284,7 +284,7 @@ namespace SomerenUI
                 {
 
                     ListViewItem li = new ListViewItem(error.ErrorId.ToString());
-                    li.SubItems.Add(error.TimeStamp.ToString("f"));
+                    li.SubItems.Add(error.TimeStamp.ToString("G"));
                     li.SubItems.Add(error.ErrorMessage);
                     listViewErrorLog.Items.Add(li);
                 }
