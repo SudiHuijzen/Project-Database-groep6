@@ -840,9 +840,9 @@
             this.ErrorDescriptionColumnHeader});
             this.listViewErrorLog.GridLines = true;
             this.listViewErrorLog.HideSelection = false;
-            this.listViewErrorLog.Location = new System.Drawing.Point(225, 86);
+            this.listViewErrorLog.Location = new System.Drawing.Point(183, 95);
             this.listViewErrorLog.Name = "listViewErrorLog";
-            this.listViewErrorLog.Size = new System.Drawing.Size(770, 434);
+            this.listViewErrorLog.Size = new System.Drawing.Size(943, 467);
             this.listViewErrorLog.TabIndex = 0;
             this.listViewErrorLog.UseCompatibleStateImageBehavior = false;
             this.listViewErrorLog.View = System.Windows.Forms.View.Details;
@@ -855,12 +855,12 @@
             // errorDateColumnHeader
             // 
             this.errorDateColumnHeader.Text = "Timestamp";
-            this.errorDateColumnHeader.Width = 119;
+            this.errorDateColumnHeader.Width = 240;
             // 
             // ErrorDescriptionColumnHeader
             // 
             this.ErrorDescriptionColumnHeader.Text = "Description";
-            this.ErrorDescriptionColumnHeader.Width = 607;
+            this.ErrorDescriptionColumnHeader.Width = 740;
             // 
             // label7
             // 
@@ -868,9 +868,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(76, 36);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(115, 29);
+            this.label7.Size = new System.Drawing.Size(117, 29);
             this.label7.TabIndex = 1;
-            this.label7.Text = "Error List";
+            this.label7.Text = "Error Log";
             // 
             // errorLogToolStripMenuItem
             // 
@@ -884,8 +884,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 622);
-            this.Controls.Add(this.pnlDashboard);
             this.Controls.Add(this.pnlErrorList);
+            this.Controls.Add(this.pnlDashboard);
             this.Controls.Add(this.pnlDrinkSupply);
             this.Controls.Add(this.pnlRegister);
             this.Controls.Add(this.pnlRooms);

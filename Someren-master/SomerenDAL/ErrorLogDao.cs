@@ -21,7 +21,7 @@ namespace SomerenDAL
 
         public void AddError(string error)
         {
-            String querry = "INSERT INTO dbo.ErrorLog (error_log)" +
+            String querry = "INSERT INTO ErrorLog (error_log)" +
                 "VALUES (@ErrorLog)";
             SqlParameter[] sqlParameters = new SqlParameter[1];
             sqlParameters[0] = new SqlParameter("@ErrorLog", error);

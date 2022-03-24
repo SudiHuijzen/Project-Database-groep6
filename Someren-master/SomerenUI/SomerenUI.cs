@@ -14,7 +14,7 @@ namespace SomerenUI
 {
     public partial class SomerenUI : Form
     {
-        ErrorLogService logError;
+        ErrorLogService logError = new ErrorLogService();
         public SomerenUI()
         {
             InitializeComponent();
@@ -123,6 +123,7 @@ namespace SomerenUI
                 pnlRegister.Hide();
 
                 pnlErrorList.Show();
+                LoadErrorList();
             }
         }
 
@@ -285,7 +286,7 @@ namespace SomerenUI
                     ListViewItem li = new ListViewItem(error.ErrorId.ToString());
                     li.SubItems.Add(error.TimeStamp.ToString("f"));
                     li.SubItems.Add(error.ErrorMessage);
-                    listViewDrinkSupply.Items.Add(li);
+                    listViewErrorLog.Items.Add(li);
                 }
 
             }
@@ -360,6 +361,7 @@ namespace SomerenUI
 
         private void LoadTeacherList()
         {
+           
             try
             {
                 // fill the students listview within the students panel with a list of students
@@ -389,6 +391,7 @@ namespace SomerenUI
 
         private void LoadRoomList()
         {
+            
             try
             {
                 // fill the rooms listview within the rooms panel with a list of rooms
