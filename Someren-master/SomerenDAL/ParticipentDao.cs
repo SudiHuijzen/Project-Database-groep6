@@ -35,6 +35,14 @@ namespace SomerenDAL
             ExecuteEditQuery(querry, sqlParameters);
         }
 
+        public void RemoveParticipent(int student)
+        {
+            String querry = "DELETE FROM ActivityStudent WHERE student_id = @StudentId";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            sqlParameters[0] = new SqlParameter("@StudentId", student);
+            ExecuteEditQuery(querry, sqlParameters);
+        }
+
         private List<Participent> ReadTables(DataTable dataTable)
         {
             List<Participent> students = new List<Participent>();
