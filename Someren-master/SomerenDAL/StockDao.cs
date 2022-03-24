@@ -22,11 +22,12 @@ namespace SomerenDAL
         public void AddNewStock(Stock stock)
         {
 
-            SqlCommand command = new SqlCommand("INSERT INTO Stock (stock_amount)" +
-              "VALUES (@Stock_amount);", OpenConnection());
-            command.Parameters.AddWithValue("@Stock_amount", stock.StockAmount);
-            command.ExecuteNonQuery();
-
+            string querry = "INSERT INTO Stock (stock_id ,stock_amount)" +
+              "VALUES (@Stock_id ,@Stock_amount);";
+            SqlParameter[] sqlParameters = new SqlParameter[2];
+            sqlParameters[0] = new SqlParameter("@Stock_id", stock.Id);
+            sqlParameters[1] = new SqlParameter("@Stock_amount", stock.StockAmount);
+            ExecuteEditQuery(querry, sqlParameters);
 
         }
         public void AddDrinkStock(int id)

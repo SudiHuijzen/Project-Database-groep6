@@ -45,10 +45,12 @@
     <Compile Include="ActivityDao.cs" />
     <Compile Include="BaseDao.cs" />
     <Compile Include="DrinkDao.cs" />
+    <Compile Include="ParticipentDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoomDao.cs" />
     <Compile Include="StockDao.cs" />
     <Compile Include="StudentDao.cs" />
+    <Compile Include="SupervisorDao.cs" />
     <Compile Include="TeacherDao.cs" />
   </ItemGroup>
   <ItemGroup>

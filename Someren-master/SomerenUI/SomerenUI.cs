@@ -202,7 +202,12 @@ namespace SomerenUI
 
         private void changeNameButton_Click(object sender, EventArgs e)
         {
-
+            int id = int.Parse(EditDrinkIdtextBox.Text);
+            string name = changeNameTextBox.Text;
+            DrinkService drinkService = new DrinkService();
+            drinkService.ChangeDrinkName(name, id);
+            LoadSupplyList();
+            changeNameTextBox.Clear();
         }
 
         private void changePriceButton_Click(object sender, EventArgs e)
@@ -213,18 +218,23 @@ namespace SomerenUI
         private void AddDrinkButton_Click(object sender, EventArgs e)
         {
             DrinkService drinkService = new DrinkService();
-            Drink drink = new Drink()
-            {
-                DrinkId = int.Parse(AddDrinkIdtextBox.Text),
-                DrinkName = DrinkNameTextBox.Text,
-                DrinkType = false,
-                DrinkStock = 0
-            };
+            StockService stockService = new StockService();
+            Drink drink = new Drink();
+            Stock stock = new Stock();
+
+            stock.Id = int.Parse(AddDrinkIdtextBox.Text);
+            stock.StockAmount = 0;
+            drink.DrinkId = int.Parse(AddDrinkIdtextBox.Text);
+            drink.DrinkName = DrinkNameTextBox.Text;
+            drink.DrinkType = false;
+            drink.DrinkStockId = int.Parse(AddDrinkIdtextBox.Text);
+            drink.DrinkStock = stock.StockAmount;
+
             if (alcoholicRadioButton.Checked)
             {
                 drink.DrinkType = true;
             }
-            //drinkService1.AddNewStock(drink);
+            stockService.AddNewStock(stock);
             drinkService.AddDrink(drink);
             LoadSupplyList();
         }

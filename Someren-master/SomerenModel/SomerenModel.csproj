@@ -50,6 +50,8 @@
     </Compile>
     <Compile Include="Room.cs" />
     <Compile Include="Stock.cs" />
+    <Compile Include="Participent.cs" />
+    <Compile Include="Supervisor.cs" />
     <Compile Include="Teacher.cs" />
     <Compile Include="Student.cs" />
   </ItemGroup>
