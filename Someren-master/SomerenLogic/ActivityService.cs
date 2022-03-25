@@ -31,6 +31,26 @@ namespace SomerenLogic
             return activities;
         }
 
+        public void RemoveActivity(int id)
+        {
+            activitydb.RemoveActivity(id);
+        }
+
+        public void AddActivity(string description, DateTime startDate, DateTime endeDate)
+        {
+            activitydb.AddActivity(description, startDate, endeDate);
+        }
+
+        public void ChangeActivityDateTime(int id, DateTime startDate, DateTime endDate)
+        {
+            activitydb.ChangeDateTime(id, startDate, endDate);
+        }
+
+        public void ChangeDescription(string newDescription, int id)
+        {
+            activitydb.ChangeDescription(newDescription, id);
+        }
+
         // methods for Particepents with activities
         public List<Participent> GetParticipents(int student)
         {

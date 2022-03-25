@@ -734,5 +734,67 @@ namespace SomerenUI
                 SelectTeacherIdTextBox.Clear();
             }
         }
+
+        private void AddActivityButton_Click(object sender, EventArgs e)
+        {
+            
+            string description = DescriptionTextBox.Text;
+            string day = startDaysTextBox.Text;
+            string month = startMonthtextBox.Text;
+            string year = startYearTextBox.Text;
+            string time = startTimeTextBox.Text;
+            string endTime = endTimeTextBox.Text;
+
+            DateTime startDate = DateTime.Parse($"{day}-{month}-{year} {time}");
+            DateTime endDate = DateTime.Parse($"{day}-{month}-{year} {endTime}");
+            ActivityService activityService = new ActivityService();
+
+            activityService.AddActivity(description, startDate, endDate);
+            LoadActivitiesList();
+        }
+
+        private void RemoveActivityButton_Click(object sender, EventArgs e)
+        {
+            string message = "Are sure you want to remove the Activity?";
+            string title = "Remove Activity";
+
+            MessageBoxButtons button = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, button);
+            if (result == DialogResult.Yes)
+            {
+                int activityId = int.Parse(ChangeActivityTextBox.Text);
+                ActivityService activityService = new ActivityService();
+                activityService.RemoveActivity(activityId);
+                LoadActivitiesList();
+            }
+        }
+
+        private void ChangeActivityDescriptionButton_Click(object sender, EventArgs e)
+        {
+            string newDescription = ChangeDescriptionTextBox.Text;
+            int activityId = int.Parse(ChangeActivityTextBox.Text);
+            ActivityService activityService = new ActivityService();
+            activityService.ChangeDescription(newDescription, activityId);
+            LoadActivitiesList();
+            ChangeDescriptionTextBox.Clear();
+            ChangeActivityTextBox.Clear();
+        }
+
+        private void ChangeActivityDateButton_Click(object sender, EventArgs e)
+        {
+            int activityId = int.Parse(ChangeActivityTextBox.Text);
+            string day = changeDayTextBox.Text;
+            string month = changeMonthTextBox.Text;
+            string year = ChangeYearTextBox.Text;
+            string time = changeStartTimeTextBox.Text;
+            string endTime = changeEndTimeTextBox.Text;
+
+            DateTime startDate = DateTime.Parse($"{day}-{month}-{year} {time}");
+            DateTime endDate = DateTime.Parse($"{day}-{month}-{year} {endTime}");
+            ActivityService activityService = new ActivityService();
+
+            activityService.ChangeActivityDateTime(activityId, startDate, endDate);
+            LoadActivitiesList();
+        }
     }
 }

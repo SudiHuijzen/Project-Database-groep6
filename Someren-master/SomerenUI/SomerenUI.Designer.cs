@@ -146,6 +146,33 @@
             this.listViewActivityStudent = new System.Windows.Forms.ListView();
             this.student_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.student_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.DescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.AddActivityButton = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.ChangeActivityDateButton = new System.Windows.Forms.Button();
+            this.ChangeDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.ChangeActivityTextBox = new System.Windows.Forms.TextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.RemoveActivityButton = new System.Windows.Forms.Button();
+            this.startDaysTextBox = new System.Windows.Forms.TextBox();
+            this.startMonthtextBox = new System.Windows.Forms.TextBox();
+            this.startYearTextBox = new System.Windows.Forms.TextBox();
+            this.startTimeTextBox = new System.Windows.Forms.TextBox();
+            this.endTimeTextBox = new System.Windows.Forms.TextBox();
+            this.ChangeYearTextBox = new System.Windows.Forms.TextBox();
+            this.changeMonthTextBox = new System.Windows.Forms.TextBox();
+            this.changeDayTextBox = new System.Windows.Forms.TextBox();
+            this.changeEndTimeTextBox = new System.Windows.Forms.TextBox();
+            this.changeStartTimeTextBox = new System.Windows.Forms.TextBox();
+            this.ChangeActivityDescriptionButton = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgDashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
@@ -163,6 +190,9 @@
             this.pnlErrorList.SuspendLayout();
             this.pnlActivities.SuspendLayout();
             this.pnlChangeActivity.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // imgDashboard
@@ -188,7 +218,7 @@
             this.errorLogToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1283, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1283, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -916,20 +946,20 @@
             // 
             // pnlActivities
             // 
-            this.pnlActivities.Controls.Add(this.label9);
-            this.pnlActivities.Controls.Add(this.textBoxActivity);
-            this.pnlActivities.Controls.Add(this.btnChooseActivity);
+            this.pnlActivities.Controls.Add(this.groupBox5);
+            this.pnlActivities.Controls.Add(this.groupBox4);
+            this.pnlActivities.Controls.Add(this.groupBox3);
             this.pnlActivities.Controls.Add(this.listViewActivities);
             this.pnlActivities.Controls.Add(this.label8);
-            this.pnlActivities.Location = new System.Drawing.Point(0, 27);
+            this.pnlActivities.Location = new System.Drawing.Point(0, 28);
             this.pnlActivities.Name = "pnlActivities";
-            this.pnlActivities.Size = new System.Drawing.Size(1280, 556);
+            this.pnlActivities.Size = new System.Drawing.Size(1280, 594);
             this.pnlActivities.TabIndex = 2;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(667, 321);
+            this.label9.Location = new System.Drawing.Point(6, 37);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(131, 16);
             this.label9.TabIndex = 5;
@@ -937,14 +967,14 @@
             // 
             // textBoxActivity
             // 
-            this.textBoxActivity.Location = new System.Drawing.Point(680, 354);
+            this.textBoxActivity.Location = new System.Drawing.Point(58, 75);
             this.textBoxActivity.Name = "textBoxActivity";
-            this.textBoxActivity.Size = new System.Drawing.Size(100, 22);
+            this.textBoxActivity.Size = new System.Drawing.Size(30, 22);
             this.textBoxActivity.TabIndex = 4;
             // 
             // btnChooseActivity
             // 
-            this.btnChooseActivity.Location = new System.Drawing.Point(680, 412);
+            this.btnChooseActivity.Location = new System.Drawing.Point(16, 117);
             this.btnChooseActivity.Name = "btnChooseActivity";
             this.btnChooseActivity.Size = new System.Drawing.Size(118, 36);
             this.btnChooseActivity.TabIndex = 2;
@@ -1187,14 +1217,266 @@
             this.student_Name.Text = "student_Name";
             this.student_Name.Width = 148;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.endTimeTextBox);
+            this.groupBox3.Controls.Add(this.startTimeTextBox);
+            this.groupBox3.Controls.Add(this.startYearTextBox);
+            this.groupBox3.Controls.Add(this.startMonthtextBox);
+            this.groupBox3.Controls.Add(this.startDaysTextBox);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.AddActivityButton);
+            this.groupBox3.Controls.Add(this.DescriptionTextBox);
+            this.groupBox3.Location = new System.Drawing.Point(657, 28);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(415, 247);
+            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Add activity";
+            // 
+            // DescriptionTextBox
+            // 
+            this.DescriptionTextBox.Location = new System.Drawing.Point(22, 58);
+            this.DescriptionTextBox.Name = "DescriptionTextBox";
+            this.DescriptionTextBox.Size = new System.Drawing.Size(178, 22);
+            this.DescriptionTextBox.TabIndex = 2;
+            // 
+            // AddActivityButton
+            // 
+            this.AddActivityButton.Location = new System.Drawing.Point(276, 93);
+            this.AddActivityButton.Name = "AddActivityButton";
+            this.AddActivityButton.Size = new System.Drawing.Size(98, 68);
+            this.AddActivityButton.TabIndex = 3;
+            this.AddActivityButton.Text = "ADD";
+            this.AddActivityButton.UseVisualStyleBackColor = true;
+            this.AddActivityButton.Click += new System.EventHandler(this.AddActivityButton_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label16);
+            this.groupBox4.Controls.Add(this.label15);
+            this.groupBox4.Controls.Add(this.label14);
+            this.groupBox4.Controls.Add(this.ChangeActivityDescriptionButton);
+            this.groupBox4.Controls.Add(this.changeEndTimeTextBox);
+            this.groupBox4.Controls.Add(this.changeStartTimeTextBox);
+            this.groupBox4.Controls.Add(this.ChangeYearTextBox);
+            this.groupBox4.Controls.Add(this.changeMonthTextBox);
+            this.groupBox4.Controls.Add(this.changeDayTextBox);
+            this.groupBox4.Controls.Add(this.label13);
+            this.groupBox4.Controls.Add(this.RemoveActivityButton);
+            this.groupBox4.Controls.Add(this.ChangeActivityTextBox);
+            this.groupBox4.Controls.Add(this.ChangeActivityDateButton);
+            this.groupBox4.Controls.Add(this.ChangeDescriptionTextBox);
+            this.groupBox4.Location = new System.Drawing.Point(657, 318);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(415, 257);
+            this.groupBox4.TabIndex = 7;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Change activity";
+            // 
+            // ChangeActivityDateButton
+            // 
+            this.ChangeActivityDateButton.Location = new System.Drawing.Point(197, 204);
+            this.ChangeActivityDateButton.Name = "ChangeActivityDateButton";
+            this.ChangeActivityDateButton.Size = new System.Drawing.Size(83, 29);
+            this.ChangeActivityDateButton.TabIndex = 3;
+            this.ChangeActivityDateButton.Text = "CHANGE";
+            this.ChangeActivityDateButton.UseVisualStyleBackColor = true;
+            this.ChangeActivityDateButton.Click += new System.EventHandler(this.ChangeActivityDateButton_Click);
+            // 
+            // ChangeDescriptionTextBox
+            // 
+            this.ChangeDescriptionTextBox.Location = new System.Drawing.Point(10, 58);
+            this.ChangeDescriptionTextBox.Name = "ChangeDescriptionTextBox";
+            this.ChangeDescriptionTextBox.Size = new System.Drawing.Size(178, 22);
+            this.ChangeDescriptionTextBox.TabIndex = 2;
+            // 
+            // ChangeActivityTextBox
+            // 
+            this.ChangeActivityTextBox.Location = new System.Drawing.Point(326, 58);
+            this.ChangeActivityTextBox.Name = "ChangeActivityTextBox";
+            this.ChangeActivityTextBox.Size = new System.Drawing.Size(33, 22);
+            this.ChangeActivityTextBox.TabIndex = 4;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.textBoxActivity);
+            this.groupBox5.Controls.Add(this.btnChooseActivity);
+            this.groupBox5.Controls.Add(this.label9);
+            this.groupBox5.Location = new System.Drawing.Point(1094, 169);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(156, 184);
+            this.groupBox5.TabIndex = 8;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Add Participents";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(21, 33);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(172, 16);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Enter description for activity:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(21, 107);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(218, 16);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Enter date for activity: (dd/mm/yyyy)";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(23, 176);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(173, 16);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "Enter time for activity: (00:00)";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(279, 27);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(130, 16);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "Insert activity id here:";
+            // 
+            // RemoveActivityButton
+            // 
+            this.RemoveActivityButton.Location = new System.Drawing.Point(289, 110);
+            this.RemoveActivityButton.Name = "RemoveActivityButton";
+            this.RemoveActivityButton.Size = new System.Drawing.Size(105, 75);
+            this.RemoveActivityButton.TabIndex = 13;
+            this.RemoveActivityButton.Text = "REMOVE";
+            this.RemoveActivityButton.UseVisualStyleBackColor = true;
+            this.RemoveActivityButton.Click += new System.EventHandler(this.RemoveActivityButton_Click);
+            // 
+            // startDaysTextBox
+            // 
+            this.startDaysTextBox.Location = new System.Drawing.Point(23, 135);
+            this.startDaysTextBox.Name = "startDaysTextBox";
+            this.startDaysTextBox.Size = new System.Drawing.Size(31, 22);
+            this.startDaysTextBox.TabIndex = 16;
+            // 
+            // startMonthtextBox
+            // 
+            this.startMonthtextBox.Location = new System.Drawing.Point(76, 135);
+            this.startMonthtextBox.Name = "startMonthtextBox";
+            this.startMonthtextBox.Size = new System.Drawing.Size(31, 22);
+            this.startMonthtextBox.TabIndex = 17;
+            // 
+            // startYearTextBox
+            // 
+            this.startYearTextBox.Location = new System.Drawing.Point(132, 135);
+            this.startYearTextBox.Name = "startYearTextBox";
+            this.startYearTextBox.Size = new System.Drawing.Size(65, 22);
+            this.startYearTextBox.TabIndex = 18;
+            // 
+            // startTimeTextBox
+            // 
+            this.startTimeTextBox.Location = new System.Drawing.Point(23, 200);
+            this.startTimeTextBox.Name = "startTimeTextBox";
+            this.startTimeTextBox.Size = new System.Drawing.Size(75, 22);
+            this.startTimeTextBox.TabIndex = 19;
+            this.startTimeTextBox.Text = "Start Time";
+            // 
+            // endTimeTextBox
+            // 
+            this.endTimeTextBox.Location = new System.Drawing.Point(136, 200);
+            this.endTimeTextBox.Name = "endTimeTextBox";
+            this.endTimeTextBox.Size = new System.Drawing.Size(71, 22);
+            this.endTimeTextBox.TabIndex = 23;
+            this.endTimeTextBox.Text = "End Time";
+            // 
+            // ChangeYearTextBox
+            // 
+            this.ChangeYearTextBox.Location = new System.Drawing.Point(123, 139);
+            this.ChangeYearTextBox.Name = "ChangeYearTextBox";
+            this.ChangeYearTextBox.Size = new System.Drawing.Size(65, 22);
+            this.ChangeYearTextBox.TabIndex = 26;
+            // 
+            // changeMonthTextBox
+            // 
+            this.changeMonthTextBox.Location = new System.Drawing.Point(67, 139);
+            this.changeMonthTextBox.Name = "changeMonthTextBox";
+            this.changeMonthTextBox.Size = new System.Drawing.Size(31, 22);
+            this.changeMonthTextBox.TabIndex = 25;
+            // 
+            // changeDayTextBox
+            // 
+            this.changeDayTextBox.Location = new System.Drawing.Point(10, 139);
+            this.changeDayTextBox.Name = "changeDayTextBox";
+            this.changeDayTextBox.Size = new System.Drawing.Size(31, 22);
+            this.changeDayTextBox.TabIndex = 24;
+            // 
+            // changeEndTimeTextBox
+            // 
+            this.changeEndTimeTextBox.Location = new System.Drawing.Point(124, 207);
+            this.changeEndTimeTextBox.Name = "changeEndTimeTextBox";
+            this.changeEndTimeTextBox.Size = new System.Drawing.Size(64, 22);
+            this.changeEndTimeTextBox.TabIndex = 25;
+            this.changeEndTimeTextBox.Text = "End Time";
+            // 
+            // changeStartTimeTextBox
+            // 
+            this.changeStartTimeTextBox.Location = new System.Drawing.Point(10, 207);
+            this.changeStartTimeTextBox.Name = "changeStartTimeTextBox";
+            this.changeStartTimeTextBox.Size = new System.Drawing.Size(72, 22);
+            this.changeStartTimeTextBox.TabIndex = 24;
+            this.changeStartTimeTextBox.Text = "Start Time";
+            // 
+            // ChangeActivityDescriptionButton
+            // 
+            this.ChangeActivityDescriptionButton.Location = new System.Drawing.Point(195, 56);
+            this.ChangeActivityDescriptionButton.Name = "ChangeActivityDescriptionButton";
+            this.ChangeActivityDescriptionButton.Size = new System.Drawing.Size(85, 27);
+            this.ChangeActivityDescriptionButton.TabIndex = 27;
+            this.ChangeActivityDescriptionButton.Text = "CHANGE";
+            this.ChangeActivityDescriptionButton.UseVisualStyleBackColor = true;
+            this.ChangeActivityDescriptionButton.Click += new System.EventHandler(this.ChangeActivityDescriptionButton_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(11, 31);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(172, 16);
+            this.label14.TabIndex = 24;
+            this.label14.Text = "Enter description for activity:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(12, 110);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(218, 16);
+            this.label15.TabIndex = 24;
+            this.label15.Text = "Enter date for activity: (dd/mm/yyyy)";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(12, 184);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(173, 16);
+            this.label16.TabIndex = 24;
+            this.label16.Text = "Enter time for activity: (00:00)";
+            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 622);
+            this.Controls.Add(this.pnlActivities);
             this.Controls.Add(this.pnlDashboard);
             this.Controls.Add(this.pnlChangeActivity);
-            this.Controls.Add(this.pnlActivities);
             this.Controls.Add(this.pnlErrorList);
             this.Controls.Add(this.pnlDrinkSupply);
             this.Controls.Add(this.pnlRegister);
@@ -1238,6 +1520,12 @@
             this.pnlActivities.PerformLayout();
             this.pnlChangeActivity.ResumeLayout(false);
             this.pnlChangeActivity.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1362,6 +1650,33 @@
         private System.Windows.Forms.TextBox SelectTeacherIdTextBox;
         private System.Windows.Forms.Button RemoveTeacherButton;
         private System.Windows.Forms.Button AddTeacherButton;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox ChangeActivityTextBox;
+        private System.Windows.Forms.Button ChangeActivityDateButton;
+        private System.Windows.Forms.TextBox ChangeDescriptionTextBox;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button AddActivityButton;
+        private System.Windows.Forms.TextBox DescriptionTextBox;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button RemoveActivityButton;
+        private System.Windows.Forms.TextBox changeEndTimeTextBox;
+        private System.Windows.Forms.TextBox changeStartTimeTextBox;
+        private System.Windows.Forms.TextBox ChangeYearTextBox;
+        private System.Windows.Forms.TextBox changeMonthTextBox;
+        private System.Windows.Forms.TextBox changeDayTextBox;
+        private System.Windows.Forms.TextBox endTimeTextBox;
+        private System.Windows.Forms.TextBox startTimeTextBox;
+        private System.Windows.Forms.TextBox startYearTextBox;
+        private System.Windows.Forms.TextBox startMonthtextBox;
+        private System.Windows.Forms.TextBox startDaysTextBox;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button ChangeActivityDescriptionButton;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
     }
 }
 

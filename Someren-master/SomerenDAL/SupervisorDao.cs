@@ -27,23 +27,20 @@ namespace SomerenDAL
         {
             String query = "INSERT INTO ActivitySupervisor (Teacher_id, activity_id)" +
                 "VALUES (@teacherId, @ActivityId);";
-          //  String secondQuery = "UPDATE Teacher SET isSupervisor = True WHERE Teacher_id = @teacherId";
             SqlParameter[] sqlParameters = new SqlParameter[2];
             sqlParameters[0] = new SqlParameter("@teacherId", teacher);
             sqlParameters[1] = new SqlParameter("@ActivityId", activity);
             ExecuteEditQuery(query, sqlParameters);
-         //   ExecuteEditQuery(secondQuery, sqlParameters);
+        
         }
 
         public void RemoveSupervisor(int Teacher, int activity)
         {
             String query = "DELETE FROM ActivitySupervisor WHERE Teacher_id = @teacherId AND activity_id = @ActivityId";
-           // String secondQuery = "UPDATE Teacher SET isSupervisor = False WHERE Teacher_id = @teacherId";
             SqlParameter[] sqlParameters = new SqlParameter[2];
             sqlParameters[0] = new SqlParameter("@teacherId", Teacher);
             sqlParameters[1] = new SqlParameter("@ActivityId", activity);
             ExecuteEditQuery(query, sqlParameters);
-            //ExecuteEditQuery(secondQuery, sqlParameters);
         }
 
         private List<Supervisor> ReadTables(DataTable dataTable)
