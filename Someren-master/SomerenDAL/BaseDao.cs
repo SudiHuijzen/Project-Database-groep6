@@ -9,7 +9,7 @@ namespace SomerenDAL
     {
         private SqlDataAdapter adapter;
         private SqlConnection conn;
-        private ErrorLogDao errorLog;
+        //private ErrorLogDao errorLog = new ErrorLogDao();
 
         public BaseDao()
         {
@@ -29,7 +29,7 @@ namespace SomerenDAL
             catch (Exception e)
             {
                 //Print.ErrorLog(e);
-                errorLog.AddError($"Something went wrong with the connection {e.Message}");
+                //errorLog.AddError($"Something went wrong with the connection {e.Message}");
                 throw;
             }
             return conn;
@@ -54,7 +54,7 @@ namespace SomerenDAL
             {
 
                 //Print.ErrorLog(e);
-                errorLog.AddError($"Something went wrong with the transaction query {e.Message}");
+                //errorLog.AddError($"Something went wrong with the transaction query {e.Message}");
                 throw;
             }
         }
@@ -75,7 +75,7 @@ namespace SomerenDAL
             catch (SqlException e)
             {
                 // Print.ErrorLog(e);
-                errorLog.AddError($"Something went wrong with the Edit query {e.Message}");
+                //errorLog.AddError($"Something went wrong with the Edit query {e.Message}");
                 throw;
             }
             finally
@@ -104,7 +104,7 @@ namespace SomerenDAL
             catch (SqlException e)
             {
                 // Print.ErrorLog(e);
-                errorLog.AddError($"Something went wrong with the Select query {e.Message}");
+                //errorLog.AddError($"Something went wrong with the Select query {e.Message}");
                 return null;
                 throw;
             }

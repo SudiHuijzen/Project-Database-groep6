@@ -36,6 +36,7 @@ namespace SomerenUI
                 pnlRooms.Hide();
                 pnlRegister.Hide();
                 pnlErrorList.Hide();
+                pnlActivities.Hide();
 
                 // show dashboard
                 pnlDashboard.Show();
@@ -124,6 +125,40 @@ namespace SomerenUI
 
                 pnlErrorList.Show();
                 LoadErrorList();
+            }
+            else if (panelName == "Activities")
+            {
+                pnlDashboard.Hide();
+                imgDashboard.Hide();
+                pnlTeachers.Hide();
+                pnlRooms.Hide();
+                pnlStudents.Hide();
+                pnlDrinkSupply.Hide();
+                pnlRegister.Hide();
+                pnlErrorList.Hide();
+                pnlChangeActivity.Hide();
+
+                pnlActivities.Show();
+                LoadActivitiesList();
+
+                
+            }
+            else if (panelName == "ChangeActivity")
+            {
+                pnlDashboard.Hide();
+                imgDashboard.Hide();
+                pnlTeachers.Hide();
+                pnlRooms.Hide();
+                pnlStudents.Hide();
+                pnlDrinkSupply.Hide();
+                pnlRegister.Hide();
+                pnlErrorList.Hide();
+                pnlActivities.Hide();
+
+                pnlChangeActivity.Show();
+              
+
+                
             }
         }
 
@@ -443,7 +478,7 @@ namespace SomerenUI
             }
             catch (Exception e)
             {
-                string message = "Something went wrong while loading the Students: " + e.Message;
+                string message = "Something went wrong while loading the Register: " + e.Message;
                 logError.AddErroLog(message);
                 MessageBox.Show(message);
             }
@@ -470,6 +505,78 @@ namespace SomerenUI
             }
         }
 
-    
+        public void LoadActivitiesList()
+        {
+            try
+            {
+                // fill the students listview within the students panel with a list of students
+                ActivityService activityService = new ActivityService();
+                List<Activity> activityList = activityService.GetActivities();
+
+
+                // clear the listviews before filling it again
+                listViewActivities.Items.Clear();
+
+                //show the students and drinks in de listviews
+                foreach (Activity a in activityList)
+                {
+                    ListViewItem li = new ListViewItem(a.ActivityId.ToString());
+                    li.SubItems.Add(a.Description);
+                    li.SubItems.Add(a.BeginTime.ToString());
+                    li.SubItems.Add(a.EndTime.ToString());
+                    listViewActivities.Items.Add(li);
+                }
+
+            }
+            catch (Exception e)
+            {
+                string message = "Something went wrong while loading the Activities: " + e.Message;
+                logError.AddErroLog(message);
+                MessageBox.Show(message);
+            }
+        }
+
+        private void activitiesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Activities");
+        }
+
+        private void btnChooseActivity_Click(object sender, EventArgs e)
+        {
+            int participent = int.Parse(textBoxActivity.Text);
+
+            showPanel("ChangeActivity");
+            LoadActivityStudent(participent);
+
+        }
+
+        public void LoadActivityStudent(int participent)
+        {
+            try
+            {
+                // fill the students listview within the students panel with a list of students
+                ActivityService activityService = new ActivityService();
+                List<Participent> participentList = activityService.GetParticipents(participent);
+
+
+                // clear the listviews before filling it again
+                listViewActivityStudent.Items.Clear();
+
+                //show the students and drinks in de listviews
+                foreach (Participent p in participentList)
+                {
+                    ListViewItem li = new ListViewItem(p.ParticipentId.ToString());
+                    li.SubItems.Add(p.ParticipentFirstName);
+                    listViewActivityStudent.Items.Add(li);
+                }
+
+            }
+            catch (Exception e)
+            {
+                string message = "Something went wrong while loading the Activities: " + e.Message;
+                logError.AddErroLog(message);
+                MessageBox.Show(message);
+            }
+        }
     }
 }

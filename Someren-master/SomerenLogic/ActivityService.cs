@@ -20,7 +20,10 @@ namespace SomerenLogic
         public ActivityService()
         {
             this.activitydb = new ActivityDao();
+            this.participentdb = new ParticipentDao();
+            this.supervisordb = new SupervisorDao();
         }
+
 
         public List<Activity> GetActivities()
         {

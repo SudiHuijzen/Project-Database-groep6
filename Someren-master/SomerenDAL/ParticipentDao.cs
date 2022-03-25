@@ -14,12 +14,11 @@ namespace SomerenDAL
     {
         public List<Participent> GetAll(int participent)
         {
-            string query = "SELECT Student.firstName, Student.lastName, ActivityStudent.activity_id, Activity.Description," +
-                "ActivityStudent.student_id FROM [ActivityStudent] " +
-                "JOIN Activity ON ActivityStudent.activity_id = Activity.activity_id" +
-                "JOIN Student On ActivityStudent.activity_id = Student.activity_id" +
+            string query = "SELECT Student.firstName, Student.lastName, ActivityStudent.student_id " +
+                "FROM ActivityStudent" +
+                "JOIN Student ON ActivityStudent.activity_id = Student.activity_id" +
                 "WHERE ActivityStudent.activity_id = @Id";
-            SqlParameter[] sqlParameters = new SqlParameter[0];
+            SqlParameter[] sqlParameters = new SqlParameter[1];
             sqlParameters[0] = new SqlParameter("@Id", participent);
      
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
@@ -51,9 +50,7 @@ namespace SomerenDAL
             {
                 Participent student = new Participent()
                 {
-                    ActivityId = (int)dr["ActivityStudent.activity_id"],
-                    ActivityDescription = (string)(dr["Activity.Description"]),
-                    ParticipentId = (int)(dr["drink_price"]),
+                    ParticipentId = (int)(dr["ActivityStudent.student_id"]),
                     ParticipentFirstName = (string)(dr["Student.firstName"]),
                     ParticipentLastNAme = (string)(dr["Student.lastName"]),
                 };
