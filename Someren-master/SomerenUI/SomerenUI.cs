@@ -38,6 +38,7 @@ namespace SomerenUI
                 pnlRegister.Hide();
                 pnlErrorList.Hide();
                 pnlActivities.Hide();
+                pnlActivities.Hide();
 
                 // show dashboard
                 pnlDashboard.Show();
@@ -52,6 +53,8 @@ namespace SomerenUI
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlErrorList.Hide();
+                pnlChangeActivity.Hide();
+                pnlActivities.Hide();
 
                 pnlDrinkSupply.Show();
                 LoadSupplyList();
@@ -67,6 +70,8 @@ namespace SomerenUI
                 pnlRegister.Hide();
                 pnlDrinkSupply.Hide();
                 pnlErrorList.Hide();
+                pnlChangeActivity.Hide();
+                pnlActivities.Hide();
                 // show rooms
                 pnlRooms.Show();
                 LoadRoomList();
@@ -81,6 +86,8 @@ namespace SomerenUI
                 pnlRegister.Hide();
                 pnlDrinkSupply.Hide();
                 pnlErrorList.Hide();
+                pnlChangeActivity?.Hide();
+                pnlActivities.Hide();
                 //show teachers
                 pnlTeachers.Show();
                 LoadTeacherList();
@@ -96,6 +103,8 @@ namespace SomerenUI
                 pnlRegister.Hide();
                 pnlDrinkSupply.Hide();
                 pnlErrorList.Hide();
+                pnlChangeActivity.Hide();
+                pnlActivities.Hide();
                 // show students
                 pnlStudents.Show();
                 LoadStudentList();
@@ -110,6 +119,8 @@ namespace SomerenUI
                 pnlStudents.Hide();
                 pnlDrinkSupply.Hide();
                 pnlErrorList.Hide();
+                pnlChangeActivity.Hide();
+                pnlActivities.Hide();
                 // show register
                 pnlRegister.Show();
                 LoadRegisterList();
@@ -123,7 +134,8 @@ namespace SomerenUI
                 pnlStudents.Hide();
                 pnlDrinkSupply.Hide();
                 pnlRegister.Hide();
-
+                pnlChangeActivity.Hide();
+                pnlActivities.Hide();
                 pnlErrorList.Show();
                 LoadErrorList();
             }
@@ -138,7 +150,7 @@ namespace SomerenUI
                 pnlRegister.Hide();
                 pnlErrorList.Hide();
                 pnlChangeActivity.Hide();
-
+                pnlActivities.Hide();
                 pnlActivities.Show();
                 LoadActivitiesList();
 
@@ -155,6 +167,7 @@ namespace SomerenUI
                 pnlRegister.Hide();
                 pnlErrorList.Hide();
                 pnlActivities.Hide();
+
 
                 pnlChangeActivity.Show();
               
@@ -673,15 +686,25 @@ namespace SomerenUI
             ActivityService activityService = new ActivityService();
             activityService.AddParticipent(StudentId, ActivityId);
             LoadActivityStudent(ActivityId);
+            SelectParticipentIdTextBox.Clear();
         }
 
         private void RemoveParticipentButton_Click(object sender, EventArgs e)
         {
-            ActivityId = int.Parse(textBoxActivity.Text);
-            int StudentId = int.Parse(SelectParticipentIdTextBox.Text);
-            ActivityService activityService = new ActivityService();
-            activityService.RemoveParticipent(StudentId, ActivityId);
-            LoadActivityStudent(ActivityId);
+            string message = "Are sure you want to remove the participent?";
+            string title = "Remove participent";
+
+            MessageBoxButtons button = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, button);
+            if(result == DialogResult.Yes)
+            {
+                ActivityId = int.Parse(textBoxActivity.Text);
+                int StudentId = int.Parse(SelectParticipentIdTextBox.Text);
+                ActivityService activityService = new ActivityService();
+                activityService.RemoveParticipent(StudentId, ActivityId);
+                LoadActivityStudent(ActivityId);
+                SelectParticipentIdTextBox.Clear();
+            }
         }
 
         private void AddTeacherButton_Click(object sender, EventArgs e)
@@ -691,15 +714,25 @@ namespace SomerenUI
             ActivityService activityService = new ActivityService();
             activityService.AddSupervisor(teacherId, ActivityId);
             LoadActivityTeachers(ActivityId);
+            SelectTeacherIdTextBox.Clear();
         }
 
         private void RemoveTeacherButton_Click(object sender, EventArgs e)
         {
-            ActivityId = int.Parse(textBoxActivity.Text);
-            int teacherId = int.Parse(SelectTeacherIdTextBox.Text);
-            ActivityService activityService = new ActivityService();
-            activityService.RemoveSupervisor(teacherId, ActivityId);
-            LoadActivityTeachers(ActivityId);
+            string message = "Are sure you want to remove the Supervisor?";
+            string title = "Remove Supervisor";
+
+            MessageBoxButtons button = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, button);
+            if (result == DialogResult.Yes)
+            {
+                ActivityId = int.Parse(textBoxActivity.Text);
+                int teacherId = int.Parse(SelectTeacherIdTextBox.Text);
+                ActivityService activityService = new ActivityService();
+                activityService.RemoveSupervisor(teacherId, ActivityId);
+                LoadActivityTeachers(ActivityId);
+                SelectTeacherIdTextBox.Clear();
+            }
         }
     }
 }

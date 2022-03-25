@@ -188,7 +188,7 @@
             this.errorLogToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1283, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1283, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -1192,8 +1192,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 622);
-            this.Controls.Add(this.pnlChangeActivity);
             this.Controls.Add(this.pnlDashboard);
+            this.Controls.Add(this.pnlChangeActivity);
             this.Controls.Add(this.pnlActivities);
             this.Controls.Add(this.pnlErrorList);
             this.Controls.Add(this.pnlDrinkSupply);
