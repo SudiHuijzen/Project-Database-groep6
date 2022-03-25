@@ -38,9 +38,9 @@ namespace SomerenLogic
             return participents;
         }
 
-        public void RemoveParticipent(int student)
+        public void RemoveParticipent(int student, int activity)
         {
-            participentdb.RemoveParticipent(student);
+            participentdb.RemoveParticipent(student, activity);
         }
 
         public void AddParticipent(int student, int activity)
@@ -56,9 +56,9 @@ namespace SomerenLogic
             return supervisors;
         }
 
-        public void RemoveSupervisor(int teacher)
+        public void RemoveSupervisor(int teacher, int activity)
         {
-            supervisordb.RemoveSupervisor(teacher);
+            supervisordb.RemoveSupervisor(teacher, activity);
         }
 
         public void AddSupervisor(int teacher, int activity)

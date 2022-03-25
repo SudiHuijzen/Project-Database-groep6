@@ -15,6 +15,7 @@ namespace SomerenUI
     public partial class SomerenUI : Form
     {
         ErrorLogService logError = new ErrorLogService();
+        int ActivityId;
         public SomerenUI()
         {
             InitializeComponent();
@@ -393,6 +394,36 @@ namespace SomerenUI
                 MessageBox.Show(message);
             }
         }
+        private void LoadActivityStudentList()
+        {
+            try
+            {
+                // fill the students listview within the students panel with a list of students
+                StudentService studService = new StudentService(); ;
+                List<Student> studentList = studService.GetStudents(); ;
+
+                // clear the listview before filling it again
+                listViewAllStudents.Items.Clear();
+
+                foreach (Student s in studentList)
+                {
+
+                    ListViewItem li = new ListViewItem(s.Number.ToString());
+                    li.SubItems.Add(s.FirstName);
+                    li.SubItems.Add(s.LastName);
+                    li.SubItems.Add(s.BirthDate.ToString("dd/MM/yyyy"));
+                    listViewAllStudents.Items.Add(li);
+                }
+
+            }
+            catch (Exception e)
+            {
+                string message = "Something went wrong while loading the Students: " + e.Message;
+                logError.AddErroLog(message);
+                MessageBox.Show(message);
+            }
+        }
+
 
         private void LoadTeacherList()
         {
@@ -414,6 +445,35 @@ namespace SomerenUI
                     li.SubItems.Add(t.LastName);
                     li.SubItems.Add(t.PrintSupervisor());   // shows whether or not teacher is supervicor when true
                     listViewTeachers.Items.Add(li);
+                }
+            }
+            catch (Exception e)
+            {
+                string message = "Something went wrong while loading the Teachers: " + e.Message;
+                logError.AddErroLog(message);
+                MessageBox.Show(message);
+            }
+        }
+
+        private void LoadAllTeacherList()
+        {
+
+            try
+            {
+                // fill the students listview within the students panel with a list of students
+                TeacherService teachService = new TeacherService(); ;
+                List<Teacher> TeacherList = teachService.GetTeachers(); ;
+
+                // clear the items in the listview before filling it again
+                listViewAllTeachers.Items.Clear();
+
+                foreach (Teacher t in TeacherList)
+                {
+
+                    ListViewItem li = new ListViewItem(t.Number.ToString());
+                    li.SubItems.Add(t.FirstName);
+                    li.SubItems.Add(t.LastName);
+                    listViewAllTeachers.Items.Add(li);
                 }
             }
             catch (Exception e)
@@ -536,6 +596,35 @@ namespace SomerenUI
             }
         }
 
+        public void LoadActivityTeachers(int supervisor)
+        {
+            try
+            {
+                // fill the students listview within the students panel with a list of students
+                ActivityService activityService = new ActivityService();
+                List<Supervisor> supervisors = activityService.GetSupervisors(supervisor);
+
+
+                // clear the listviews before filling it again
+                listViewActivityTeachers.Items.Clear();
+
+                //show the students and drinks in de listviews
+                foreach (Supervisor s in supervisors)
+                {
+                    ListViewItem li = new ListViewItem(s.SupervisorId.ToString());
+                    li.SubItems.Add(s.SupervisorFirstName);
+                    listViewActivityTeachers.Items.Add(li);
+                }
+
+            }
+            catch (Exception e)
+            {
+                string message = "Something went wrong while loading the Activities: " + e.Message;
+                logError.AddErroLog(message);
+                MessageBox.Show(message);
+            }
+        }
+
         private void activitiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showPanel("Activities");
@@ -543,17 +632,23 @@ namespace SomerenUI
 
         private void btnChooseActivity_Click(object sender, EventArgs e)
         {
-            int participent = int.Parse(textBoxActivity.Text);
+             ActivityId = int.Parse(textBoxActivity.Text);
 
             showPanel("ChangeActivity");
-            LoadActivityStudent(participent);
+            
+            
+            LoadActivityStudent(ActivityId);
+            LoadActivityStudentList();
+            LoadActivityTeachers(ActivityId);
+            LoadAllTeacherList();
+            
 
         }
 
         public void LoadActivityStudent(int participent)
         {
-            try
-            {
+            
+            
                 // fill the students listview within the students panel with a list of students
                 ActivityService activityService = new ActivityService();
                 List<Participent> participentList = activityService.GetParticipents(participent);
@@ -569,14 +664,42 @@ namespace SomerenUI
                     li.SubItems.Add(p.ParticipentFirstName);
                     listViewActivityStudent.Items.Add(li);
                 }
+        }
 
-            }
-            catch (Exception e)
-            {
-                string message = "Something went wrong while loading the Activities: " + e.Message;
-                logError.AddErroLog(message);
-                MessageBox.Show(message);
-            }
+        private void AddParticipentButton_Click(object sender, EventArgs e)
+        { 
+            ActivityId = int.Parse(textBoxActivity.Text);
+            int StudentId = int.Parse(SelectParticipentIdTextBox.Text);
+            ActivityService activityService = new ActivityService();
+            activityService.AddParticipent(StudentId, ActivityId);
+            LoadActivityStudent(ActivityId);
+        }
+
+        private void RemoveParticipentButton_Click(object sender, EventArgs e)
+        {
+            ActivityId = int.Parse(textBoxActivity.Text);
+            int StudentId = int.Parse(SelectParticipentIdTextBox.Text);
+            ActivityService activityService = new ActivityService();
+            activityService.RemoveParticipent(StudentId, ActivityId);
+            LoadActivityStudent(ActivityId);
+        }
+
+        private void AddTeacherButton_Click(object sender, EventArgs e)
+        {
+            ActivityId = int.Parse(textBoxActivity.Text);
+            int teacherId = int.Parse(SelectTeacherIdTextBox.Text);
+            ActivityService activityService = new ActivityService();
+            activityService.AddSupervisor(teacherId, ActivityId);
+            LoadActivityTeachers(ActivityId);
+        }
+
+        private void RemoveTeacherButton_Click(object sender, EventArgs e)
+        {
+            ActivityId = int.Parse(textBoxActivity.Text);
+            int teacherId = int.Parse(SelectTeacherIdTextBox.Text);
+            ActivityService activityService = new ActivityService();
+            activityService.RemoveSupervisor(teacherId, ActivityId);
+            LoadActivityTeachers(ActivityId);
         }
     }
 }

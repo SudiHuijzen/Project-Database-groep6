@@ -14,31 +14,32 @@ namespace SomerenDAL
     {
         public List<Participent> GetAll(int participent)
         {
-            string query = "SELECT Student.firstName, Student.lastName, ActivityStudent.student_id " +
-                "FROM ActivityStudent" +
-                "JOIN Student ON ActivityStudent.activity_id = Student.activity_id" +
-                "WHERE ActivityStudent.activity_id = @Id";
+            string query = "SELECT Student.firstName, Student.lastName, Student.student_id " +
+                "FROM ActivityStudent " +
+                "JOIN Student ON ActivityStudent.Student_id = Student.Student_id " +
+                "WHERE ActivityStudent.activity_id = @id";
             SqlParameter[] sqlParameters = new SqlParameter[1];
             sqlParameters[0] = new SqlParameter("@Id", participent);
-     
+
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
         public void AddParticipent(int student, int activity)
         {
-            String querry = "INSERT INTO dbo.ActivityStudent (student_id, activity_id)" +
-                "VALUES (@DStudentId, @ActivityId);";
+            String querry = "INSERT INTO ActivityStudent (student_id, activity_id)" +
+                "VALUES (@StudentId, @ActivityId);";
             SqlParameter[] sqlParameters = new SqlParameter[2];
             sqlParameters[0] = new SqlParameter("@StudentId", student);
             sqlParameters[1] = new SqlParameter("@ActivityId", activity);
             ExecuteEditQuery(querry, sqlParameters);
         }
 
-        public void RemoveParticipent(int student)
+        public void RemoveParticipent(int student, int activity)
         {
-            String querry = "DELETE FROM ActivityStudent WHERE student_id = @StudentId";
-            SqlParameter[] sqlParameters = new SqlParameter[0];
+            String querry = "DELETE FROM ActivityStudent WHERE student_id = @StudentId AND activity_id = @activityId";
+            SqlParameter[] sqlParameters = new SqlParameter[2];
             sqlParameters[0] = new SqlParameter("@StudentId", student);
+            sqlParameters[1] = new SqlParameter("@activityId", activity);
             ExecuteEditQuery(querry, sqlParameters);
         }
 
@@ -50,9 +51,9 @@ namespace SomerenDAL
             {
                 Participent student = new Participent()
                 {
-                    ParticipentId = (int)(dr["ActivityStudent.student_id"]),
-                    ParticipentFirstName = (string)(dr["Student.firstName"]),
-                    ParticipentLastNAme = (string)(dr["Student.lastName"]),
+                    ParticipentId = (int)(dr["student_id"]),
+                    ParticipentFirstName = (string)(dr["firstName"]),
+                    ParticipentLastNAme = (string)(dr["lastName"]),
                 };
                 students.Add(student);
             }

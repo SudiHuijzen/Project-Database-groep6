@@ -14,12 +14,10 @@ namespace SomerenDAL
     {
         public List<Supervisor> GetAll(int supervisor)
         {
-            string query = "SELECT Teacher.firstName, Teacher.lastName, ActivitySupervisor.activity_id, Activity.Description," +
-                "ActivitySupervisor.teacher_id FROM [ActivitySupervisor] " +
-                "JOIN Activity ON ActivitySupervisor.activity_id = Activity.activity_id" +
-                "JOIN Teacher On ActivitySupervisor.activiyy_id = Teacher.activity_id" +
-                "WHERE ActivityTeacher.activity_id = @Id";
-            SqlParameter[] sqlParameters = new SqlParameter[0];
+            string query = "SELECT Teacher.firstName, Teacher.lastName, Teacher.teacher_id FROM ActivitySupervisor " +
+                "JOIN Teacher ON ActivitySupervisor.teacher_id = Teacher.teacher_id " +
+                "WHERE ActivitySupervisor.activity_id = @Id";
+            SqlParameter[] sqlParameters = new SqlParameter[1];
             sqlParameters[0] = new SqlParameter("@Id", supervisor);
 
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
@@ -27,24 +25,25 @@ namespace SomerenDAL
 
         public void AddSupervisor(int teacher, int activity)
         {
-            String query = "INSERT INTO dbo.ActivitySupervisor (Teacher_id, activity_id)" +
+            String query = "INSERT INTO ActivitySupervisor (Teacher_id, activity_id)" +
                 "VALUES (@teacherId, @ActivityId);";
-            String secondQuery = "UPDATE Teacher SET isSupervisor = True WHERE Teacher_id = @teacherId";
+          //  String secondQuery = "UPDATE Teacher SET isSupervisor = True WHERE Teacher_id = @teacherId";
             SqlParameter[] sqlParameters = new SqlParameter[2];
             sqlParameters[0] = new SqlParameter("@teacherId", teacher);
             sqlParameters[1] = new SqlParameter("@ActivityId", activity);
             ExecuteEditQuery(query, sqlParameters);
-            ExecuteEditQuery(secondQuery, sqlParameters);
+         //   ExecuteEditQuery(secondQuery, sqlParameters);
         }
 
-        public void RemoveSupervisor(int Teacher)
+        public void RemoveSupervisor(int Teacher, int activity)
         {
-            String query = "DELETE FROM ActivitySupervisor WHERE Teacher_id = @teacherId";
-            String secondQuery = "UPDATE Teacher SET isSupervisor = False WHERE Teacher_id = @teacherId";
-            SqlParameter[] sqlParameters = new SqlParameter[1];
+            String query = "DELETE FROM ActivitySupervisor WHERE Teacher_id = @teacherId AND activity_id = @ActivityId";
+           // String secondQuery = "UPDATE Teacher SET isSupervisor = False WHERE Teacher_id = @teacherId";
+            SqlParameter[] sqlParameters = new SqlParameter[2];
             sqlParameters[0] = new SqlParameter("@teacherId", Teacher);
+            sqlParameters[1] = new SqlParameter("@ActivityId", activity);
             ExecuteEditQuery(query, sqlParameters);
-            ExecuteEditQuery(secondQuery, sqlParameters);
+            //ExecuteEditQuery(secondQuery, sqlParameters);
         }
 
         private List<Supervisor> ReadTables(DataTable dataTable)
@@ -54,12 +53,10 @@ namespace SomerenDAL
             foreach (DataRow dr in dataTable.Rows)
             {
                 Supervisor teacher = new Supervisor()
-                {
-                    ActivityId = (int)dr["ActivitySupervisor.activity_id"],
-                    ActivityDescription = (string)(dr["Activity.Description"]),
-                    SupervisorId = (int)(dr["ActivitySupervisor.Teacher_id"]),
-                    SupervisorFirstName = (string)(dr["Teacher.firstName"]),
-                    SupervisorLastNAme = (string)(dr["Teacher.lastName"]),
+                { 
+                    SupervisorId = (int)(dr["Teacher_id"]),
+                    SupervisorFirstName = (string)(dr["firstName"]),
+                    SupervisorLastNAme = (string)(dr["lastName"]),
                 };
                 teachers.Add(teacher);
             }
