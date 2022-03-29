@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,7 +24,8 @@ namespace SomerenUI
 
         private void SomerenUI_Load(object sender, EventArgs e)
         {
-            showPanel("Dashboard");
+            showPanel("LogIn");
+            passwordTextBox.PasswordChar = '*';
         }
 
         private void showPanel(string panelName)
@@ -39,13 +41,15 @@ namespace SomerenUI
                 pnlErrorList.Hide();
                 pnlActivities.Hide();
                 pnlActivities.Hide();
-
+                pnlUserRegister.Hide();
+                pnlLogIn.Hide();
                 // show dashboard
                 pnlDashboard.Show();
                 imgDashboard.Show();
             }
             else if(panelName == "DrinkSupply")
             {
+                pnlLogIn.Hide();
                 pnlStudents.Hide();
                 pnlTeachers.Hide();
                 pnlRooms.Hide();
@@ -55,7 +59,7 @@ namespace SomerenUI
                 pnlErrorList.Hide();
                 pnlChangeActivity.Hide();
                 pnlActivities.Hide();
-
+                pnlUserRegister.Hide();
                 pnlDrinkSupply.Show();
                 LoadSupplyList();
                
@@ -63,6 +67,7 @@ namespace SomerenUI
             else if (panelName == "Rooms")
             {
                 // hide all other panels
+                pnlLogIn.Hide();
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlTeachers.Hide();
@@ -72,6 +77,7 @@ namespace SomerenUI
                 pnlErrorList.Hide();
                 pnlChangeActivity.Hide();
                 pnlActivities.Hide();
+                pnlUserRegister.Hide();
                 // show rooms
                 pnlRooms.Show();
                 LoadRoomList();
@@ -79,6 +85,7 @@ namespace SomerenUI
             }
             else if (panelName == "Lectures")
             {
+                pnlLogIn.Hide();
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlStudents.Hide();
@@ -88,6 +95,7 @@ namespace SomerenUI
                 pnlErrorList.Hide();
                 pnlChangeActivity?.Hide();
                 pnlActivities.Hide();
+                pnlUserRegister.Hide();
                 //show teachers
                 pnlTeachers.Show();
                 LoadTeacherList();
@@ -96,6 +104,7 @@ namespace SomerenUI
             else if (panelName == "Students")
             {
                 // hide all other panels
+                pnlLogIn.Hide();
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlTeachers.Hide();
@@ -105,6 +114,7 @@ namespace SomerenUI
                 pnlErrorList.Hide();
                 pnlChangeActivity.Hide();
                 pnlActivities.Hide();
+                pnlUserRegister.Hide();
                 // show students
                 pnlStudents.Show();
                 LoadStudentList();
@@ -112,6 +122,7 @@ namespace SomerenUI
             else if (panelName == "Register")
             {
                 // hide all other panels
+                pnlLogIn.Hide();
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlTeachers.Hide();
@@ -121,12 +132,14 @@ namespace SomerenUI
                 pnlErrorList.Hide();
                 pnlChangeActivity.Hide();
                 pnlActivities.Hide();
+                pnlUserRegister.Hide();
                 // show register
                 pnlRegister.Show();
                 LoadRegisterList();
             }
             else if(panelName == "ErrorLog")
             {
+                pnlLogIn.Hide();
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlTeachers.Hide();
@@ -136,11 +149,13 @@ namespace SomerenUI
                 pnlRegister.Hide();
                 pnlChangeActivity.Hide();
                 pnlActivities.Hide();
+                pnlUserRegister.Hide();
                 pnlErrorList.Show();
                 LoadErrorList();
             }
             else if (panelName == "Activities")
             {
+                pnlLogIn.Hide();
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlTeachers.Hide();
@@ -151,6 +166,7 @@ namespace SomerenUI
                 pnlErrorList.Hide();
                 pnlChangeActivity.Hide();
                 pnlActivities.Hide();
+                pnlUserRegister.Hide();
                 pnlActivities.Show();
                 LoadActivitiesList();
 
@@ -158,6 +174,41 @@ namespace SomerenUI
             }
             else if (panelName == "ChangeActivity")
             {
+                pnlLogIn.Hide();
+                pnlDashboard.Hide();
+                imgDashboard.Hide();
+                pnlTeachers.Hide();
+                pnlRooms.Hide();
+                pnlStudents.Hide();
+                pnlDrinkSupply.Hide();
+                pnlRegister.Hide();
+                pnlErrorList.Hide();
+                pnlActivities.Hide();
+                pnlUserRegister.Hide();
+
+                pnlChangeActivity.Show();
+              
+
+                
+            }else if(panelName == "RegisterUser")
+            {
+                pnlLogIn.Hide();
+                pnlDashboard.Hide();
+                imgDashboard.Hide();
+                pnlTeachers.Hide();
+                pnlRooms.Hide();
+                pnlStudents.Hide();
+                pnlDrinkSupply.Hide();
+                pnlRegister.Hide();
+                pnlErrorList.Hide();
+                pnlActivities.Hide();
+             
+
+                pnlChangeActivity.Hide();
+                pnlUserRegister.Show();
+            }else if(panelName == "LogIn")
+            {
+              
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlTeachers.Hide();
@@ -169,10 +220,9 @@ namespace SomerenUI
                 pnlActivities.Hide();
 
 
-                pnlChangeActivity.Show();
-              
-
-                
+                pnlChangeActivity.Hide();
+                pnlUserRegister.Hide();
+                pnlLogIn.Show();
             }
         }
 
@@ -625,7 +675,7 @@ namespace SomerenUI
                 foreach (Supervisor s in supervisors)
                 {
                     ListViewItem li = new ListViewItem(s.SupervisorId.ToString());
-                    li.SubItems.Add(s.SupervisorFirstName);
+                    li.SubItems.Add(s.SupervisorFullName);
                     listViewActivityTeachers.Items.Add(li);
                 }
 
@@ -674,7 +724,7 @@ namespace SomerenUI
                 foreach (Participent p in participentList)
                 {
                     ListViewItem li = new ListViewItem(p.ParticipentId.ToString());
-                    li.SubItems.Add(p.ParticipentFirstName);
+                    li.SubItems.Add(p.ParticipentFullName);
                     listViewActivityStudent.Items.Add(li);
                 }
         }
@@ -795,6 +845,77 @@ namespace SomerenUI
 
             activityService.ChangeActivityDateTime(activityId, startDate, endDate);
             LoadActivitiesList();
+        }
+
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+            UserService userService = new UserService();
+            List<User> users = userService.GetUsers();
+            HashSalt hash = new HashSalt();
+           // HashWithSaltResult hashResultSha256 = hasher.HashWithSalt(passwordTextBox.Text, 64, SHA256.Create());
+         
+           
+           
+            foreach (User user in users)
+            {
+
+                bool isPasswordCorrect = hash.VerifyPassword(passwordTextBox.Text, user.Hash, user.Salt);
+             
+
+                if (user.UserName == userNameTextBox.Text && isPasswordCorrect)
+                {
+
+                    showPanel("Dashboard");
+                }
+                else
+                {
+                    passwordTextBox.Hide();
+                    wrongPassLabel.Show();
+                    secretQuestionLabel.Text = user.SecretQuestion.ToString();
+                    secretQuestionLabel.Show();
+                    secretQuestionTextBox.Show();
+                    if(user.UserName == userNameTextBox.Text && user.SecretAwnser == secretQuestionTextBox.Text)
+                    {
+                        showPanel("Dashboard");
+                    }
+                }
+            }
+        }
+
+        private void RegisterUserButton_Click(object sender, EventArgs e)
+        {
+            
+
+            
+            if(initRegPasswordTextBox.Text == secondRegPasswordTextBox.Text &&
+                awnserRegTextBox.Text != string.Empty && questionRegTextBox.Text != string.Empty)
+            {
+                licenseKeyGroupBox.Show();
+            }
+            else
+            {
+
+            }
+        }
+
+        private void FinalAddUserButton_Click(object sender, EventArgs e)
+        {
+         
+            string enterLicenseKey = $"{firstLicenseKeytextBox.Text} - {secondLicenseKeyTextBox.Text} - {thirdLicenseKeyTextBox.Text} - {fourthLicenseKeyTextBox.Text}";
+            string licenseKey = "XsZAb - tgz3PsD - qYh69un - WQCEx";
+            string testLicense = "1 - 2 - 3 - 4";
+
+            UserService userService = new UserService();
+            if (enterLicenseKey == testLicense)
+            {
+                userService.CreateUser(userRegisterTextBox.Text, initRegPasswordTextBox.Text,
+                    questionRegTextBox.Text, awnserRegTextBox.Text);
+            }
+        }
+
+        private void registerLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            showPanel("RegisterUser");
         }
     }
 }

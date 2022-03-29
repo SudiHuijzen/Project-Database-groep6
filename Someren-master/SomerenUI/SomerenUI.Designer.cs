@@ -46,6 +46,17 @@
             this.errorLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlDashboard = new System.Windows.Forms.Panel();
             this.lbl_Dashboard = new System.Windows.Forms.Label();
+            this.pnlLogIn = new System.Windows.Forms.Panel();
+            this.registerLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.wrongPassLabel = new System.Windows.Forms.Label();
+            this.secretQuestionLabel = new System.Windows.Forms.Label();
+            this.LoginButton = new System.Windows.Forms.Button();
+            this.secretQuestionTextBox = new System.Windows.Forms.TextBox();
+            this.passwordLabel = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.pnlStudents = new System.Windows.Forms.Panel();
             this.listViewStudents = new System.Windows.Forms.ListView();
             this.studentID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -152,6 +163,27 @@
             this.EndTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label8 = new System.Windows.Forms.Label();
             this.pnlChangeActivity = new System.Windows.Forms.Panel();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.listViewAllTeachers = new System.Windows.Forms.ListView();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.listViewAllStudents = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.SelectTeacherIdTextBox = new System.Windows.Forms.TextBox();
+            this.AddTeacherButton = new System.Windows.Forms.Button();
+            this.RemoveTeacherButton = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.SelectParticipentIdTextBox = new System.Windows.Forms.TextBox();
+            this.AddParticipentButton = new System.Windows.Forms.Button();
+            this.RemoveParticipentButton = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.listViewActivityTeachers = new System.Windows.Forms.ListView();
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -160,30 +192,32 @@
             this.listViewActivityStudent = new System.Windows.Forms.ListView();
             this.student_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.student_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listViewAllTeachers = new System.Windows.Forms.ListView();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.SelectTeacherIdTextBox = new System.Windows.Forms.TextBox();
-            this.RemoveTeacherButton = new System.Windows.Forms.Button();
-            this.AddTeacherButton = new System.Windows.Forms.Button();
-            this.SelectParticipentIdTextBox = new System.Windows.Forms.TextBox();
-            this.RemoveParticipentButton = new System.Windows.Forms.Button();
-            this.AddParticipentButton = new System.Windows.Forms.Button();
-            this.listViewAllStudents = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.pnlUserRegister = new System.Windows.Forms.Panel();
+            this.licenseKeyGroupBox = new System.Windows.Forms.GroupBox();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.Label = new System.Windows.Forms.Label();
+            this.EnterFieldsWarningLabel = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.awnserRegTextBox = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.RegisterUserButton = new System.Windows.Forms.Button();
+            this.secondRegPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.initRegPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.questionRegTextBox = new System.Windows.Forms.TextBox();
+            this.userRegisterTextBox = new System.Windows.Forms.TextBox();
+            this.firstLicenseKeytextBox = new System.Windows.Forms.TextBox();
+            this.secondLicenseKeyTextBox = new System.Windows.Forms.TextBox();
+            this.fourthLicenseKeyTextBox = new System.Windows.Forms.TextBox();
+            this.thirdLicenseKeyTextBox = new System.Windows.Forms.TextBox();
+            this.FinalAddUserButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgDashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
+            this.pnlLogIn.SuspendLayout();
+            this.groupBox12.SuspendLayout();
             this.pnlStudents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTeachers.SuspendLayout();
@@ -201,12 +235,15 @@
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.pnlChangeActivity.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            this.groupBox8.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            this.groupBox11.SuspendLayout();
+            this.pnlUserRegister.SuspendLayout();
+            this.licenseKeyGroupBox.SuspendLayout();
+            this.groupBox13.SuspendLayout();
             this.SuspendLayout();
             // 
             // imgDashboard
@@ -244,7 +281,7 @@
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(100, 26);
             this.dashboardToolStripMenuItem.Text = "Application";
             this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
             // 
@@ -270,28 +307,28 @@
             // studentsToolStripMenuItem
             // 
             this.studentsToolStripMenuItem.Name = "studentsToolStripMenuItem";
-            this.studentsToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
+            this.studentsToolStripMenuItem.Size = new System.Drawing.Size(80, 26);
             this.studentsToolStripMenuItem.Text = "Students";
             this.studentsToolStripMenuItem.Click += new System.EventHandler(this.studentsToolStripMenuItem_Click);
             // 
             // lecturersToolStripMenuItem
             // 
             this.lecturersToolStripMenuItem.Name = "lecturersToolStripMenuItem";
-            this.lecturersToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
+            this.lecturersToolStripMenuItem.Size = new System.Drawing.Size(82, 26);
             this.lecturersToolStripMenuItem.Text = "Lecturers";
             this.lecturersToolStripMenuItem.Click += new System.EventHandler(this.lecturersToolStripMenuItem_Click);
             // 
             // activitiesToolStripMenuItem
             // 
             this.activitiesToolStripMenuItem.Name = "activitiesToolStripMenuItem";
-            this.activitiesToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
+            this.activitiesToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
             this.activitiesToolStripMenuItem.Text = "Activities";
             this.activitiesToolStripMenuItem.Click += new System.EventHandler(this.activitiesToolStripMenuItem_Click);
             // 
             // roomsToolStripMenuItem
             // 
             this.roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
-            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
+            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(69, 26);
             this.roomsToolStripMenuItem.Text = "Rooms";
             this.roomsToolStripMenuItem.Click += new System.EventHandler(this.roomsToolStripMenuItem_Click_1);
             // 
@@ -302,7 +339,7 @@
             this.registerToolStripMenuItem,
             this.reveneToolStripMenuItem});
             this.barToolStripMenuItem.Name = "barToolStripMenuItem";
-            this.barToolStripMenuItem.Size = new System.Drawing.Size(45, 24);
+            this.barToolStripMenuItem.Size = new System.Drawing.Size(45, 26);
             this.barToolStripMenuItem.Text = "Bar";
             // 
             // drinkToolStripMenuItem
@@ -328,7 +365,7 @@
             // errorLogToolStripMenuItem
             // 
             this.errorLogToolStripMenuItem.Name = "errorLogToolStripMenuItem";
-            this.errorLogToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
+            this.errorLogToolStripMenuItem.Size = new System.Drawing.Size(84, 26);
             this.errorLogToolStripMenuItem.Text = "Error Log";
             this.errorLogToolStripMenuItem.Click += new System.EventHandler(this.errorLogToolStripMenuItem_Click);
             // 
@@ -348,9 +385,120 @@
             this.lbl_Dashboard.Location = new System.Drawing.Point(17, 16);
             this.lbl_Dashboard.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Dashboard.Name = "lbl_Dashboard";
-            this.lbl_Dashboard.Size = new System.Drawing.Size(243, 17);
+            this.lbl_Dashboard.Size = new System.Drawing.Size(231, 16);
             this.lbl_Dashboard.TabIndex = 1;
             this.lbl_Dashboard.Text = "Welcome to the Someren Application!";
+            // 
+            // pnlLogIn
+            // 
+            this.pnlLogIn.Controls.Add(this.registerLinkLabel);
+            this.pnlLogIn.Controls.Add(this.groupBox12);
+            this.pnlLogIn.Location = new System.Drawing.Point(0, 0);
+            this.pnlLogIn.Name = "pnlLogIn";
+            this.pnlLogIn.Size = new System.Drawing.Size(1283, 622);
+            this.pnlLogIn.TabIndex = 2;
+            // 
+            // registerLinkLabel
+            // 
+            this.registerLinkLabel.AutoSize = true;
+            this.registerLinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerLinkLabel.LinkColor = System.Drawing.Color.Black;
+            this.registerLinkLabel.Location = new System.Drawing.Point(1071, 37);
+            this.registerLinkLabel.Name = "registerLinkLabel";
+            this.registerLinkLabel.Size = new System.Drawing.Size(83, 25);
+            this.registerLinkLabel.TabIndex = 3;
+            this.registerLinkLabel.TabStop = true;
+            this.registerLinkLabel.Text = "Register";
+            this.registerLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.registerLinkLabel_LinkClicked);
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.wrongPassLabel);
+            this.groupBox12.Controls.Add(this.secretQuestionLabel);
+            this.groupBox12.Controls.Add(this.LoginButton);
+            this.groupBox12.Controls.Add(this.secretQuestionTextBox);
+            this.groupBox12.Controls.Add(this.passwordLabel);
+            this.groupBox12.Controls.Add(this.label19);
+            this.groupBox12.Controls.Add(this.passwordTextBox);
+            this.groupBox12.Controls.Add(this.userNameTextBox);
+            this.groupBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox12.Location = new System.Drawing.Point(496, 90);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(370, 376);
+            this.groupBox12.TabIndex = 2;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Login";
+            // 
+            // wrongPassLabel
+            // 
+            this.wrongPassLabel.AutoSize = true;
+            this.wrongPassLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wrongPassLabel.ForeColor = System.Drawing.Color.Red;
+            this.wrongPassLabel.Location = new System.Drawing.Point(50, 218);
+            this.wrongPassLabel.Name = "wrongPassLabel";
+            this.wrongPassLabel.Size = new System.Drawing.Size(263, 18);
+            this.wrongPassLabel.TabIndex = 7;
+            this.wrongPassLabel.Text = "Wrong username or password entered";
+            // 
+            // secretQuestionLabel
+            // 
+            this.secretQuestionLabel.AutoSize = true;
+            this.secretQuestionLabel.Location = new System.Drawing.Point(110, 142);
+            this.secretQuestionLabel.Name = "secretQuestionLabel";
+            this.secretQuestionLabel.Size = new System.Drawing.Size(141, 24);
+            this.secretQuestionLabel.TabIndex = 6;
+            this.secretQuestionLabel.Text = "Secret question";
+            this.secretQuestionLabel.Visible = false;
+            // 
+            // LoginButton
+            // 
+            this.LoginButton.Location = new System.Drawing.Point(82, 282);
+            this.LoginButton.Name = "LoginButton";
+            this.LoginButton.Size = new System.Drawing.Size(203, 37);
+            this.LoginButton.TabIndex = 5;
+            this.LoginButton.Text = "Log in";
+            this.LoginButton.UseVisualStyleBackColor = true;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
+            // 
+            // secretQuestionTextBox
+            // 
+            this.secretQuestionTextBox.Location = new System.Drawing.Point(82, 174);
+            this.secretQuestionTextBox.Name = "secretQuestionTextBox";
+            this.secretQuestionTextBox.Size = new System.Drawing.Size(203, 28);
+            this.secretQuestionTextBox.TabIndex = 4;
+            this.secretQuestionTextBox.Visible = false;
+            // 
+            // passwordLabel
+            // 
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Location = new System.Drawing.Point(135, 143);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(92, 24);
+            this.passwordLabel.TabIndex = 3;
+            this.passwordLabel.Text = "Password";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(129, 58);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(97, 24);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "Username";
+            // 
+            // passwordTextBox
+            // 
+            this.passwordTextBox.Location = new System.Drawing.Point(82, 173);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(201, 28);
+            this.passwordTextBox.TabIndex = 1;
+            // 
+            // userNameTextBox
+            // 
+            this.userNameTextBox.Location = new System.Drawing.Point(82, 93);
+            this.userNameTextBox.Name = "userNameTextBox";
+            this.userNameTextBox.Size = new System.Drawing.Size(201, 28);
+            this.userNameTextBox.TabIndex = 0;
             // 
             // pnlStudents
             // 
@@ -548,7 +696,7 @@
             this.lbl_Rooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Rooms.Location = new System.Drawing.Point(18, 27);
             this.lbl_Rooms.Name = "lbl_Rooms";
-            this.lbl_Rooms.Size = new System.Drawing.Size(104, 32);
+            this.lbl_Rooms.Size = new System.Drawing.Size(103, 32);
             this.lbl_Rooms.TabIndex = 0;
             this.lbl_Rooms.Text = "Rooms";
             // 
@@ -699,7 +847,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(28, 194);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 17);
+            this.label5.Size = new System.Drawing.Size(72, 16);
             this.label5.TabIndex = 11;
             this.label5.Text = "Enter Price";
             // 
@@ -708,7 +856,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(28, 104);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 17);
+            this.label4.Size = new System.Drawing.Size(112, 16);
             this.label4.TabIndex = 10;
             this.label4.Text = "Enter Drink Name";
             // 
@@ -766,7 +914,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(185, 42);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 17);
+            this.label2.Size = new System.Drawing.Size(52, 16);
             this.label2.TabIndex = 6;
             this.label2.Text = "Amount";
             // 
@@ -798,7 +946,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(25, 81);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 17);
+            this.label6.Size = new System.Drawing.Size(79, 16);
             this.label6.TabIndex = 14;
             this.label6.Text = "Enter new id";
             // 
@@ -814,7 +962,7 @@
             this.nonAlcoholRadioButton.AutoSize = true;
             this.nonAlcoholRadioButton.Location = new System.Drawing.Point(32, 243);
             this.nonAlcoholRadioButton.Name = "nonAlcoholRadioButton";
-            this.nonAlcoholRadioButton.Size = new System.Drawing.Size(105, 21);
+            this.nonAlcoholRadioButton.Size = new System.Drawing.Size(101, 20);
             this.nonAlcoholRadioButton.TabIndex = 4;
             this.nonAlcoholRadioButton.Text = "Non Alcohol";
             this.nonAlcoholRadioButton.UseVisualStyleBackColor = true;
@@ -825,7 +973,7 @@
             this.alcoholicRadioButton.Checked = true;
             this.alcoholicRadioButton.Location = new System.Drawing.Point(32, 217);
             this.alcoholicRadioButton.Name = "alcoholicRadioButton";
-            this.alcoholicRadioButton.Size = new System.Drawing.Size(75, 21);
+            this.alcoholicRadioButton.Size = new System.Drawing.Size(73, 20);
             this.alcoholicRadioButton.TabIndex = 3;
             this.alcoholicRadioButton.TabStop = true;
             this.alcoholicRadioButton.Text = "Alcohol";
@@ -853,7 +1001,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(27, 140);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 17);
+            this.label3.Size = new System.Drawing.Size(112, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "Enter Drink Name";
             // 
@@ -862,7 +1010,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(37, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.Size = new System.Drawing.Size(44, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
             // 
@@ -1004,7 +1152,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(6, 37);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(143, 17);
+            this.label9.Size = new System.Drawing.Size(131, 16);
             this.label9.TabIndex = 5;
             this.label9.Text = "Insert Activity Id here:";
             // 
@@ -1036,7 +1184,7 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(12, 184);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(194, 17);
+            this.label16.Size = new System.Drawing.Size(173, 16);
             this.label16.TabIndex = 24;
             this.label16.Text = "Enter time for activity: (00:00)";
             // 
@@ -1045,7 +1193,7 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(12, 110);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(234, 17);
+            this.label15.Size = new System.Drawing.Size(218, 16);
             this.label15.TabIndex = 24;
             this.label15.Text = "Enter date for activity: (dd/mm/yyyy)";
             // 
@@ -1054,7 +1202,7 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(11, 31);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(187, 17);
+            this.label14.Size = new System.Drawing.Size(172, 16);
             this.label14.TabIndex = 24;
             this.label14.Text = "Enter description for activity:";
             // 
@@ -1110,7 +1258,7 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(279, 27);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(142, 17);
+            this.label13.Size = new System.Drawing.Size(130, 16);
             this.label13.TabIndex = 10;
             this.label13.Text = "Insert activity id here:";
             // 
@@ -1209,7 +1357,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(23, 176);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(194, 17);
+            this.label12.Size = new System.Drawing.Size(173, 16);
             this.label12.TabIndex = 9;
             this.label12.Text = "Enter time for activity: (00:00)";
             // 
@@ -1218,7 +1366,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(21, 107);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(234, 17);
+            this.label11.Size = new System.Drawing.Size(218, 16);
             this.label11.TabIndex = 8;
             this.label11.Text = "Enter date for activity: (dd/mm/yyyy)";
             // 
@@ -1227,7 +1375,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(21, 33);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(187, 17);
+            this.label10.Size = new System.Drawing.Size(172, 16);
             this.label10.TabIndex = 7;
             this.label10.Text = "Enter description for activity:";
             // 
@@ -1308,6 +1456,194 @@
             this.pnlChangeActivity.Size = new System.Drawing.Size(1276, 576);
             this.pnlChangeActivity.TabIndex = 3;
             // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.listViewAllTeachers);
+            this.groupBox11.Location = new System.Drawing.Point(790, 265);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(470, 214);
+            this.groupBox11.TabIndex = 20;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "All teachers available";
+            // 
+            // listViewAllTeachers
+            // 
+            this.listViewAllTeachers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listViewAllTeachers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7});
+            this.listViewAllTeachers.GridLines = true;
+            this.listViewAllTeachers.HideSelection = false;
+            this.listViewAllTeachers.Location = new System.Drawing.Point(16, 17);
+            this.listViewAllTeachers.Name = "listViewAllTeachers";
+            this.listViewAllTeachers.Size = new System.Drawing.Size(444, 185);
+            this.listViewAllTeachers.TabIndex = 13;
+            this.listViewAllTeachers.UseCompatibleStateImageBehavior = false;
+            this.listViewAllTeachers.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "ID";
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Firstname";
+            this.columnHeader6.Width = 80;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Lastname";
+            this.columnHeader7.Width = 100;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.listViewAllStudents);
+            this.groupBox10.Location = new System.Drawing.Point(790, 29);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(470, 192);
+            this.groupBox10.TabIndex = 19;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "All students available:";
+            // 
+            // listViewAllStudents
+            // 
+            this.listViewAllStudents.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.listViewAllStudents.GridLines = true;
+            this.listViewAllStudents.HideSelection = false;
+            this.listViewAllStudents.Location = new System.Drawing.Point(10, 16);
+            this.listViewAllStudents.Margin = new System.Windows.Forms.Padding(4);
+            this.listViewAllStudents.Name = "listViewAllStudents";
+            this.listViewAllStudents.Scrollable = false;
+            this.listViewAllStudents.Size = new System.Drawing.Size(450, 169);
+            this.listViewAllStudents.TabIndex = 6;
+            this.listViewAllStudents.UseCompatibleStateImageBehavior = false;
+            this.listViewAllStudents.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Tag = "";
+            this.columnHeader1.Text = "ID";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Tag = "";
+            this.columnHeader2.Text = "Firstname";
+            this.columnHeader2.Width = 100;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Lastname";
+            this.columnHeader3.Width = 100;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Tag = "";
+            this.columnHeader4.Text = "Date of Birth";
+            this.columnHeader4.Width = 150;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.label18);
+            this.groupBox9.Controls.Add(this.SelectTeacherIdTextBox);
+            this.groupBox9.Controls.Add(this.AddTeacherButton);
+            this.groupBox9.Controls.Add(this.RemoveTeacherButton);
+            this.groupBox9.Location = new System.Drawing.Point(394, 255);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(333, 224);
+            this.groupBox9.TabIndex = 18;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Add or remove teacher from activity";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(26, 76);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(100, 16);
+            this.label18.TabIndex = 13;
+            this.label18.Text = "Enter teacher Id";
+            // 
+            // SelectTeacherIdTextBox
+            // 
+            this.SelectTeacherIdTextBox.Location = new System.Drawing.Point(29, 98);
+            this.SelectTeacherIdTextBox.Name = "SelectTeacherIdTextBox";
+            this.SelectTeacherIdTextBox.Size = new System.Drawing.Size(112, 22);
+            this.SelectTeacherIdTextBox.TabIndex = 12;
+            // 
+            // AddTeacherButton
+            // 
+            this.AddTeacherButton.Location = new System.Drawing.Point(198, 46);
+            this.AddTeacherButton.Name = "AddTeacherButton";
+            this.AddTeacherButton.Size = new System.Drawing.Size(83, 36);
+            this.AddTeacherButton.TabIndex = 10;
+            this.AddTeacherButton.Text = "ADD";
+            this.AddTeacherButton.UseVisualStyleBackColor = true;
+            this.AddTeacherButton.Click += new System.EventHandler(this.AddTeacherButton_Click);
+            // 
+            // RemoveTeacherButton
+            // 
+            this.RemoveTeacherButton.Location = new System.Drawing.Point(198, 134);
+            this.RemoveTeacherButton.Name = "RemoveTeacherButton";
+            this.RemoveTeacherButton.Size = new System.Drawing.Size(83, 36);
+            this.RemoveTeacherButton.TabIndex = 11;
+            this.RemoveTeacherButton.Text = "REMOVE";
+            this.RemoveTeacherButton.UseVisualStyleBackColor = true;
+            this.RemoveTeacherButton.Click += new System.EventHandler(this.RemoveTeacherButton_Click);
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.label17);
+            this.groupBox8.Controls.Add(this.SelectParticipentIdTextBox);
+            this.groupBox8.Controls.Add(this.AddParticipentButton);
+            this.groupBox8.Controls.Add(this.RemoveParticipentButton);
+            this.groupBox8.Location = new System.Drawing.Point(394, 29);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(333, 192);
+            this.groupBox8.TabIndex = 17;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Add or remove a student from the activity";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(26, 67);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(98, 16);
+            this.label17.TabIndex = 10;
+            this.label17.Text = "Enter student Id";
+            // 
+            // SelectParticipentIdTextBox
+            // 
+            this.SelectParticipentIdTextBox.Location = new System.Drawing.Point(29, 87);
+            this.SelectParticipentIdTextBox.Name = "SelectParticipentIdTextBox";
+            this.SelectParticipentIdTextBox.Size = new System.Drawing.Size(112, 22);
+            this.SelectParticipentIdTextBox.TabIndex = 9;
+            // 
+            // AddParticipentButton
+            // 
+            this.AddParticipentButton.Location = new System.Drawing.Point(198, 46);
+            this.AddParticipentButton.Name = "AddParticipentButton";
+            this.AddParticipentButton.Size = new System.Drawing.Size(83, 33);
+            this.AddParticipentButton.TabIndex = 7;
+            this.AddParticipentButton.Text = "ADD";
+            this.AddParticipentButton.UseVisualStyleBackColor = true;
+            this.AddParticipentButton.Click += new System.EventHandler(this.AddParticipentButton_Click);
+            // 
+            // RemoveParticipentButton
+            // 
+            this.RemoveParticipentButton.Location = new System.Drawing.Point(198, 115);
+            this.RemoveParticipentButton.Name = "RemoveParticipentButton";
+            this.RemoveParticipentButton.Size = new System.Drawing.Size(83, 29);
+            this.RemoveParticipentButton.TabIndex = 8;
+            this.RemoveParticipentButton.Text = "REMOVE";
+            this.RemoveParticipentButton.UseVisualStyleBackColor = true;
+            this.RemoveParticipentButton.Click += new System.EventHandler(this.RemoveParticipentButton_Click);
+            // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.listViewActivityTeachers);
@@ -1378,199 +1714,208 @@
             this.student_Name.Text = "student_Name";
             this.student_Name.Width = 148;
             // 
-            // listViewAllTeachers
+            // pnlUserRegister
             // 
-            this.listViewAllTeachers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listViewAllTeachers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7});
-            this.listViewAllTeachers.GridLines = true;
-            this.listViewAllTeachers.HideSelection = false;
-            this.listViewAllTeachers.Location = new System.Drawing.Point(16, 17);
-            this.listViewAllTeachers.Name = "listViewAllTeachers";
-            this.listViewAllTeachers.Size = new System.Drawing.Size(444, 185);
-            this.listViewAllTeachers.TabIndex = 13;
-            this.listViewAllTeachers.UseCompatibleStateImageBehavior = false;
-            this.listViewAllTeachers.View = System.Windows.Forms.View.Details;
+            this.pnlUserRegister.Controls.Add(this.licenseKeyGroupBox);
+            this.pnlUserRegister.Controls.Add(this.groupBox13);
+            this.pnlUserRegister.Location = new System.Drawing.Point(0, 1);
+            this.pnlUserRegister.Name = "pnlUserRegister";
+            this.pnlUserRegister.Size = new System.Drawing.Size(1283, 622);
+            this.pnlUserRegister.TabIndex = 4;
             // 
-            // columnHeader5
+            // licenseKeyGroupBox
             // 
-            this.columnHeader5.Text = "ID";
+            this.licenseKeyGroupBox.Controls.Add(this.FinalAddUserButton);
+            this.licenseKeyGroupBox.Controls.Add(this.thirdLicenseKeyTextBox);
+            this.licenseKeyGroupBox.Controls.Add(this.fourthLicenseKeyTextBox);
+            this.licenseKeyGroupBox.Controls.Add(this.secondLicenseKeyTextBox);
+            this.licenseKeyGroupBox.Controls.Add(this.firstLicenseKeytextBox);
+            this.licenseKeyGroupBox.Location = new System.Drawing.Point(780, 61);
+            this.licenseKeyGroupBox.Name = "licenseKeyGroupBox";
+            this.licenseKeyGroupBox.Size = new System.Drawing.Size(436, 171);
+            this.licenseKeyGroupBox.TabIndex = 1;
+            this.licenseKeyGroupBox.TabStop = false;
+            this.licenseKeyGroupBox.Text = "License verification";
+            this.licenseKeyGroupBox.Visible = false;
             // 
-            // columnHeader6
+            // groupBox13
             // 
-            this.columnHeader6.Text = "Firstname";
-            this.columnHeader6.Width = 80;
+            this.groupBox13.Controls.Add(this.Label);
+            this.groupBox13.Controls.Add(this.EnterFieldsWarningLabel);
+            this.groupBox13.Controls.Add(this.label24);
+            this.groupBox13.Controls.Add(this.awnserRegTextBox);
+            this.groupBox13.Controls.Add(this.label23);
+            this.groupBox13.Controls.Add(this.label22);
+            this.groupBox13.Controls.Add(this.label21);
+            this.groupBox13.Controls.Add(this.label20);
+            this.groupBox13.Controls.Add(this.RegisterUserButton);
+            this.groupBox13.Controls.Add(this.secondRegPasswordTextBox);
+            this.groupBox13.Controls.Add(this.initRegPasswordTextBox);
+            this.groupBox13.Controls.Add(this.questionRegTextBox);
+            this.groupBox13.Controls.Add(this.userRegisterTextBox);
+            this.groupBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox13.Location = new System.Drawing.Point(67, 58);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(650, 488);
+            this.groupBox13.TabIndex = 0;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "Register";
             // 
-            // columnHeader7
+            // Label
             // 
-            this.columnHeader7.Text = "Lastname";
-            this.columnHeader7.Width = 100;
+            this.Label.AutoSize = true;
+            this.Label.ForeColor = System.Drawing.Color.Red;
+            this.Label.Location = new System.Drawing.Point(298, 223);
+            this.Label.Name = "Label";
+            this.Label.Size = new System.Drawing.Size(331, 24);
+            this.Label.TabIndex = 13;
+            this.Label.Text = "The password entered is not the same";
             // 
-            // SelectTeacherIdTextBox
+            // EnterFieldsWarningLabel
             // 
-            this.SelectTeacherIdTextBox.Location = new System.Drawing.Point(29, 98);
-            this.SelectTeacherIdTextBox.Name = "SelectTeacherIdTextBox";
-            this.SelectTeacherIdTextBox.Size = new System.Drawing.Size(112, 22);
-            this.SelectTeacherIdTextBox.TabIndex = 12;
+            this.EnterFieldsWarningLabel.AutoSize = true;
+            this.EnterFieldsWarningLabel.ForeColor = System.Drawing.Color.Red;
+            this.EnterFieldsWarningLabel.Location = new System.Drawing.Point(39, 420);
+            this.EnterFieldsWarningLabel.Name = "EnterFieldsWarningLabel";
+            this.EnterFieldsWarningLabel.Size = new System.Drawing.Size(126, 24);
+            this.EnterFieldsWarningLabel.TabIndex = 12;
+            this.EnterFieldsWarningLabel.Text = "Enter all fields";
             // 
-            // RemoveTeacherButton
+            // label24
             // 
-            this.RemoveTeacherButton.Location = new System.Drawing.Point(198, 134);
-            this.RemoveTeacherButton.Name = "RemoveTeacherButton";
-            this.RemoveTeacherButton.Size = new System.Drawing.Size(83, 36);
-            this.RemoveTeacherButton.TabIndex = 11;
-            this.RemoveTeacherButton.Text = "REMOVE";
-            this.RemoveTeacherButton.UseVisualStyleBackColor = true;
-            this.RemoveTeacherButton.Click += new System.EventHandler(this.RemoveTeacherButton_Click);
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(39, 348);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(280, 24);
+            this.label24.TabIndex = 11;
+            this.label24.Text = "Enter the awnser to the question";
             // 
-            // AddTeacherButton
+            // awnserRegTextBox
             // 
-            this.AddTeacherButton.Location = new System.Drawing.Point(198, 46);
-            this.AddTeacherButton.Name = "AddTeacherButton";
-            this.AddTeacherButton.Size = new System.Drawing.Size(83, 36);
-            this.AddTeacherButton.TabIndex = 10;
-            this.AddTeacherButton.Text = "ADD";
-            this.AddTeacherButton.UseVisualStyleBackColor = true;
-            this.AddTeacherButton.Click += new System.EventHandler(this.AddTeacherButton_Click);
+            this.awnserRegTextBox.Location = new System.Drawing.Point(39, 373);
+            this.awnserRegTextBox.Name = "awnserRegTextBox";
+            this.awnserRegTextBox.Size = new System.Drawing.Size(387, 28);
+            this.awnserRegTextBox.TabIndex = 10;
             // 
-            // SelectParticipentIdTextBox
+            // label23
             // 
-            this.SelectParticipentIdTextBox.Location = new System.Drawing.Point(29, 87);
-            this.SelectParticipentIdTextBox.Name = "SelectParticipentIdTextBox";
-            this.SelectParticipentIdTextBox.Size = new System.Drawing.Size(112, 22);
-            this.SelectParticipentIdTextBox.TabIndex = 9;
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(39, 273);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(391, 24);
+            this.label23.TabIndex = 9;
+            this.label23.Text = "Make a question only you know the awnser to";
             // 
-            // RemoveParticipentButton
+            // label22
             // 
-            this.RemoveParticipentButton.Location = new System.Drawing.Point(198, 115);
-            this.RemoveParticipentButton.Name = "RemoveParticipentButton";
-            this.RemoveParticipentButton.Size = new System.Drawing.Size(83, 29);
-            this.RemoveParticipentButton.TabIndex = 8;
-            this.RemoveParticipentButton.Text = "REMOVE";
-            this.RemoveParticipentButton.UseVisualStyleBackColor = true;
-            this.RemoveParticipentButton.Click += new System.EventHandler(this.RemoveParticipentButton_Click);
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(39, 198);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(192, 24);
+            this.label22.TabIndex = 8;
+            this.label22.Text = "Enter password again";
             // 
-            // AddParticipentButton
+            // label21
             // 
-            this.AddParticipentButton.Location = new System.Drawing.Point(198, 46);
-            this.AddParticipentButton.Name = "AddParticipentButton";
-            this.AddParticipentButton.Size = new System.Drawing.Size(83, 33);
-            this.AddParticipentButton.TabIndex = 7;
-            this.AddParticipentButton.Text = "ADD";
-            this.AddParticipentButton.UseVisualStyleBackColor = true;
-            this.AddParticipentButton.Click += new System.EventHandler(this.AddParticipentButton_Click);
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(39, 121);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(141, 24);
+            this.label21.TabIndex = 7;
+            this.label21.Text = "Enter password";
             // 
-            // listViewAllStudents
+            // label20
             // 
-            this.listViewAllStudents.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.listViewAllStudents.GridLines = true;
-            this.listViewAllStudents.HideSelection = false;
-            this.listViewAllStudents.Location = new System.Drawing.Point(10, 16);
-            this.listViewAllStudents.Margin = new System.Windows.Forms.Padding(4);
-            this.listViewAllStudents.Name = "listViewAllStudents";
-            this.listViewAllStudents.Scrollable = false;
-            this.listViewAllStudents.Size = new System.Drawing.Size(450, 169);
-            this.listViewAllStudents.TabIndex = 6;
-            this.listViewAllStudents.UseCompatibleStateImageBehavior = false;
-            this.listViewAllStudents.View = System.Windows.Forms.View.Details;
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(39, 48);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(145, 24);
+            this.label20.TabIndex = 6;
+            this.label20.Text = "Enter username";
             // 
-            // columnHeader1
+            // RegisterUserButton
             // 
-            this.columnHeader1.Tag = "";
-            this.columnHeader1.Text = "ID";
+            this.RegisterUserButton.Location = new System.Drawing.Point(448, 415);
+            this.RegisterUserButton.Name = "RegisterUserButton";
+            this.RegisterUserButton.Size = new System.Drawing.Size(130, 51);
+            this.RegisterUserButton.TabIndex = 5;
+            this.RegisterUserButton.Text = "Register";
+            this.RegisterUserButton.UseVisualStyleBackColor = true;
+            this.RegisterUserButton.Click += new System.EventHandler(this.RegisterUserButton_Click);
             // 
-            // columnHeader2
+            // secondRegPasswordTextBox
             // 
-            this.columnHeader2.Tag = "";
-            this.columnHeader2.Text = "Firstname";
-            this.columnHeader2.Width = 100;
+            this.secondRegPasswordTextBox.Location = new System.Drawing.Point(39, 223);
+            this.secondRegPasswordTextBox.Name = "secondRegPasswordTextBox";
+            this.secondRegPasswordTextBox.Size = new System.Drawing.Size(247, 28);
+            this.secondRegPasswordTextBox.TabIndex = 4;
             // 
-            // columnHeader3
+            // initRegPasswordTextBox
             // 
-            this.columnHeader3.Text = "Lastname";
-            this.columnHeader3.Width = 100;
+            this.initRegPasswordTextBox.Location = new System.Drawing.Point(39, 146);
+            this.initRegPasswordTextBox.Name = "initRegPasswordTextBox";
+            this.initRegPasswordTextBox.Size = new System.Drawing.Size(247, 28);
+            this.initRegPasswordTextBox.TabIndex = 3;
             // 
-            // columnHeader4
+            // questionRegTextBox
             // 
-            this.columnHeader4.Tag = "";
-            this.columnHeader4.Text = "Date of Birth";
-            this.columnHeader4.Width = 150;
+            this.questionRegTextBox.Location = new System.Drawing.Point(39, 300);
+            this.questionRegTextBox.Name = "questionRegTextBox";
+            this.questionRegTextBox.Size = new System.Drawing.Size(387, 28);
+            this.questionRegTextBox.TabIndex = 2;
             // 
-            // groupBox8
+            // userRegisterTextBox
             // 
-            this.groupBox8.Controls.Add(this.label17);
-            this.groupBox8.Controls.Add(this.SelectParticipentIdTextBox);
-            this.groupBox8.Controls.Add(this.AddParticipentButton);
-            this.groupBox8.Controls.Add(this.RemoveParticipentButton);
-            this.groupBox8.Location = new System.Drawing.Point(394, 29);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(333, 192);
-            this.groupBox8.TabIndex = 17;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Add or remove a student from the activity";
+            this.userRegisterTextBox.Location = new System.Drawing.Point(39, 74);
+            this.userRegisterTextBox.Name = "userRegisterTextBox";
+            this.userRegisterTextBox.Size = new System.Drawing.Size(247, 28);
+            this.userRegisterTextBox.TabIndex = 1;
             // 
-            // label17
+            // firstLicenseKeytextBox
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(26, 67);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(108, 17);
-            this.label17.TabIndex = 10;
-            this.label17.Text = "Enter student Id";
+            this.firstLicenseKeytextBox.Location = new System.Drawing.Point(56, 59);
+            this.firstLicenseKeytextBox.Name = "firstLicenseKeytextBox";
+            this.firstLicenseKeytextBox.Size = new System.Drawing.Size(49, 22);
+            this.firstLicenseKeytextBox.TabIndex = 0;
             // 
-            // groupBox9
+            // secondLicenseKeyTextBox
             // 
-            this.groupBox9.Controls.Add(this.label18);
-            this.groupBox9.Controls.Add(this.SelectTeacherIdTextBox);
-            this.groupBox9.Controls.Add(this.AddTeacherButton);
-            this.groupBox9.Controls.Add(this.RemoveTeacherButton);
-            this.groupBox9.Location = new System.Drawing.Point(394, 255);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(333, 224);
-            this.groupBox9.TabIndex = 18;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Add or remove teacher from activity";
+            this.secondLicenseKeyTextBox.Location = new System.Drawing.Point(128, 59);
+            this.secondLicenseKeyTextBox.Name = "secondLicenseKeyTextBox";
+            this.secondLicenseKeyTextBox.Size = new System.Drawing.Size(49, 22);
+            this.secondLicenseKeyTextBox.TabIndex = 1;
             // 
-            // label18
+            // fourthLicenseKeyTextBox
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(26, 76);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(109, 17);
-            this.label18.TabIndex = 13;
-            this.label18.Text = "Enter teacher Id";
+            this.fourthLicenseKeyTextBox.Location = new System.Drawing.Point(273, 59);
+            this.fourthLicenseKeyTextBox.Name = "fourthLicenseKeyTextBox";
+            this.fourthLicenseKeyTextBox.Size = new System.Drawing.Size(49, 22);
+            this.fourthLicenseKeyTextBox.TabIndex = 2;
             // 
-            // groupBox10
+            // thirdLicenseKeyTextBox
             // 
-            this.groupBox10.Controls.Add(this.listViewAllStudents);
-            this.groupBox10.Location = new System.Drawing.Point(790, 29);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(470, 192);
-            this.groupBox10.TabIndex = 19;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "All students available:";
+            this.thirdLicenseKeyTextBox.Location = new System.Drawing.Point(202, 59);
+            this.thirdLicenseKeyTextBox.Name = "thirdLicenseKeyTextBox";
+            this.thirdLicenseKeyTextBox.Size = new System.Drawing.Size(49, 22);
+            this.thirdLicenseKeyTextBox.TabIndex = 3;
             // 
-            // groupBox11
+            // FinalAddUserButton
             // 
-            this.groupBox11.Controls.Add(this.listViewAllTeachers);
-            this.groupBox11.Location = new System.Drawing.Point(790, 265);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(470, 214);
-            this.groupBox11.TabIndex = 20;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "All teachers available";
+            this.FinalAddUserButton.Location = new System.Drawing.Point(307, 111);
+            this.FinalAddUserButton.Name = "FinalAddUserButton";
+            this.FinalAddUserButton.Size = new System.Drawing.Size(82, 36);
+            this.FinalAddUserButton.TabIndex = 4;
+            this.FinalAddUserButton.Text = "button1";
+            this.FinalAddUserButton.UseVisualStyleBackColor = true;
+            this.FinalAddUserButton.Click += new System.EventHandler(this.FinalAddUserButton_Click);
             // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 622);
+            this.Controls.Add(this.pnlUserRegister);
+            this.Controls.Add(this.pnlLogIn);
             this.Controls.Add(this.pnlDashboard);
             this.Controls.Add(this.pnlChangeActivity);
             this.Controls.Add(this.pnlActivities);
@@ -1593,6 +1938,10 @@
             this.menuStrip1.PerformLayout();
             this.pnlDashboard.ResumeLayout(false);
             this.pnlDashboard.PerformLayout();
+            this.pnlLogIn.ResumeLayout(false);
+            this.pnlLogIn.PerformLayout();
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
             this.pnlStudents.ResumeLayout(false);
             this.pnlStudents.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1622,14 +1971,19 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.pnlChangeActivity.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox11.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.pnlUserRegister.ResumeLayout(false);
+            this.licenseKeyGroupBox.ResumeLayout(false);
+            this.licenseKeyGroupBox.PerformLayout();
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1789,6 +2143,38 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.Panel pnlLogIn;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.Label passwordLabel;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox passwordTextBox;
+        private System.Windows.Forms.TextBox userNameTextBox;
+        private System.Windows.Forms.LinkLabel registerLinkLabel;
+        private System.Windows.Forms.Label secretQuestionLabel;
+        private System.Windows.Forms.Button LoginButton;
+        private System.Windows.Forms.TextBox secretQuestionTextBox;
+        private System.Windows.Forms.Label wrongPassLabel;
+        private System.Windows.Forms.Panel pnlUserRegister;
+        private System.Windows.Forms.GroupBox groupBox13;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox awnserRegTextBox;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button RegisterUserButton;
+        private System.Windows.Forms.TextBox secondRegPasswordTextBox;
+        private System.Windows.Forms.TextBox initRegPasswordTextBox;
+        private System.Windows.Forms.TextBox questionRegTextBox;
+        private System.Windows.Forms.TextBox userRegisterTextBox;
+        private System.Windows.Forms.Label Label;
+        private System.Windows.Forms.Label EnterFieldsWarningLabel;
+        private System.Windows.Forms.GroupBox licenseKeyGroupBox;
+        private System.Windows.Forms.Button FinalAddUserButton;
+        private System.Windows.Forms.TextBox thirdLicenseKeyTextBox;
+        private System.Windows.Forms.TextBox fourthLicenseKeyTextBox;
+        private System.Windows.Forms.TextBox secondLicenseKeyTextBox;
+        private System.Windows.Forms.TextBox firstLicenseKeytextBox;
     }
 }
 
