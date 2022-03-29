@@ -43,6 +43,10 @@
     <Compile Include="Activity.cs" />
     <Compile Include="Drink.cs" />
     <Compile Include="ErrorLog.cs" />
+<<<<<<< Updated upstream
+=======
+    <Compile Include="PasswordSecurity.cs" />
+>>>>>>> Stashed changes
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

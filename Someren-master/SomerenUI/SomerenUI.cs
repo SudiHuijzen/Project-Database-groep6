@@ -23,7 +23,12 @@ namespace SomerenUI
 
         private void SomerenUI_Load(object sender, EventArgs e)
         {
+<<<<<<< Updated upstream
             showPanel("Dashboard");
+=======
+            showPanel("LogIn");
+            
+>>>>>>> Stashed changes
         }
 
         private void showPanel(string panelName)
@@ -173,6 +178,46 @@ namespace SomerenUI
               
 
                 
+<<<<<<< Updated upstream
+=======
+            }else if(panelName == "RegisterUser")
+            {
+                initRegPasswordTextBox.PasswordChar = '*';
+                secondRegPasswordTextBox.PasswordChar = '*';    
+                pnlLogIn.Hide();
+                pnlDashboard.Hide();
+                imgDashboard.Hide();
+                pnlTeachers.Hide();
+                pnlRooms.Hide();
+                pnlStudents.Hide();
+                pnlDrinkSupply.Hide();
+                pnlRegister.Hide();
+                pnlErrorList.Hide();
+                pnlActivities.Hide();
+              
+
+                pnlChangeActivity.Hide();
+                pnlUserRegister.Show();
+            }else if(panelName == "LogIn")
+            {
+                newPasswordTextBox.PasswordChar = '*';
+                checkNewPasswordTextBox.PasswordChar = '*';
+                passwordTextBox.PasswordChar = '*';
+                pnlDashboard.Hide();
+                imgDashboard.Hide();
+                pnlTeachers.Hide();
+                pnlRooms.Hide();
+                pnlStudents.Hide();
+                pnlDrinkSupply.Hide();
+                pnlRegister.Hide();
+                pnlErrorList.Hide();
+                pnlActivities.Hide();
+
+
+                pnlChangeActivity.Hide();
+                pnlUserRegister.Hide();
+                pnlLogIn.Show();
+>>>>>>> Stashed changes
             }
         }
 
@@ -283,10 +328,7 @@ namespace SomerenUI
             changeNameTextBox.Clear();
         }
 
-        private void changePriceButton_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void AddDrinkButton_Click(object sender, EventArgs e)
         {
@@ -310,6 +352,10 @@ namespace SomerenUI
             stockService.AddNewStock(stock);
             drinkService.AddDrink(drink);
             LoadSupplyList();
+        }
+        private void registerLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            showPanel("RegisterUser");
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -796,5 +842,160 @@ namespace SomerenUI
             activityService.ChangeActivityDateTime(activityId, startDate, endDate);
             LoadActivitiesList();
         }
+<<<<<<< Updated upstream
+=======
+
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+            UserService userService = new UserService();
+            List<User> users = userService.GetUsers();
+            
+            foreach (User user in users)
+            {
+                string passwordSalt = PasswordSecurity.HashPassword(passwordTextBox.Text, user.Salt, 10101, 70);
+
+                if (user.UserName == userNameTextBox.Text && user.Password == passwordSalt)
+                {
+
+                    showPanel("Dashboard");
+                }
+                else
+                {
+                   
+                    wrongPassLabel.Show();
+                    changePasswordLinkLabel.Show();
+                    if(user.UserName == userNameTextBox.Text && user.SecretAwnser == secretQuestionTextBox.Text)
+                    {
+                        showPanel("Dashboard");
+                    }
+                }
+            }
+        }
+
+        private void RegisterUserButton_Click(object sender, EventArgs e)
+        {
+            initRegPasswordTextBox.PasswordChar= '*';
+            secondRegPasswordTextBox.PasswordChar= '*';
+            if (initRegPasswordTextBox.Text != secondRegPasswordTextBox.Text)
+            {
+                registerWarningLabel.Show();
+            }
+            else if(awnserRegTextBox.Text != string.Empty && questionRegTextBox.Text != string.Empty && 
+                initRegPasswordTextBox.Text == secondRegPasswordTextBox.Text)
+            {
+                licenseKeyGroupBox.Show();
+            }
+            else
+            {
+                EnterFieldsWarningLabel.Show();
+            }
+      
+        }
+
+        private void FinalAddUserButton_Click(object sender, EventArgs e)
+        {   
+            
+            
+            string licenseKey = "XsZAb - tgz3PsD - qYh69un - WQCEx";
+            string salt = PasswordSecurity.GenerateSalt(70);
+            string passwordHashed = PasswordSecurity.HashPassword(initRegPasswordTextBox.Text, salt, 10101, 70);
+
+
+            UserService userService = new UserService();
+            if (licenseKeyTextBox.Text == licenseKey)
+            {
+                userService.CreateUser(userRegisterTextBox.Text, passwordHashed, salt,
+                    questionRegTextBox.Text, awnserRegTextBox.Text);
+                MessageBox.Show("Registration complete");
+                showPanel("LogIn");
+            }
+        }
+
+
+
+        private void ChangePasswordButton_Click(object sender, EventArgs e)
+        {
+            
+            UserService userService = new UserService();
+            List<User> users = userService.GetUsers();
+            string salt = PasswordSecurity.GenerateSalt(70);
+            foreach (User user in users)
+            {
+                secretQuestionLabel.Text = user.SecretQuestion.ToString();
+                string passwordSalt = PasswordSecurity.HashPassword(newPasswordTextBox.Text, salt, 10101, 70);
+                if (newPasswordTextBox.Text != checkNewPasswordTextBox.Text)
+                {
+                    newPasswordErrorLabel.Show();
+                }
+                else if (user.UserName == checkUserNameTextBox.Text && user.SecretAwnser == awnserTextBox.Text &&
+                    newPasswordTextBox.Text != string.Empty && checkNewPasswordTextBox.Text != string.Empty)
+                {
+                    string message = "You have changed your password";
+            
+                    userService.ChangePassword(passwordSalt, salt, user.UserName, user.SecretAwnser);
+                    MessageBox.Show(message);
+                    
+                    changePasswordGroupBox.Hide();
+                    loginGroupBox.Show();
+                }
+            }
+        }
+
+        private void changePasswordLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            loginGroupBox.Hide();
+            changePasswordGroupBox.Show();
+        }
+
+        private void checkUserNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            UserService userService = new UserService();
+            List<User> users = userService.GetUsers();
+            foreach (User user in users)
+            {
+                if(checkUserNameTextBox.Text == user.UserName)
+                {
+                    secretQuestionLabel.Text = user.SecretQuestion;
+                }
+            }
+        }
+
+        private void logOutStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string message = "Are sure you want to Log Out?";
+            string title = "Log Out";
+
+            MessageBoxButtons button = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, button);
+            if (result == DialogResult.Yes)
+            {
+                showPanel("LogIn");
+            }     
+        }
+
+        private void secondRegPasswordTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if(secondRegPasswordTextBox.Text != initRegPasswordTextBox.Text)
+            {
+                registerWarningLabel.Show();
+            }
+            else
+            {
+                registerWarningLabel.Hide();
+            }
+        }
+
+        private void checkNewPasswordTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if(checkNewPasswordTextBox.Text != newPasswordTextBox.Text)
+            {
+                newPasswordErrorLabel.Show();
+            }
+            else
+            {
+                newPasswordErrorLabel.Hide();
+            }
+        }
+>>>>>>> Stashed changes
     }
 }

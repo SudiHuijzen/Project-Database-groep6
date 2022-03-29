@@ -44,8 +44,34 @@
             this.registerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reveneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.errorLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlDashboard = new System.Windows.Forms.Panel();
             this.lbl_Dashboard = new System.Windows.Forms.Label();
+<<<<<<< Updated upstream
+=======
+            this.pnlLogIn = new System.Windows.Forms.Panel();
+            this.changePasswordGroupBox = new System.Windows.Forms.GroupBox();
+            this.newPasswordErrorLabel = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.checkNewPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.ChangePasswordButton = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
+            this.newPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.checkUserNameTextBox = new System.Windows.Forms.TextBox();
+            this.secretQuestionLabel = new System.Windows.Forms.Label();
+            this.awnserTextBox = new System.Windows.Forms.TextBox();
+            this.registerLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.loginGroupBox = new System.Windows.Forms.GroupBox();
+            this.changePasswordLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.wrongPassLabel = new System.Windows.Forms.Label();
+            this.LoginButton = new System.Windows.Forms.Button();
+            this.secretQuestionTextBox = new System.Windows.Forms.TextBox();
+            this.passwordLabel = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.userNameTextBox = new System.Windows.Forms.TextBox();
+>>>>>>> Stashed changes
             this.pnlStudents = new System.Windows.Forms.Panel();
             this.listViewStudents = new System.Windows.Forms.ListView();
             this.studentID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -164,12 +190,33 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+<<<<<<< Updated upstream
             this.SelectTeacherIdTextBox = new System.Windows.Forms.TextBox();
             this.RemoveTeacherButton = new System.Windows.Forms.Button();
             this.AddTeacherButton = new System.Windows.Forms.Button();
             this.SelectParticipentIdTextBox = new System.Windows.Forms.TextBox();
             this.RemoveParticipentButton = new System.Windows.Forms.Button();
             this.AddParticipentButton = new System.Windows.Forms.Button();
+=======
+            this.pnlUserRegister = new System.Windows.Forms.Panel();
+            this.licenseKeyGroupBox = new System.Windows.Forms.GroupBox();
+            this.FinalAddUserButton = new System.Windows.Forms.Button();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.registerWarningLabel = new System.Windows.Forms.Label();
+            this.EnterFieldsWarningLabel = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.awnserRegTextBox = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.RegisterUserButton = new System.Windows.Forms.Button();
+            this.secondRegPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.initRegPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.questionRegTextBox = new System.Windows.Forms.TextBox();
+            this.userRegisterTextBox = new System.Windows.Forms.TextBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+>>>>>>> Stashed changes
             this.listViewAllStudents = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -177,6 +224,7 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
+<<<<<<< Updated upstream
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.label18 = new System.Windows.Forms.Label();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
@@ -184,6 +232,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgDashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
+=======
+            this.SelectParticipentIdTextBox = new System.Windows.Forms.TextBox();
+            this.AddParticipentButton = new System.Windows.Forms.Button();
+            this.RemoveParticipentButton = new System.Windows.Forms.Button();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.listViewActivityTeachers = new System.Windows.Forms.ListView();
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.listViewActivityStudent = new System.Windows.Forms.ListView();
+            this.student_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.student_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.licenseKeyTextBox = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.imgDashboard)).BeginInit();
+            this.menuStrip1.SuspendLayout();
+            this.pnlDashboard.SuspendLayout();
+            this.pnlLogIn.SuspendLayout();
+            this.changePasswordGroupBox.SuspendLayout();
+            this.loginGroupBox.SuspendLayout();
+>>>>>>> Stashed changes
             this.pnlStudents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTeachers.SuspendLayout();
@@ -201,12 +269,24 @@
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.pnlChangeActivity.SuspendLayout();
+<<<<<<< Updated upstream
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox11.SuspendLayout();
+=======
+            this.groupBox11.SuspendLayout();
+            this.pnlUserRegister.SuspendLayout();
+            this.licenseKeyGroupBox.SuspendLayout();
+            this.groupBox13.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+>>>>>>> Stashed changes
             this.SuspendLayout();
             // 
             // imgDashboard
@@ -229,7 +309,8 @@
             this.activitiesToolStripMenuItem,
             this.roomsToolStripMenuItem,
             this.barToolStripMenuItem,
-            this.errorLogToolStripMenuItem});
+            this.errorLogToolStripMenuItem,
+            this.logOutStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1283, 30);
@@ -332,14 +413,22 @@
             this.errorLogToolStripMenuItem.Text = "Error Log";
             this.errorLogToolStripMenuItem.Click += new System.EventHandler(this.errorLogToolStripMenuItem_Click);
             // 
+            // logOutStripMenuItem
+            // 
+            this.logOutStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.logOutStripMenuItem.Name = "logOutStripMenuItem";
+            this.logOutStripMenuItem.Size = new System.Drawing.Size(74, 26);
+            this.logOutStripMenuItem.Text = "Log out";
+            this.logOutStripMenuItem.Click += new System.EventHandler(this.logOutStripMenuItem_Click);
+            // 
             // pnlDashboard
             // 
             this.pnlDashboard.Controls.Add(this.lbl_Dashboard);
             this.pnlDashboard.Controls.Add(this.imgDashboard);
-            this.pnlDashboard.Location = new System.Drawing.Point(16, 33);
+            this.pnlDashboard.Location = new System.Drawing.Point(0, 27);
             this.pnlDashboard.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDashboard.Name = "pnlDashboard";
-            this.pnlDashboard.Size = new System.Drawing.Size(1251, 574);
+            this.pnlDashboard.Size = new System.Drawing.Size(1276, 564);
             this.pnlDashboard.TabIndex = 2;
             // 
             // lbl_Dashboard
@@ -352,6 +441,235 @@
             this.lbl_Dashboard.TabIndex = 1;
             this.lbl_Dashboard.Text = "Welcome to the Someren Application!";
             // 
+<<<<<<< Updated upstream
+=======
+            // pnlLogIn
+            // 
+            this.pnlLogIn.Controls.Add(this.changePasswordGroupBox);
+            this.pnlLogIn.Controls.Add(this.registerLinkLabel);
+            this.pnlLogIn.Controls.Add(this.loginGroupBox);
+            this.pnlLogIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlLogIn.Location = new System.Drawing.Point(0, 0);
+            this.pnlLogIn.Name = "pnlLogIn";
+            this.pnlLogIn.Size = new System.Drawing.Size(1283, 622);
+            this.pnlLogIn.TabIndex = 2;
+            // 
+            // changePasswordGroupBox
+            // 
+            this.changePasswordGroupBox.Controls.Add(this.newPasswordErrorLabel);
+            this.changePasswordGroupBox.Controls.Add(this.label26);
+            this.changePasswordGroupBox.Controls.Add(this.label25);
+            this.changePasswordGroupBox.Controls.Add(this.checkNewPasswordTextBox);
+            this.changePasswordGroupBox.Controls.Add(this.ChangePasswordButton);
+            this.changePasswordGroupBox.Controls.Add(this.label27);
+            this.changePasswordGroupBox.Controls.Add(this.newPasswordTextBox);
+            this.changePasswordGroupBox.Controls.Add(this.checkUserNameTextBox);
+            this.changePasswordGroupBox.Controls.Add(this.secretQuestionLabel);
+            this.changePasswordGroupBox.Controls.Add(this.awnserTextBox);
+            this.changePasswordGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changePasswordGroupBox.Location = new System.Drawing.Point(337, 90);
+            this.changePasswordGroupBox.Name = "changePasswordGroupBox";
+            this.changePasswordGroupBox.Size = new System.Drawing.Size(615, 491);
+            this.changePasswordGroupBox.TabIndex = 11;
+            this.changePasswordGroupBox.TabStop = false;
+            this.changePasswordGroupBox.Text = "Change Password";
+            this.changePasswordGroupBox.Visible = false;
+            // 
+            // newPasswordErrorLabel
+            // 
+            this.newPasswordErrorLabel.AutoSize = true;
+            this.newPasswordErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newPasswordErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.newPasswordErrorLabel.Location = new System.Drawing.Point(194, 364);
+            this.newPasswordErrorLabel.Name = "newPasswordErrorLabel";
+            this.newPasswordErrorLabel.Size = new System.Drawing.Size(233, 18);
+            this.newPasswordErrorLabel.TabIndex = 13;
+            this.newPasswordErrorLabel.Text = "Entered password is not the same";
+            this.newPasswordErrorLabel.Visible = false;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(186, 298);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(233, 24);
+            this.label26.TabIndex = 12;
+            this.label26.Text = "Enter new password again";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(187, 227);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(182, 24);
+            this.label25.TabIndex = 11;
+            this.label25.Text = "Enter new password";
+            // 
+            // checkNewPasswordTextBox
+            // 
+            this.checkNewPasswordTextBox.Location = new System.Drawing.Point(161, 332);
+            this.checkNewPasswordTextBox.Name = "checkNewPasswordTextBox";
+            this.checkNewPasswordTextBox.Size = new System.Drawing.Size(296, 28);
+            this.checkNewPasswordTextBox.TabIndex = 10;
+            this.checkNewPasswordTextBox.TextChanged += new System.EventHandler(this.checkNewPasswordTextBox_TextChanged);
+            // 
+            // ChangePasswordButton
+            // 
+            this.ChangePasswordButton.Location = new System.Drawing.Point(207, 408);
+            this.ChangePasswordButton.Name = "ChangePasswordButton";
+            this.ChangePasswordButton.Size = new System.Drawing.Size(203, 37);
+            this.ChangePasswordButton.TabIndex = 5;
+            this.ChangePasswordButton.Text = "Change Password";
+            this.ChangePasswordButton.UseVisualStyleBackColor = true;
+            this.ChangePasswordButton.Click += new System.EventHandler(this.ChangePasswordButton_Click);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(254, 64);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(97, 24);
+            this.label27.TabIndex = 2;
+            this.label27.Text = "Username";
+            // 
+            // newPasswordTextBox
+            // 
+            this.newPasswordTextBox.Location = new System.Drawing.Point(161, 257);
+            this.newPasswordTextBox.Name = "newPasswordTextBox";
+            this.newPasswordTextBox.Size = new System.Drawing.Size(296, 28);
+            this.newPasswordTextBox.TabIndex = 9;
+            // 
+            // checkUserNameTextBox
+            // 
+            this.checkUserNameTextBox.Location = new System.Drawing.Point(162, 99);
+            this.checkUserNameTextBox.Name = "checkUserNameTextBox";
+            this.checkUserNameTextBox.Size = new System.Drawing.Size(294, 28);
+            this.checkUserNameTextBox.TabIndex = 0;
+            this.checkUserNameTextBox.TextChanged += new System.EventHandler(this.checkUserNameTextBox_TextChanged);
+            // 
+            // secretQuestionLabel
+            // 
+            this.secretQuestionLabel.AutoSize = true;
+            this.secretQuestionLabel.Location = new System.Drawing.Point(234, 144);
+            this.secretQuestionLabel.Name = "secretQuestionLabel";
+            this.secretQuestionLabel.Size = new System.Drawing.Size(141, 24);
+            this.secretQuestionLabel.TabIndex = 6;
+            this.secretQuestionLabel.Text = "Secret question";
+            // 
+            // awnserTextBox
+            // 
+            this.awnserTextBox.Location = new System.Drawing.Point(160, 183);
+            this.awnserTextBox.Name = "awnserTextBox";
+            this.awnserTextBox.Size = new System.Drawing.Size(296, 28);
+            this.awnserTextBox.TabIndex = 8;
+            // 
+            // registerLinkLabel
+            // 
+            this.registerLinkLabel.AutoSize = true;
+            this.registerLinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerLinkLabel.LinkColor = System.Drawing.Color.Black;
+            this.registerLinkLabel.Location = new System.Drawing.Point(1071, 37);
+            this.registerLinkLabel.Name = "registerLinkLabel";
+            this.registerLinkLabel.Size = new System.Drawing.Size(83, 25);
+            this.registerLinkLabel.TabIndex = 3;
+            this.registerLinkLabel.TabStop = true;
+            this.registerLinkLabel.Text = "Register";
+            this.registerLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.registerLinkLabel_LinkClicked);
+            // 
+            // loginGroupBox
+            // 
+            this.loginGroupBox.Controls.Add(this.changePasswordLinkLabel);
+            this.loginGroupBox.Controls.Add(this.wrongPassLabel);
+            this.loginGroupBox.Controls.Add(this.LoginButton);
+            this.loginGroupBox.Controls.Add(this.secretQuestionTextBox);
+            this.loginGroupBox.Controls.Add(this.passwordLabel);
+            this.loginGroupBox.Controls.Add(this.label19);
+            this.loginGroupBox.Controls.Add(this.passwordTextBox);
+            this.loginGroupBox.Controls.Add(this.userNameTextBox);
+            this.loginGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginGroupBox.Location = new System.Drawing.Point(337, 90);
+            this.loginGroupBox.Name = "loginGroupBox";
+            this.loginGroupBox.Size = new System.Drawing.Size(615, 491);
+            this.loginGroupBox.TabIndex = 2;
+            this.loginGroupBox.TabStop = false;
+            this.loginGroupBox.Text = "Login";
+            // 
+            // changePasswordLinkLabel
+            // 
+            this.changePasswordLinkLabel.AutoSize = true;
+            this.changePasswordLinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changePasswordLinkLabel.Location = new System.Drawing.Point(300, 259);
+            this.changePasswordLinkLabel.Name = "changePasswordLinkLabel";
+            this.changePasswordLinkLabel.Size = new System.Drawing.Size(138, 17);
+            this.changePasswordLinkLabel.TabIndex = 10;
+            this.changePasswordLinkLabel.TabStop = true;
+            this.changePasswordLinkLabel.Text = "Password forgotten?";
+            this.changePasswordLinkLabel.Visible = false;
+            this.changePasswordLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.changePasswordLinkLabel_LinkClicked);
+            // 
+            // wrongPassLabel
+            // 
+            this.wrongPassLabel.AutoSize = true;
+            this.wrongPassLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wrongPassLabel.ForeColor = System.Drawing.Color.Red;
+            this.wrongPassLabel.Location = new System.Drawing.Point(175, 224);
+            this.wrongPassLabel.Name = "wrongPassLabel";
+            this.wrongPassLabel.Size = new System.Drawing.Size(263, 18);
+            this.wrongPassLabel.TabIndex = 7;
+            this.wrongPassLabel.Text = "Wrong username or password entered";
+            this.wrongPassLabel.Visible = false;
+            // 
+            // LoginButton
+            // 
+            this.LoginButton.Location = new System.Drawing.Point(207, 304);
+            this.LoginButton.Name = "LoginButton";
+            this.LoginButton.Size = new System.Drawing.Size(203, 37);
+            this.LoginButton.TabIndex = 5;
+            this.LoginButton.Text = "Log in";
+            this.LoginButton.UseVisualStyleBackColor = true;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
+            // 
+            // secretQuestionTextBox
+            // 
+            this.secretQuestionTextBox.Location = new System.Drawing.Point(207, 180);
+            this.secretQuestionTextBox.Name = "secretQuestionTextBox";
+            this.secretQuestionTextBox.Size = new System.Drawing.Size(203, 28);
+            this.secretQuestionTextBox.TabIndex = 4;
+            this.secretQuestionTextBox.Visible = false;
+            // 
+            // passwordLabel
+            // 
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Location = new System.Drawing.Point(260, 149);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(92, 24);
+            this.passwordLabel.TabIndex = 3;
+            this.passwordLabel.Text = "Password";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(254, 64);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(97, 24);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "Username";
+            // 
+            // passwordTextBox
+            // 
+            this.passwordTextBox.Location = new System.Drawing.Point(207, 179);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(201, 28);
+            this.passwordTextBox.TabIndex = 1;
+            // 
+            // userNameTextBox
+            // 
+            this.userNameTextBox.Location = new System.Drawing.Point(207, 99);
+            this.userNameTextBox.Name = "userNameTextBox";
+            this.userNameTextBox.Size = new System.Drawing.Size(201, 28);
+            this.userNameTextBox.TabIndex = 0;
+            // 
+>>>>>>> Stashed changes
             // pnlStudents
             // 
             this.pnlStudents.Controls.Add(this.listViewStudents);
@@ -720,7 +1038,6 @@
             this.changePriceButton.TabIndex = 9;
             this.changePriceButton.Text = "Change";
             this.changePriceButton.UseVisualStyleBackColor = true;
-            this.changePriceButton.Click += new System.EventHandler(this.changePriceButton_Click);
             // 
             // changePriceTextBox
             // 
@@ -1408,7 +1725,182 @@
             this.columnHeader7.Text = "Lastname";
             this.columnHeader7.Width = 100;
             // 
+<<<<<<< Updated upstream
             // SelectTeacherIdTextBox
+=======
+            // pnlUserRegister
+            // 
+            this.pnlUserRegister.Controls.Add(this.licenseKeyGroupBox);
+            this.pnlUserRegister.Controls.Add(this.groupBox13);
+            this.pnlUserRegister.Location = new System.Drawing.Point(0, 0);
+            this.pnlUserRegister.Name = "pnlUserRegister";
+            this.pnlUserRegister.Size = new System.Drawing.Size(1283, 622);
+            this.pnlUserRegister.TabIndex = 4;
+            // 
+            // licenseKeyGroupBox
+            // 
+            this.licenseKeyGroupBox.Controls.Add(this.licenseKeyTextBox);
+            this.licenseKeyGroupBox.Controls.Add(this.FinalAddUserButton);
+            this.licenseKeyGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.licenseKeyGroupBox.Location = new System.Drawing.Point(780, 61);
+            this.licenseKeyGroupBox.Name = "licenseKeyGroupBox";
+            this.licenseKeyGroupBox.Size = new System.Drawing.Size(436, 171);
+            this.licenseKeyGroupBox.TabIndex = 1;
+            this.licenseKeyGroupBox.TabStop = false;
+            this.licenseKeyGroupBox.Text = "License verification";
+            this.licenseKeyGroupBox.Visible = false;
+            // 
+            // FinalAddUserButton
+            // 
+            this.FinalAddUserButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FinalAddUserButton.Location = new System.Drawing.Point(222, 111);
+            this.FinalAddUserButton.Name = "FinalAddUserButton";
+            this.FinalAddUserButton.Size = new System.Drawing.Size(167, 36);
+            this.FinalAddUserButton.TabIndex = 4;
+            this.FinalAddUserButton.Text = "Complete registration";
+            this.FinalAddUserButton.UseVisualStyleBackColor = true;
+            this.FinalAddUserButton.Click += new System.EventHandler(this.FinalAddUserButton_Click);
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.registerWarningLabel);
+            this.groupBox13.Controls.Add(this.EnterFieldsWarningLabel);
+            this.groupBox13.Controls.Add(this.label24);
+            this.groupBox13.Controls.Add(this.awnserRegTextBox);
+            this.groupBox13.Controls.Add(this.label23);
+            this.groupBox13.Controls.Add(this.label22);
+            this.groupBox13.Controls.Add(this.label21);
+            this.groupBox13.Controls.Add(this.label20);
+            this.groupBox13.Controls.Add(this.RegisterUserButton);
+            this.groupBox13.Controls.Add(this.secondRegPasswordTextBox);
+            this.groupBox13.Controls.Add(this.initRegPasswordTextBox);
+            this.groupBox13.Controls.Add(this.questionRegTextBox);
+            this.groupBox13.Controls.Add(this.userRegisterTextBox);
+            this.groupBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox13.Location = new System.Drawing.Point(67, 58);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(650, 488);
+            this.groupBox13.TabIndex = 0;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "Register";
+            // 
+            // registerWarningLabel
+            // 
+            this.registerWarningLabel.AutoSize = true;
+            this.registerWarningLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerWarningLabel.ForeColor = System.Drawing.Color.Red;
+            this.registerWarningLabel.Location = new System.Drawing.Point(298, 223);
+            this.registerWarningLabel.Name = "registerWarningLabel";
+            this.registerWarningLabel.Size = new System.Drawing.Size(260, 18);
+            this.registerWarningLabel.TabIndex = 13;
+            this.registerWarningLabel.Text = "The password entered is not the same";
+            this.registerWarningLabel.Visible = false;
+            // 
+            // EnterFieldsWarningLabel
+            // 
+            this.EnterFieldsWarningLabel.AutoSize = true;
+            this.EnterFieldsWarningLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EnterFieldsWarningLabel.ForeColor = System.Drawing.Color.Red;
+            this.EnterFieldsWarningLabel.Location = new System.Drawing.Point(39, 420);
+            this.EnterFieldsWarningLabel.Name = "EnterFieldsWarningLabel";
+            this.EnterFieldsWarningLabel.Size = new System.Drawing.Size(99, 18);
+            this.EnterFieldsWarningLabel.TabIndex = 12;
+            this.EnterFieldsWarningLabel.Text = "Enter all fields";
+            this.EnterFieldsWarningLabel.Visible = false;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(39, 348);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(280, 24);
+            this.label24.TabIndex = 11;
+            this.label24.Text = "Enter the awnser to the question";
+            // 
+            // awnserRegTextBox
+            // 
+            this.awnserRegTextBox.Location = new System.Drawing.Point(39, 373);
+            this.awnserRegTextBox.Name = "awnserRegTextBox";
+            this.awnserRegTextBox.Size = new System.Drawing.Size(387, 28);
+            this.awnserRegTextBox.TabIndex = 10;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(39, 273);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(391, 24);
+            this.label23.TabIndex = 9;
+            this.label23.Text = "Make a question only you know the awnser to";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(39, 198);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(192, 24);
+            this.label22.TabIndex = 8;
+            this.label22.Text = "Enter password again";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(39, 121);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(141, 24);
+            this.label21.TabIndex = 7;
+            this.label21.Text = "Enter password";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(39, 48);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(145, 24);
+            this.label20.TabIndex = 6;
+            this.label20.Text = "Enter username";
+            // 
+            // RegisterUserButton
+            // 
+            this.RegisterUserButton.Location = new System.Drawing.Point(448, 415);
+            this.RegisterUserButton.Name = "RegisterUserButton";
+            this.RegisterUserButton.Size = new System.Drawing.Size(130, 51);
+            this.RegisterUserButton.TabIndex = 5;
+            this.RegisterUserButton.Text = "Register";
+            this.RegisterUserButton.UseVisualStyleBackColor = true;
+            this.RegisterUserButton.Click += new System.EventHandler(this.RegisterUserButton_Click);
+            // 
+            // secondRegPasswordTextBox
+            // 
+            this.secondRegPasswordTextBox.Location = new System.Drawing.Point(39, 223);
+            this.secondRegPasswordTextBox.Name = "secondRegPasswordTextBox";
+            this.secondRegPasswordTextBox.Size = new System.Drawing.Size(247, 28);
+            this.secondRegPasswordTextBox.TabIndex = 4;
+            this.secondRegPasswordTextBox.TextChanged += new System.EventHandler(this.secondRegPasswordTextBox_TextChanged);
+            // 
+            // initRegPasswordTextBox
+            // 
+            this.initRegPasswordTextBox.Location = new System.Drawing.Point(39, 146);
+            this.initRegPasswordTextBox.Name = "initRegPasswordTextBox";
+            this.initRegPasswordTextBox.Size = new System.Drawing.Size(247, 28);
+            this.initRegPasswordTextBox.TabIndex = 3;
+            // 
+            // questionRegTextBox
+            // 
+            this.questionRegTextBox.Location = new System.Drawing.Point(39, 300);
+            this.questionRegTextBox.Name = "questionRegTextBox";
+            this.questionRegTextBox.Size = new System.Drawing.Size(387, 28);
+            this.questionRegTextBox.TabIndex = 2;
+            // 
+            // userRegisterTextBox
+            // 
+            this.userRegisterTextBox.Location = new System.Drawing.Point(39, 74);
+            this.userRegisterTextBox.Name = "userRegisterTextBox";
+            this.userRegisterTextBox.Size = new System.Drawing.Size(247, 28);
+            this.userRegisterTextBox.TabIndex = 1;
+            // 
+            // groupBox10
+>>>>>>> Stashed changes
             // 
             this.SelectTeacherIdTextBox.Location = new System.Drawing.Point(29, 98);
             this.SelectTeacherIdTextBox.Name = "SelectTeacherIdTextBox";
@@ -1524,6 +2016,7 @@
             this.label17.TabIndex = 10;
             this.label17.Text = "Enter student Id";
             // 
+<<<<<<< Updated upstream
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.label18);
@@ -1565,12 +2058,122 @@
             this.groupBox11.TabIndex = 20;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "All teachers available";
+=======
+            // SelectParticipentIdTextBox
+            // 
+            this.SelectParticipentIdTextBox.Location = new System.Drawing.Point(29, 87);
+            this.SelectParticipentIdTextBox.Name = "SelectParticipentIdTextBox";
+            this.SelectParticipentIdTextBox.Size = new System.Drawing.Size(112, 22);
+            this.SelectParticipentIdTextBox.TabIndex = 9;
+            // 
+            // AddParticipentButton
+            // 
+            this.AddParticipentButton.Location = new System.Drawing.Point(198, 46);
+            this.AddParticipentButton.Name = "AddParticipentButton";
+            this.AddParticipentButton.Size = new System.Drawing.Size(83, 33);
+            this.AddParticipentButton.TabIndex = 7;
+            this.AddParticipentButton.Text = "ADD";
+            this.AddParticipentButton.UseVisualStyleBackColor = true;
+            this.AddParticipentButton.Click += new System.EventHandler(this.AddParticipentButton_Click);
+            // 
+            // RemoveParticipentButton
+            // 
+            this.RemoveParticipentButton.Location = new System.Drawing.Point(198, 115);
+            this.RemoveParticipentButton.Name = "RemoveParticipentButton";
+            this.RemoveParticipentButton.Size = new System.Drawing.Size(83, 29);
+            this.RemoveParticipentButton.TabIndex = 8;
+            this.RemoveParticipentButton.Text = "REMOVE";
+            this.RemoveParticipentButton.UseVisualStyleBackColor = true;
+            this.RemoveParticipentButton.Click += new System.EventHandler(this.RemoveParticipentButton_Click);
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.listViewActivityTeachers);
+            this.groupBox7.Location = new System.Drawing.Point(16, 244);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(280, 235);
+            this.groupBox7.TabIndex = 16;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Teachers in chosen activity:";
+            // 
+            // listViewActivityTeachers
+            // 
+            this.listViewActivityTeachers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader9,
+            this.columnHeader10});
+            this.listViewActivityTeachers.GridLines = true;
+            this.listViewActivityTeachers.HideSelection = false;
+            this.listViewActivityTeachers.Location = new System.Drawing.Point(10, 21);
+            this.listViewActivityTeachers.Name = "listViewActivityTeachers";
+            this.listViewActivityTeachers.Scrollable = false;
+            this.listViewActivityTeachers.Size = new System.Drawing.Size(260, 202);
+            this.listViewActivityTeachers.TabIndex = 14;
+            this.listViewActivityTeachers.UseCompatibleStateImageBehavior = false;
+            this.listViewActivityTeachers.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Teacher_id";
+            this.columnHeader9.Width = 103;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Teacher_Name";
+            this.columnHeader10.Width = 148;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.listViewActivityStudent);
+            this.groupBox6.Location = new System.Drawing.Point(20, 28);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(276, 193);
+            this.groupBox6.TabIndex = 15;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Students in chosen activity:";
+            // 
+            // listViewActivityStudent
+            // 
+            this.listViewActivityStudent.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.student_id,
+            this.student_Name});
+            this.listViewActivityStudent.GridLines = true;
+            this.listViewActivityStudent.HideSelection = false;
+            this.listViewActivityStudent.Location = new System.Drawing.Point(5, 17);
+            this.listViewActivityStudent.Name = "listViewActivityStudent";
+            this.listViewActivityStudent.Scrollable = false;
+            this.listViewActivityStudent.Size = new System.Drawing.Size(261, 172);
+            this.listViewActivityStudent.TabIndex = 0;
+            this.listViewActivityStudent.UseCompatibleStateImageBehavior = false;
+            this.listViewActivityStudent.View = System.Windows.Forms.View.Details;
+            // 
+            // student_id
+            // 
+            this.student_id.Text = "student_id";
+            this.student_id.Width = 103;
+            // 
+            // student_Name
+            // 
+            this.student_Name.Text = "student_Name";
+            this.student_Name.Width = 148;
+            // 
+            // licenseKeyTextBox
+            // 
+            this.licenseKeyTextBox.Location = new System.Drawing.Point(36, 56);
+            this.licenseKeyTextBox.Name = "licenseKeyTextBox";
+            this.licenseKeyTextBox.Size = new System.Drawing.Size(353, 28);
+            this.licenseKeyTextBox.TabIndex = 5;
+>>>>>>> Stashed changes
             // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 622);
+<<<<<<< Updated upstream
+=======
+            this.Controls.Add(this.pnlLogIn);
+            this.Controls.Add(this.pnlUserRegister);
+>>>>>>> Stashed changes
             this.Controls.Add(this.pnlDashboard);
             this.Controls.Add(this.pnlChangeActivity);
             this.Controls.Add(this.pnlActivities);
@@ -1593,6 +2196,15 @@
             this.menuStrip1.PerformLayout();
             this.pnlDashboard.ResumeLayout(false);
             this.pnlDashboard.PerformLayout();
+<<<<<<< Updated upstream
+=======
+            this.pnlLogIn.ResumeLayout(false);
+            this.pnlLogIn.PerformLayout();
+            this.changePasswordGroupBox.ResumeLayout(false);
+            this.changePasswordGroupBox.PerformLayout();
+            this.loginGroupBox.ResumeLayout(false);
+            this.loginGroupBox.PerformLayout();
+>>>>>>> Stashed changes
             this.pnlStudents.ResumeLayout(false);
             this.pnlStudents.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1622,6 +2234,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.pnlChangeActivity.ResumeLayout(false);
+<<<<<<< Updated upstream
             this.groupBox7.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
@@ -1630,6 +2243,21 @@
             this.groupBox9.PerformLayout();
             this.groupBox10.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
+=======
+            this.groupBox11.ResumeLayout(false);
+            this.pnlUserRegister.ResumeLayout(false);
+            this.licenseKeyGroupBox.ResumeLayout(false);
+            this.licenseKeyGroupBox.PerformLayout();
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+>>>>>>> Stashed changes
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1789,6 +2417,50 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.GroupBox groupBox10;
+<<<<<<< Updated upstream
+=======
+        private System.Windows.Forms.Panel pnlLogIn;
+        private System.Windows.Forms.GroupBox loginGroupBox;
+        private System.Windows.Forms.Label passwordLabel;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox passwordTextBox;
+        private System.Windows.Forms.TextBox userNameTextBox;
+        private System.Windows.Forms.LinkLabel registerLinkLabel;
+        private System.Windows.Forms.Label secretQuestionLabel;
+        private System.Windows.Forms.Button LoginButton;
+        private System.Windows.Forms.TextBox secretQuestionTextBox;
+        private System.Windows.Forms.Label wrongPassLabel;
+        private System.Windows.Forms.Panel pnlUserRegister;
+        private System.Windows.Forms.GroupBox groupBox13;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox awnserRegTextBox;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button RegisterUserButton;
+        private System.Windows.Forms.TextBox secondRegPasswordTextBox;
+        private System.Windows.Forms.TextBox initRegPasswordTextBox;
+        private System.Windows.Forms.TextBox questionRegTextBox;
+        private System.Windows.Forms.TextBox userRegisterTextBox;
+        private System.Windows.Forms.Label registerWarningLabel;
+        private System.Windows.Forms.Label EnterFieldsWarningLabel;
+        private System.Windows.Forms.GroupBox licenseKeyGroupBox;
+        private System.Windows.Forms.Button FinalAddUserButton;
+        private System.Windows.Forms.GroupBox changePasswordGroupBox;
+        private System.Windows.Forms.Label newPasswordErrorLabel;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox checkNewPasswordTextBox;
+        private System.Windows.Forms.Button ChangePasswordButton;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox newPasswordTextBox;
+        private System.Windows.Forms.TextBox checkUserNameTextBox;
+        private System.Windows.Forms.TextBox awnserTextBox;
+        private System.Windows.Forms.LinkLabel changePasswordLinkLabel;
+        private System.Windows.Forms.ToolStripMenuItem logOutStripMenuItem;
+        private System.Windows.Forms.TextBox licenseKeyTextBox;
+>>>>>>> Stashed changes
     }
 }
 

@@ -8,10 +8,10 @@ namespace SomerenModel
 {
     public class Activity
     {
-        DateTime beginTime;
+       
         DateTime endTime;
-        Student student;
-        Teacher teacher;
+        
+        
         public int ActivityId { get; set; }
         public string Description { get; set; }
         public DateTime BeginTime { get; set; }
