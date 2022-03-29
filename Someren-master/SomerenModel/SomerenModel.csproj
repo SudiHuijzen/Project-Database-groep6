@@ -44,6 +44,10 @@
     <Compile Include="Drink.cs" />
     <Compile Include="ErrorLog.cs" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+    <Compile Include="PasswordSecurity.cs" />
+>>>>>>> Stashed changes
 =======
     <Compile Include="PasswordSecurity.cs" />
 >>>>>>> Stashed changes
@@ -59,6 +63,7 @@
     <Compile Include="Supervisor.cs" />
     <Compile Include="Teacher.cs" />
     <Compile Include="Student.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\Settings.settings">
