@@ -29,7 +29,7 @@ namespace SomerenDAL
             catch (Exception e)
             {
                 //Print.ErrorLog(e);
-                //errorLog.AddError($"Something went wrong with the connection {e.Message}");
+           
                 throw;
             }
             return conn;

@@ -26,7 +26,18 @@ namespace SomerenLogic
 
         public void CreateUser(string userName, string password, string secretQuestion, string secretAwnser)
         {
-            userdb.CreateUser(userName, password, secretQuestion, secretAwnser);
+            HashSalt hashSalt = new HashSalt();
+            string salt = hashSalt.GenerateSalt(70);
+            string hashedPassword = hashSalt.HashPassword(password, salt, 10101, 70);
+            userdb.CreateUser(userName, hashedPassword, salt, secretQuestion, secretAwnser);
+        }
+
+        public void ChangePassword(string userName, string secretAwnser, string password)
+        {
+            HashSalt hashSalt = new HashSalt();
+            string NewSalt = hashSalt.GenerateSalt(70);
+            string hashedPassword = hashSalt.HashPassword(password, NewSalt, hashSalt.Iterations, hashSalt.Hash);
+            userdb.ChangePassword(userName, secretAwnser, hashedPassword, NewSalt);
         }
     }
 }

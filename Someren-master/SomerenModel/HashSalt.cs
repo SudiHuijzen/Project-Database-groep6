@@ -1,47 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using System.Security.Cryptography;
 
 namespace SomerenModel
 {
     public class HashSalt
     {
-        public string Salt { get; set; }
-        public string Hash { get; set; }
-      
-        public bool VerifyPassword(string enteredPassword, string storedHash, string storedSalt)
+        private int iterations = 10101;
+        private int hash = 70;
+
+        public int Hash { get { return hash; } }
+        public int Iterations { get { return iterations; } }
+        public string GenerateSalt(int nSalt)
         {
-            var saltBytes = Convert.FromBase64String(storedSalt);
-            var rfc2898DeriveBytes = new Rfc2898DeriveBytes(enteredPassword, saltBytes, 10000);
-            return Convert.ToBase64String(rfc2898DeriveBytes.GetBytes(256)) == storedHash;
+            var saltBytes = new byte[nSalt];
+
+            using (var provider = new RNGCryptoServiceProvider())
+            {
+                provider.GetNonZeroBytes(saltBytes);
+            }
+
+            return Convert.ToBase64String(saltBytes);
+        }
+
+        public string HashPassword(string password, string salt, int nIterations, int nHash)
+        {
+            var saltBytes = Convert.FromBase64String(salt);
+
+            using (var rfc2898DeriveBytes = new Rfc2898DeriveBytes(password, saltBytes, nIterations))
+            {
+                return Convert.ToBase64String(rfc2898DeriveBytes.GetBytes(nHash));
+            }
+        }
+
+        internal static string ReferenceEquals(string pwd, string pwd2, string salt)
+        {
+            throw new NotImplementedException();
         }
     }
-
-    public static HashSalt GenerateHashWithSalt(int size, string password)
-    {/*
-            RNG rng = new RNG();
-            byte[] saltBytes = rng.GenerateRandomCryptographicBytes(saltLength);
-            byte[] passwordAsBytes = Encoding.UTF8.GetBytes(password);
-            List<byte> passwordWithSaltBytes = new List<byte>();
-            passwordWithSaltBytes.AddRange(passwordAsBytes);
-            passwordWithSaltBytes.AddRange(saltBytes);
-            byte[] digestBytes = hashAlgo.ComputeHash(passwordWithSaltBytes.ToArray());
-            return new HashWithSaltResult(Convert.ToBase64String(saltBytes), Convert.ToBase64String(digestBytes));*/
-        var saltBytes = new byte[size];
-        var provider = new RNGCryptoServiceProvider();
-        provider.GetNonZeroBytes(saltBytes);
-        var salt = Convert.ToBase64String(saltBytes);
-
-        var rfc2898DeriveBytes = new Rfc2898DeriveBytes(password, saltBytes, 10000);
-        var hashPassword = Convert.ToBase64String(rfc2898DeriveBytes.GetBytes(256));
-
-        HashSalt hashSalt = new HashSalt { Hash = hashPassword, Salt = salt };
-        return hashSalt;
-
-    }
-
-
 }

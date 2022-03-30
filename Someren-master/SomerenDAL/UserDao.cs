@@ -14,29 +14,34 @@ namespace SomerenDAL
     {
         public List<User> GetAll()
         {
-            string query = "SELECT UserId, UserName, UserPasswordHash, UserPasswordSalt, SecretQuestion, SecretAwnser FROM [User]";
+            string query = "SELECT UserId, UserName, UserPassword, UserSalt, SecretQuestion, SecretAwnser FROM [User]";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        public void CreateUser(string userName, string password, string question, string awnser)
-        {
-            HashSalt hash = new HashSalt();
-
-            hash.GenerateHashWithSalt(64, password);
-
-
-            
-
-            String querry = "INSERT INTO [User] (UserName, UserPasswordHash, UserPasswordSalt, SecretQuestion, SecretAwnser) " +
-                    "VALUES (@userName, @PasswordHash, @PasswordSalt, @Question, @Awnser);";
+        public void CreateUser(string userName, string password, string salt, string question, string awnser)
+        {           
+            String querry = "INSERT INTO [User] (UserName, UserPassword, UserSalt, SecretQuestion, SecretAwnser) " +
+                    "VALUES (@userName, @Password, @Salt, @Question, @Awnser);";
             SqlParameter[] sqlParameters = new SqlParameter[5];
             sqlParameters[0] = new SqlParameter("@userName", userName);
-            sqlParameters[1] = new SqlParameter("@PasswordHash", hash.Hash);
-            sqlParameters[2] = new SqlParameter("@PasswordSalt", hash.Salt);
+            sqlParameters[1] = new SqlParameter("@Password", password);
+            sqlParameters[2] = new SqlParameter("@Salt", salt);
             sqlParameters[3] = new SqlParameter("@Question", question);
             sqlParameters[4] = new SqlParameter("@Awnser", awnser);
             ExecuteEditQuery(querry, sqlParameters);   
+        }
+
+        public void ChangePassword(string userName, string secretAwnser, string password, string salt)
+        {
+            string querry = "UPDATE [User] SET UserPassword = @NewPassword, UserSalt = @NewSalt" +
+                " WHERE UserName = @userName AND SecretAwnser = @Awnser";
+            SqlParameter[] sqlParameters = new SqlParameter[4];
+            sqlParameters[0] = new SqlParameter("@NewPassword", password);
+            sqlParameters[1] = new SqlParameter("@NewSalt", salt);
+            sqlParameters[2] = new SqlParameter("@Awnser", secretAwnser);
+            sqlParameters[3] = new SqlParameter("@userName", userName);
+            ExecuteEditQuery(querry, sqlParameters);
         }
 
         private List<User> ReadTables(DataTable dataTable)
@@ -49,8 +54,8 @@ namespace SomerenDAL
                 {
                     Id = (int)dr["UserId"],
                     UserName = (string)(dr["UserName"].ToString()),
-                    Hash = (string)(dr["UserPasswordHash"]).ToString(),
-                    Salt = (string)(dr["UserPasswordSalt"]).ToString(),
+                    Password = (string)(dr["UserPassword"]).ToString(),
+                    Salt = (string)(dr["UserSalt"]).ToString(),
                     SecretQuestion = (string)(dr["SecretQuestion"]).ToString(),
                     SecretAwnser = (string)dr["SecretAwnser"]
                 };

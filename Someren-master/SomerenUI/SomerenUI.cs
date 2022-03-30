@@ -25,7 +25,6 @@ namespace SomerenUI
         private void SomerenUI_Load(object sender, EventArgs e)
         {
             showPanel("LogIn");
-            passwordTextBox.PasswordChar = '*';
         }
 
         private void showPanel(string panelName)
@@ -192,6 +191,8 @@ namespace SomerenUI
                 
             }else if(panelName == "RegisterUser")
             {
+                registerFirstPassTextBox.PasswordChar = '*';
+                registerSecondPassTextBox.PasswordChar = '*';
                 pnlLogIn.Hide();
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
@@ -208,7 +209,9 @@ namespace SomerenUI
                 pnlUserRegister.Show();
             }else if(panelName == "LogIn")
             {
-              
+                passwordTextBox.PasswordChar = '*';
+                changePassFirstTextBox.PasswordChar= '*';
+                changePassSecondTextBox.PasswordChar= '*';  
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlTeachers.Hide();
@@ -226,6 +229,7 @@ namespace SomerenUI
             }
         }
 
+        /* ---------- Panel link clicks -----------*/
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //
@@ -275,98 +279,30 @@ namespace SomerenUI
         {
             showPanel("ErrorLog");
         }
-
-        private void btn_Checkout_Click(object sender, EventArgs e)
+        private void activitiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //clear the selected items after clicking the checkout button
-            listViewRegisterStudents.SelectedItems.Clear();
-            listViewRegisterDrinks.SelectedItems.Clear();
+            showPanel("Activities");
+        }
+        private void registerLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            showPanel("RegisterUser");
+        }
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string message = "Are sure you want to Log out";
+            string title = "Log Out";
 
-            //use the selected items to create a new object
-            Student student = new Student();
-            Drink drink = new Drink();
-
-            for(int i = 0; i < listViewRegisterStudents.Items.Count; i++)
+            MessageBoxButtons button = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, button);
+            if (result == DialogResult.Yes)
             {
-                if(listViewRegisterStudents.Items[i].Selected)
-                {
-                    student = new Student(int.Parse(listViewRegisterStudents.Items[i].Text));
-                }
+                showPanel("LogIn");
+                wrongPassWarningLabel.Hide();
+                ChangePassLinkLabel.Hide();
             }
-
-            for (int i = 0; i < listViewRegisterDrinks.Items.Count; i++)
-            {
-                if (listViewRegisterDrinks.Items[i].Selected)
-                {
-                    drink = new Drink(int.Parse(listViewRegisterDrinks.Items[i].Text));
-                }
-            }
-
-            //get the values to the logic layer
-            DrinkService drinkService = new DrinkService();
-            drinkService.AddSale(student, drink);
         }
 
-        private void RemoveStockButton_Click(object sender, EventArgs e)
-        {
-            int id = int.Parse(EditDrinkIdtextBox.Text);
-            StockService stockService = new StockService();
-            stockService.RemoveDrinkStock(id);
-            LoadSupplyList();
-        }
-
-        private void AddStockButton_Click(object sender, EventArgs e)
-        {
-            int id = int.Parse(EditDrinkIdtextBox.Text);
-            StockService stockService = new StockService();
-            stockService.AddDrinkStock(id);
-            LoadSupplyList();
-        }
-
-        private void changeNameButton_Click(object sender, EventArgs e)
-        {
-            int id = int.Parse(EditDrinkIdtextBox.Text);
-            string name = changeNameTextBox.Text;
-            DrinkService drinkService = new DrinkService();
-            drinkService.ChangeDrinkName(name, id);
-            LoadSupplyList();
-            changeNameTextBox.Clear();
-        }
-
-        private void changePriceButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AddDrinkButton_Click(object sender, EventArgs e)
-        {
-            DrinkService drinkService = new DrinkService();
-            StockService stockService = new StockService();
-            Drink drink = new Drink();
-            Stock stock = new Stock();
-
-            stock.Id = int.Parse(AddDrinkIdtextBox.Text);
-            stock.StockAmount = 0;
-            drink.DrinkId = int.Parse(AddDrinkIdtextBox.Text);
-            drink.DrinkName = DrinkNameTextBox.Text;
-            drink.DrinkType = false;
-            drink.DrinkStockId = int.Parse(AddDrinkIdtextBox.Text);
-            drink.DrinkStock = stock.StockAmount;
-
-            if (alcoholicRadioButton.Checked)
-            {
-                drink.DrinkType = true;
-            }
-            stockService.AddNewStock(stock);
-            drinkService.AddDrink(drink);
-            LoadSupplyList();
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
+        /* ----------- Loading Lists ------------*/
         private void LoadErrorList()
         {
             try
@@ -688,9 +624,91 @@ namespace SomerenUI
             }
         }
 
-        private void activitiesToolStripMenuItem_Click(object sender, EventArgs e)
+        /* ---------- Button clicks ----------*/
+        private void btn_Checkout_Click(object sender, EventArgs e)
         {
-            showPanel("Activities");
+            //clear the selected items after clicking the checkout button
+            listViewRegisterStudents.SelectedItems.Clear();
+            listViewRegisterDrinks.SelectedItems.Clear();
+
+            //use the selected items to create a new object
+            Student student = new Student();
+            Drink drink = new Drink();
+
+            for (int i = 0; i < listViewRegisterStudents.Items.Count; i++)
+            {
+                if (listViewRegisterStudents.Items[i].Selected)
+                {
+                    student = new Student(int.Parse(listViewRegisterStudents.Items[i].Text));
+                }
+            }
+
+            for (int i = 0; i < listViewRegisterDrinks.Items.Count; i++)
+            {
+                if (listViewRegisterDrinks.Items[i].Selected)
+                {
+                    drink = new Drink(int.Parse(listViewRegisterDrinks.Items[i].Text));
+                }
+            }
+
+            //get the values to the logic layer
+            DrinkService drinkService = new DrinkService();
+            drinkService.AddSale(student, drink);
+        }
+
+        private void RemoveStockButton_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(EditDrinkIdtextBox.Text);
+            StockService stockService = new StockService();
+            stockService.RemoveDrinkStock(id);
+            LoadSupplyList();
+        }
+
+        private void AddStockButton_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(EditDrinkIdtextBox.Text);
+            StockService stockService = new StockService();
+            stockService.AddDrinkStock(id);
+            LoadSupplyList();
+        }
+
+        private void changeNameButton_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(EditDrinkIdtextBox.Text);
+            string name = changeNameTextBox.Text;
+            DrinkService drinkService = new DrinkService();
+            drinkService.ChangeDrinkName(name, id);
+            LoadSupplyList();
+            changeNameTextBox.Clear();
+        }
+
+        private void changePriceButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddDrinkButton_Click(object sender, EventArgs e)
+        {
+            DrinkService drinkService = new DrinkService();
+            StockService stockService = new StockService();
+            Drink drink = new Drink();
+            Stock stock = new Stock();
+
+            stock.Id = int.Parse(AddDrinkIdtextBox.Text);
+            stock.StockAmount = 0;
+            drink.DrinkId = int.Parse(AddDrinkIdtextBox.Text);
+            drink.DrinkName = DrinkNameTextBox.Text;
+            drink.DrinkType = false;
+            drink.DrinkStockId = int.Parse(AddDrinkIdtextBox.Text);
+            drink.DrinkStock = stock.StockAmount;
+
+            if (alcoholicRadioButton.Checked)
+            {
+                drink.DrinkType = true;
+            }
+            stockService.AddNewStock(stock);
+            drinkService.AddDrink(drink);
+            LoadSupplyList();
         }
 
         private void btnChooseActivity_Click(object sender, EventArgs e)
@@ -787,7 +805,6 @@ namespace SomerenUI
 
         private void AddActivityButton_Click(object sender, EventArgs e)
         {
-            
             string description = DescriptionTextBox.Text;
             string day = startDaysTextBox.Text;
             string month = startMonthtextBox.Text;
@@ -851,71 +868,130 @@ namespace SomerenUI
         {
             UserService userService = new UserService();
             List<User> users = userService.GetUsers();
-            HashSalt hash = new HashSalt();
-           // HashWithSaltResult hashResultSha256 = hasher.HashWithSalt(passwordTextBox.Text, 64, SHA256.Create());
-         
-           
-           
+            HashSalt hashSalt = new HashSalt();
+          
             foreach (User user in users)
-            {
-
-                bool isPasswordCorrect = hash.VerifyPassword(passwordTextBox.Text, user.Hash, user.Salt);
-             
-
-                if (user.UserName == userNameTextBox.Text && isPasswordCorrect)
-                {
-
+            {  
+                if (user.UserName == userNameTextBox.Text && user.Password == hashSalt.HashPassword(passwordTextBox.Text, user.Salt, hashSalt.Iterations, hashSalt.Hash))
+                { 
                     showPanel("Dashboard");
+                    userNameTextBox.Clear();
+                    passwordTextBox.Clear();
+                    
                 }
                 else
                 {
-                    passwordTextBox.Hide();
-                    wrongPassLabel.Show();
-                    secretQuestionLabel.Text = user.SecretQuestion.ToString();
-                    secretQuestionLabel.Show();
-                    secretQuestionTextBox.Show();
-                    if(user.UserName == userNameTextBox.Text && user.SecretAwnser == secretQuestionTextBox.Text)
-                    {
-                        showPanel("Dashboard");
-                    }
+                    wrongPassWarningLabel.Show();
+                    ChangePassLinkLabel.Show();
                 }
-            }
+            } 
         }
 
         private void RegisterUserButton_Click(object sender, EventArgs e)
         {
-            
+            if (registerSecondPassTextBox.Text != registerFirstPassTextBox.Text)
+            {
+                registerPasswEnteredWarningLabel.Show();
+            }
+            else
+            {
+                registerPasswEnteredWarningLabel.Hide();
+            }
 
-            
-            if(initRegPasswordTextBox.Text == secondRegPasswordTextBox.Text &&
-                awnserRegTextBox.Text != string.Empty && questionRegTextBox.Text != string.Empty)
+            if (registerFirstPassTextBox.Text == registerSecondPassTextBox.Text && registerFirstPassTextBox.Text != string.Empty &&
+                registerAwnserTextBox.Text != string.Empty && registerQuestionTextBox.Text != string.Empty)
             {
                 licenseKeyGroupBox.Show();
             }
             else
             {
-
+                registerEnterAllFieldsWarningLabel.Show();
             }
         }
 
         private void FinalAddUserButton_Click(object sender, EventArgs e)
-        {
-         
-            string enterLicenseKey = $"{firstLicenseKeytextBox.Text} - {secondLicenseKeyTextBox.Text} - {thirdLicenseKeyTextBox.Text} - {fourthLicenseKeyTextBox.Text}";
+        { 
             string licenseKey = "XsZAb - tgz3PsD - qYh69un - WQCEx";
-            string testLicense = "1 - 2 - 3 - 4";
 
             UserService userService = new UserService();
-            if (enterLicenseKey == testLicense)
+            if (compareLicenseTextBox.Text == licenseKey )
             {
-                userService.CreateUser(userRegisterTextBox.Text, initRegPasswordTextBox.Text,
-                    questionRegTextBox.Text, awnserRegTextBox.Text);
+                userService.CreateUser(registerUserNameTextBox.Text, registerFirstPassTextBox.Text,
+                    registerQuestionTextBox.Text, registerAwnserTextBox.Text);
+            }
+
+            MessageBox.Show("Registration complete");
+            showPanel("LogIn");
+        }
+
+        private void changePasswordButton_Click(object sender, EventArgs e)
+        {
+            UserService userService = new UserService();
+            List<User> users = userService.GetUsers();
+            foreach (User user in users)
+            {
+                // if the username and anwser of the secret question are correct and all fields are correctly filled 
+                // the password will be changed
+                if (changePassSecondTextBox.Text != changePassFirstTextBox.Text)
+                {
+                    changePassNoMatchWarningLabel.Show();
+                }
+                else
+                {
+                    changePassNoMatchWarningLabel.Hide();
+                }
+
+                if (changePassUserNameTextBox.Text == user.UserName && secretAwnserTextBox.Text == user.SecretAwnser
+                    && changePassFirstTextBox.Text == changePassSecondTextBox.Text && changePassFirstTextBox.Text != string.Empty)
+                   
+                    userService.ChangePassword(changePassUserNameTextBox.Text, secretAwnserTextBox.Text, changePassFirstTextBox.Text);
+            }
+
+            MessageBox.Show("Your password has been changed.");
+          
+            logInGroupBox.Show();
+            changePasswordGroupBox.Hide();
+        }
+
+        private void ReturnToLogInButton_Click(object sender, EventArgs e)
+        {
+            showPanel("LogIn");
+            wrongPassWarningLabel.Hide();
+            ChangePassLinkLabel.Hide();
+        }
+
+        private void ChangePassBackToLogInButton_Click(object sender, EventArgs e)
+        {
+            changePasswordGroupBox.Hide();
+            logInGroupBox.Show();
+            wrongPassWarningLabel.Hide();
+            ChangePassLinkLabel.Hide();
+        }
+
+        /* ------- Link Labels ------- */
+        private void ChangePassLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            logInGroupBox.Hide();
+            changePasswordGroupBox.Visible = true;
+            changePasswordGroupBox.Show();
+        }
+
+
+        /*---------- Textbox behavior -----------*/
+
+        private void changePassUserNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            UserService userService = new UserService();
+            List<User> users = userService.GetUsers();
+            foreach (User user in users)
+            {
+                if(user.UserName == changePassUserNameTextBox.Text)
+                {
+                    secretQuestionLabel.Text = user.SecretQuestion;
+                }
             }
         }
 
-        private void registerLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            showPanel("RegisterUser");
-        }
+    
     }
 }
