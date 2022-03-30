@@ -223,6 +223,7 @@
             this.registerQuestionTextBox = new System.Windows.Forms.TextBox();
             this.registerUserNameTextBox = new System.Windows.Forms.TextBox();
             this.ChangePassBackToLogInButton = new System.Windows.Forms.Button();
+            this.changePassAllFieldsWarningLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgDashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
@@ -420,6 +421,7 @@
             // 
             // changePasswordGroupBox
             // 
+            this.changePasswordGroupBox.Controls.Add(this.changePassAllFieldsWarningLabel);
             this.changePasswordGroupBox.Controls.Add(this.ChangePassBackToLogInButton);
             this.changePasswordGroupBox.Controls.Add(this.changePassNoMatchWarningLabel);
             this.changePasswordGroupBox.Controls.Add(this.label25);
@@ -479,7 +481,7 @@
             // 
             // changePasswordButton
             // 
-            this.changePasswordButton.Location = new System.Drawing.Point(451, 310);
+            this.changePasswordButton.Location = new System.Drawing.Point(453, 313);
             this.changePasswordButton.Name = "changePasswordButton";
             this.changePasswordButton.Size = new System.Drawing.Size(212, 49);
             this.changePasswordButton.TabIndex = 5;
@@ -550,7 +552,7 @@
             this.logInGroupBox.Controls.Add(this.passwordTextBox);
             this.logInGroupBox.Controls.Add(this.userNameTextBox);
             this.logInGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logInGroupBox.Location = new System.Drawing.Point(415, 108);
+            this.logInGroupBox.Location = new System.Drawing.Point(398, 111);
             this.logInGroupBox.Name = "logInGroupBox";
             this.logInGroupBox.Size = new System.Drawing.Size(455, 423);
             this.logInGroupBox.TabIndex = 2;
@@ -2037,6 +2039,18 @@
             this.ChangePassBackToLogInButton.UseVisualStyleBackColor = true;
             this.ChangePassBackToLogInButton.Click += new System.EventHandler(this.ChangePassBackToLogInButton_Click);
             // 
+            // changePassAllFieldsWarningLabel
+            // 
+            this.changePassAllFieldsWarningLabel.AutoSize = true;
+            this.changePassAllFieldsWarningLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changePassAllFieldsWarningLabel.ForeColor = System.Drawing.Color.Red;
+            this.changePassAllFieldsWarningLabel.Location = new System.Drawing.Point(323, 336);
+            this.changePassAllFieldsWarningLabel.Name = "changePassAllFieldsWarningLabel";
+            this.changePassAllFieldsWarningLabel.Size = new System.Drawing.Size(99, 18);
+            this.changePassAllFieldsWarningLabel.TabIndex = 12;
+            this.changePassAllFieldsWarningLabel.Text = "Enter all fields";
+            this.changePassAllFieldsWarningLabel.Visible = false;
+            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2315,6 +2329,7 @@
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
         private System.Windows.Forms.Button ReturnToLogInButton;
         private System.Windows.Forms.Button ChangePassBackToLogInButton;
+        private System.Windows.Forms.Label changePassAllFieldsWarningLabel;
     }
 }
 

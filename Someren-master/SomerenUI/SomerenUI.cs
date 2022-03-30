@@ -943,14 +943,22 @@ namespace SomerenUI
 
                 if (changePassUserNameTextBox.Text == user.UserName && secretAwnserTextBox.Text == user.SecretAwnser
                     && changePassFirstTextBox.Text == changePassSecondTextBox.Text && changePassFirstTextBox.Text != string.Empty)
-                   
+                {
                     userService.ChangePassword(changePassUserNameTextBox.Text, secretAwnserTextBox.Text, changePassFirstTextBox.Text);
+                    MessageBox.Show("Your password has been changed.");
+                    logInGroupBox.Show();
+                    changePasswordGroupBox.Hide();
+                    changePassAllFieldsWarningLabel.Hide();
+                }
+                else
+                {
+                    changePassAllFieldsWarningLabel.Show();
+                }
             }
 
-            MessageBox.Show("Your password has been changed.");
+           
           
-            logInGroupBox.Show();
-            changePasswordGroupBox.Hide();
+           
         }
 
         private void ReturnToLogInButton_Click(object sender, EventArgs e)
@@ -966,6 +974,7 @@ namespace SomerenUI
             logInGroupBox.Show();
             wrongPassWarningLabel.Hide();
             ChangePassLinkLabel.Hide();
+            changePassAllFieldsWarningLabel.Hide();
         }
 
         /* ------- Link Labels ------- */
