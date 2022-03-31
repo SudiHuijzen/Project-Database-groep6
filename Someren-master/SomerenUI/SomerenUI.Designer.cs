@@ -48,7 +48,17 @@
             this.pnlDashboard = new System.Windows.Forms.Panel();
             this.lbl_Dashboard = new System.Windows.Forms.Label();
             this.pnlLogIn = new System.Windows.Forms.Panel();
+            this.logInGroupBox = new System.Windows.Forms.GroupBox();
+            this.ChangePassLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.wrongPassWarningLabel = new System.Windows.Forms.Label();
+            this.LoginButton = new System.Windows.Forms.Button();
+            this.passwordLabel = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.changePasswordGroupBox = new System.Windows.Forms.GroupBox();
+            this.changePassAllFieldsWarningLabel = new System.Windows.Forms.Label();
+            this.ChangePassBackToLogInButton = new System.Windows.Forms.Button();
             this.changePassNoMatchWarningLabel = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.changePassFirstTextBox = new System.Windows.Forms.TextBox();
@@ -60,14 +70,6 @@
             this.secretAwnserTextBox = new System.Windows.Forms.TextBox();
             this.changePassUserNameTextBox = new System.Windows.Forms.TextBox();
             this.registerLinkLabel = new System.Windows.Forms.LinkLabel();
-            this.logInGroupBox = new System.Windows.Forms.GroupBox();
-            this.ChangePassLinkLabel = new System.Windows.Forms.LinkLabel();
-            this.wrongPassWarningLabel = new System.Windows.Forms.Label();
-            this.LoginButton = new System.Windows.Forms.Button();
-            this.passwordLabel = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.passwordTextBox = new System.Windows.Forms.TextBox();
-            this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.pnlStudents = new System.Windows.Forms.Panel();
             this.listViewStudents = new System.Windows.Forms.ListView();
             this.studentID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -222,14 +224,12 @@
             this.registerFirstPassTextBox = new System.Windows.Forms.TextBox();
             this.registerQuestionTextBox = new System.Windows.Forms.TextBox();
             this.registerUserNameTextBox = new System.Windows.Forms.TextBox();
-            this.ChangePassBackToLogInButton = new System.Windows.Forms.Button();
-            this.changePassAllFieldsWarningLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgDashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
             this.pnlLogIn.SuspendLayout();
-            this.changePasswordGroupBox.SuspendLayout();
             this.logInGroupBox.SuspendLayout();
+            this.changePasswordGroupBox.SuspendLayout();
             this.pnlStudents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTeachers.SuspendLayout();
@@ -419,6 +419,90 @@
             this.pnlLogIn.Size = new System.Drawing.Size(1283, 619);
             this.pnlLogIn.TabIndex = 2;
             // 
+            // logInGroupBox
+            // 
+            this.logInGroupBox.Controls.Add(this.ChangePassLinkLabel);
+            this.logInGroupBox.Controls.Add(this.wrongPassWarningLabel);
+            this.logInGroupBox.Controls.Add(this.LoginButton);
+            this.logInGroupBox.Controls.Add(this.passwordLabel);
+            this.logInGroupBox.Controls.Add(this.label19);
+            this.logInGroupBox.Controls.Add(this.passwordTextBox);
+            this.logInGroupBox.Controls.Add(this.userNameTextBox);
+            this.logInGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logInGroupBox.Location = new System.Drawing.Point(398, 111);
+            this.logInGroupBox.Name = "logInGroupBox";
+            this.logInGroupBox.Size = new System.Drawing.Size(455, 423);
+            this.logInGroupBox.TabIndex = 2;
+            this.logInGroupBox.TabStop = false;
+            this.logInGroupBox.Text = "Login";
+            // 
+            // ChangePassLinkLabel
+            // 
+            this.ChangePassLinkLabel.AutoSize = true;
+            this.ChangePassLinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChangePassLinkLabel.Location = new System.Drawing.Point(140, 256);
+            this.ChangePassLinkLabel.Name = "ChangePassLinkLabel";
+            this.ChangePassLinkLabel.Size = new System.Drawing.Size(154, 18);
+            this.ChangePassLinkLabel.TabIndex = 8;
+            this.ChangePassLinkLabel.TabStop = true;
+            this.ChangePassLinkLabel.Text = "Forgot your password";
+            this.ChangePassLinkLabel.Visible = false;
+            this.ChangePassLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ChangePassLinkLabel_LinkClicked);
+            // 
+            // wrongPassWarningLabel
+            // 
+            this.wrongPassWarningLabel.AutoSize = true;
+            this.wrongPassWarningLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wrongPassWarningLabel.ForeColor = System.Drawing.Color.Red;
+            this.wrongPassWarningLabel.Location = new System.Drawing.Point(81, 223);
+            this.wrongPassWarningLabel.Name = "wrongPassWarningLabel";
+            this.wrongPassWarningLabel.Size = new System.Drawing.Size(263, 18);
+            this.wrongPassWarningLabel.TabIndex = 7;
+            this.wrongPassWarningLabel.Text = "Wrong username or password entered";
+            this.wrongPassWarningLabel.Visible = false;
+            // 
+            // LoginButton
+            // 
+            this.LoginButton.Location = new System.Drawing.Point(118, 319);
+            this.LoginButton.Name = "LoginButton";
+            this.LoginButton.Size = new System.Drawing.Size(203, 52);
+            this.LoginButton.TabIndex = 5;
+            this.LoginButton.Text = "Log in";
+            this.LoginButton.UseVisualStyleBackColor = true;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
+            // 
+            // passwordLabel
+            // 
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Location = new System.Drawing.Point(160, 151);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(92, 24);
+            this.passwordLabel.TabIndex = 3;
+            this.passwordLabel.Text = "Password";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(155, 68);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(97, 24);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "Username";
+            // 
+            // passwordTextBox
+            // 
+            this.passwordTextBox.Location = new System.Drawing.Point(79, 184);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(270, 28);
+            this.passwordTextBox.TabIndex = 1;
+            // 
+            // userNameTextBox
+            // 
+            this.userNameTextBox.Location = new System.Drawing.Point(79, 106);
+            this.userNameTextBox.Name = "userNameTextBox";
+            this.userNameTextBox.Size = new System.Drawing.Size(270, 28);
+            this.userNameTextBox.TabIndex = 0;
+            // 
             // changePasswordGroupBox
             // 
             this.changePasswordGroupBox.Controls.Add(this.changePassAllFieldsWarningLabel);
@@ -441,6 +525,29 @@
             this.changePasswordGroupBox.TabStop = false;
             this.changePasswordGroupBox.Text = "Change Password";
             this.changePasswordGroupBox.Visible = false;
+            // 
+            // changePassAllFieldsWarningLabel
+            // 
+            this.changePassAllFieldsWarningLabel.AutoSize = true;
+            this.changePassAllFieldsWarningLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changePassAllFieldsWarningLabel.ForeColor = System.Drawing.Color.Red;
+            this.changePassAllFieldsWarningLabel.Location = new System.Drawing.Point(323, 336);
+            this.changePassAllFieldsWarningLabel.Name = "changePassAllFieldsWarningLabel";
+            this.changePassAllFieldsWarningLabel.Size = new System.Drawing.Size(99, 18);
+            this.changePassAllFieldsWarningLabel.TabIndex = 12;
+            this.changePassAllFieldsWarningLabel.Text = "Enter all fields";
+            this.changePassAllFieldsWarningLabel.Visible = false;
+            // 
+            // ChangePassBackToLogInButton
+            // 
+            this.ChangePassBackToLogInButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChangePassBackToLogInButton.Location = new System.Drawing.Point(527, 93);
+            this.ChangePassBackToLogInButton.Name = "ChangePassBackToLogInButton";
+            this.ChangePassBackToLogInButton.Size = new System.Drawing.Size(136, 37);
+            this.ChangePassBackToLogInButton.TabIndex = 11;
+            this.ChangePassBackToLogInButton.Text = "Back to Log in";
+            this.ChangePassBackToLogInButton.UseVisualStyleBackColor = true;
+            this.ChangePassBackToLogInButton.Click += new System.EventHandler(this.ChangePassBackToLogInButton_Click);
             // 
             // changePassNoMatchWarningLabel
             // 
@@ -541,90 +648,6 @@
             this.registerLinkLabel.TabStop = true;
             this.registerLinkLabel.Text = "Register";
             this.registerLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.registerLinkLabel_LinkClicked);
-            // 
-            // logInGroupBox
-            // 
-            this.logInGroupBox.Controls.Add(this.ChangePassLinkLabel);
-            this.logInGroupBox.Controls.Add(this.wrongPassWarningLabel);
-            this.logInGroupBox.Controls.Add(this.LoginButton);
-            this.logInGroupBox.Controls.Add(this.passwordLabel);
-            this.logInGroupBox.Controls.Add(this.label19);
-            this.logInGroupBox.Controls.Add(this.passwordTextBox);
-            this.logInGroupBox.Controls.Add(this.userNameTextBox);
-            this.logInGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logInGroupBox.Location = new System.Drawing.Point(398, 111);
-            this.logInGroupBox.Name = "logInGroupBox";
-            this.logInGroupBox.Size = new System.Drawing.Size(455, 423);
-            this.logInGroupBox.TabIndex = 2;
-            this.logInGroupBox.TabStop = false;
-            this.logInGroupBox.Text = "Login";
-            // 
-            // ChangePassLinkLabel
-            // 
-            this.ChangePassLinkLabel.AutoSize = true;
-            this.ChangePassLinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChangePassLinkLabel.Location = new System.Drawing.Point(140, 256);
-            this.ChangePassLinkLabel.Name = "ChangePassLinkLabel";
-            this.ChangePassLinkLabel.Size = new System.Drawing.Size(154, 18);
-            this.ChangePassLinkLabel.TabIndex = 8;
-            this.ChangePassLinkLabel.TabStop = true;
-            this.ChangePassLinkLabel.Text = "Forgot your password";
-            this.ChangePassLinkLabel.Visible = false;
-            this.ChangePassLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ChangePassLinkLabel_LinkClicked);
-            // 
-            // wrongPassWarningLabel
-            // 
-            this.wrongPassWarningLabel.AutoSize = true;
-            this.wrongPassWarningLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wrongPassWarningLabel.ForeColor = System.Drawing.Color.Red;
-            this.wrongPassWarningLabel.Location = new System.Drawing.Point(81, 223);
-            this.wrongPassWarningLabel.Name = "wrongPassWarningLabel";
-            this.wrongPassWarningLabel.Size = new System.Drawing.Size(263, 18);
-            this.wrongPassWarningLabel.TabIndex = 7;
-            this.wrongPassWarningLabel.Text = "Wrong username or password entered";
-            this.wrongPassWarningLabel.Visible = false;
-            // 
-            // LoginButton
-            // 
-            this.LoginButton.Location = new System.Drawing.Point(118, 319);
-            this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(203, 52);
-            this.LoginButton.TabIndex = 5;
-            this.LoginButton.Text = "Log in";
-            this.LoginButton.UseVisualStyleBackColor = true;
-            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
-            // 
-            // passwordLabel
-            // 
-            this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(160, 151);
-            this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(92, 24);
-            this.passwordLabel.TabIndex = 3;
-            this.passwordLabel.Text = "Password";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(155, 68);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(97, 24);
-            this.label19.TabIndex = 2;
-            this.label19.Text = "Username";
-            // 
-            // passwordTextBox
-            // 
-            this.passwordTextBox.Location = new System.Drawing.Point(79, 184);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(270, 28);
-            this.passwordTextBox.TabIndex = 1;
-            // 
-            // userNameTextBox
-            // 
-            this.userNameTextBox.Location = new System.Drawing.Point(79, 106);
-            this.userNameTextBox.Name = "userNameTextBox";
-            this.userNameTextBox.Size = new System.Drawing.Size(270, 28);
-            this.userNameTextBox.TabIndex = 0;
             // 
             // pnlStudents
             // 
@@ -1856,7 +1879,7 @@
             this.ReturnToLogInButton.Location = new System.Drawing.Point(1056, 473);
             this.ReturnToLogInButton.Name = "ReturnToLogInButton";
             this.ReturnToLogInButton.Size = new System.Drawing.Size(147, 51);
-            this.ReturnToLogInButton.TabIndex = 2;
+            this.ReturnToLogInButton.TabIndex = 9;
             this.ReturnToLogInButton.Text = "Back to Login";
             this.ReturnToLogInButton.UseVisualStyleBackColor = true;
             this.ReturnToLogInButton.Click += new System.EventHandler(this.ReturnToLogInButton_Click);
@@ -1879,14 +1902,14 @@
             this.compareLicenseTextBox.Location = new System.Drawing.Point(49, 47);
             this.compareLicenseTextBox.Name = "compareLicenseTextBox";
             this.compareLicenseTextBox.Size = new System.Drawing.Size(340, 28);
-            this.compareLicenseTextBox.TabIndex = 5;
+            this.compareLicenseTextBox.TabIndex = 7;
             // 
             // FinalAddUserButton
             // 
             this.FinalAddUserButton.Location = new System.Drawing.Point(181, 111);
             this.FinalAddUserButton.Name = "FinalAddUserButton";
             this.FinalAddUserButton.Size = new System.Drawing.Size(208, 36);
-            this.FinalAddUserButton.TabIndex = 4;
+            this.FinalAddUserButton.TabIndex = 8;
             this.FinalAddUserButton.Text = "Complete registration";
             this.FinalAddUserButton.UseVisualStyleBackColor = true;
             this.FinalAddUserButton.Click += new System.EventHandler(this.FinalAddUserButton_Click);
@@ -1952,7 +1975,7 @@
             this.registerAwnserTextBox.Location = new System.Drawing.Point(39, 373);
             this.registerAwnserTextBox.Name = "registerAwnserTextBox";
             this.registerAwnserTextBox.Size = new System.Drawing.Size(387, 28);
-            this.registerAwnserTextBox.TabIndex = 10;
+            this.registerAwnserTextBox.TabIndex = 5;
             // 
             // label23
             // 
@@ -1995,7 +2018,7 @@
             this.RegisterUserButton.Location = new System.Drawing.Point(448, 415);
             this.RegisterUserButton.Name = "RegisterUserButton";
             this.RegisterUserButton.Size = new System.Drawing.Size(130, 51);
-            this.RegisterUserButton.TabIndex = 5;
+            this.RegisterUserButton.TabIndex = 6;
             this.RegisterUserButton.Text = "Register";
             this.RegisterUserButton.UseVisualStyleBackColor = true;
             this.RegisterUserButton.Click += new System.EventHandler(this.RegisterUserButton_Click);
@@ -2005,21 +2028,21 @@
             this.registerSecondPassTextBox.Location = new System.Drawing.Point(39, 223);
             this.registerSecondPassTextBox.Name = "registerSecondPassTextBox";
             this.registerSecondPassTextBox.Size = new System.Drawing.Size(247, 28);
-            this.registerSecondPassTextBox.TabIndex = 4;
+            this.registerSecondPassTextBox.TabIndex = 3;
             // 
             // registerFirstPassTextBox
             // 
             this.registerFirstPassTextBox.Location = new System.Drawing.Point(39, 146);
             this.registerFirstPassTextBox.Name = "registerFirstPassTextBox";
             this.registerFirstPassTextBox.Size = new System.Drawing.Size(247, 28);
-            this.registerFirstPassTextBox.TabIndex = 3;
+            this.registerFirstPassTextBox.TabIndex = 2;
             // 
             // registerQuestionTextBox
             // 
             this.registerQuestionTextBox.Location = new System.Drawing.Point(39, 300);
             this.registerQuestionTextBox.Name = "registerQuestionTextBox";
             this.registerQuestionTextBox.Size = new System.Drawing.Size(387, 28);
-            this.registerQuestionTextBox.TabIndex = 2;
+            this.registerQuestionTextBox.TabIndex = 4;
             // 
             // registerUserNameTextBox
             // 
@@ -2028,36 +2051,13 @@
             this.registerUserNameTextBox.Size = new System.Drawing.Size(247, 28);
             this.registerUserNameTextBox.TabIndex = 1;
             // 
-            // ChangePassBackToLogInButton
-            // 
-            this.ChangePassBackToLogInButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChangePassBackToLogInButton.Location = new System.Drawing.Point(527, 93);
-            this.ChangePassBackToLogInButton.Name = "ChangePassBackToLogInButton";
-            this.ChangePassBackToLogInButton.Size = new System.Drawing.Size(136, 37);
-            this.ChangePassBackToLogInButton.TabIndex = 11;
-            this.ChangePassBackToLogInButton.Text = "Back to Log in";
-            this.ChangePassBackToLogInButton.UseVisualStyleBackColor = true;
-            this.ChangePassBackToLogInButton.Click += new System.EventHandler(this.ChangePassBackToLogInButton_Click);
-            // 
-            // changePassAllFieldsWarningLabel
-            // 
-            this.changePassAllFieldsWarningLabel.AutoSize = true;
-            this.changePassAllFieldsWarningLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.changePassAllFieldsWarningLabel.ForeColor = System.Drawing.Color.Red;
-            this.changePassAllFieldsWarningLabel.Location = new System.Drawing.Point(323, 336);
-            this.changePassAllFieldsWarningLabel.Name = "changePassAllFieldsWarningLabel";
-            this.changePassAllFieldsWarningLabel.Size = new System.Drawing.Size(99, 18);
-            this.changePassAllFieldsWarningLabel.TabIndex = 12;
-            this.changePassAllFieldsWarningLabel.Text = "Enter all fields";
-            this.changePassAllFieldsWarningLabel.Visible = false;
-            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 622);
-            this.Controls.Add(this.pnlLogIn);
             this.Controls.Add(this.pnlUserRegister);
+            this.Controls.Add(this.pnlLogIn);
             this.Controls.Add(this.pnlDashboard);
             this.Controls.Add(this.pnlChangeActivity);
             this.Controls.Add(this.pnlActivities);
@@ -2082,10 +2082,10 @@
             this.pnlDashboard.PerformLayout();
             this.pnlLogIn.ResumeLayout(false);
             this.pnlLogIn.PerformLayout();
-            this.changePasswordGroupBox.ResumeLayout(false);
-            this.changePasswordGroupBox.PerformLayout();
             this.logInGroupBox.ResumeLayout(false);
             this.logInGroupBox.PerformLayout();
+            this.changePasswordGroupBox.ResumeLayout(false);
+            this.changePasswordGroupBox.PerformLayout();
             this.pnlStudents.ResumeLayout(false);
             this.pnlStudents.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

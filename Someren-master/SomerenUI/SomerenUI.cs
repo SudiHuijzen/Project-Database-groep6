@@ -168,8 +168,6 @@ namespace SomerenUI
                 pnlUserRegister.Hide();
                 pnlActivities.Show();
                 LoadActivitiesList();
-
-                
             }
             else if (panelName == "ChangeActivity")
             {
@@ -186,9 +184,6 @@ namespace SomerenUI
                 pnlUserRegister.Hide();
 
                 pnlChangeActivity.Show();
-              
-
-                
             }else if(panelName == "RegisterUser")
             {
                 registerFirstPassTextBox.PasswordChar = '*';
@@ -522,7 +517,6 @@ namespace SomerenUI
                 StudentService studService = new StudentService();
                 List<Student> studentList = studService.GetStudents();
 
-
                 // clear the listviews before filling it again
                 listViewRegisterStudents.Items.Clear();
 
@@ -713,23 +707,18 @@ namespace SomerenUI
 
         private void btnChooseActivity_Click(object sender, EventArgs e)
         {
-             ActivityId = int.Parse(textBoxActivity.Text);
+            ActivityId = int.Parse(textBoxActivity.Text);
 
             showPanel("ChangeActivity");
-            
             
             LoadActivityStudent(ActivityId);
             LoadActivityStudentList();
             LoadActivityTeachers(ActivityId);
             LoadAllTeacherList();
-            
-
         }
 
         public void LoadActivityStudent(int participent)
         {
-            
-            
                 // fill the students listview within the students panel with a list of students
                 ActivityService activityService = new ActivityService();
                 List<Participent> participentList = activityService.GetParticipents(participent);
@@ -872,7 +861,8 @@ namespace SomerenUI
           
             foreach (User user in users)
             {  
-                if (user.UserName == userNameTextBox.Text && user.Password == hashSalt.HashPassword(passwordTextBox.Text, user.Salt, hashSalt.Iterations, hashSalt.Hash))
+                if (user.UserName == userNameTextBox.Text && user.Password == hashSalt.HashPassword(passwordTextBox.Text,
+                    user.Salt, hashSalt.Iterations, hashSalt.Hash))
                 { 
                     showPanel("Dashboard");
                     userNameTextBox.Clear();
@@ -954,16 +944,15 @@ namespace SomerenUI
                 {
                     changePassAllFieldsWarningLabel.Show();
                 }
-            }
-
-           
-          
-           
+            }    
         }
 
         private void ReturnToLogInButton_Click(object sender, EventArgs e)
         {
+            
             showPanel("LogIn");
+            logInGroupBox.Show();
+            changePasswordGroupBox.Hide();
             wrongPassWarningLabel.Hide();
             ChangePassLinkLabel.Hide();
         }
@@ -978,6 +967,7 @@ namespace SomerenUI
         }
 
         /* ------- Link Labels ------- */
+
         private void ChangePassLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             logInGroupBox.Hide();
@@ -999,8 +989,6 @@ namespace SomerenUI
                     secretQuestionLabel.Text = user.SecretQuestion;
                 }
             }
-        }
-
-    
+        }    
     }
 }
