@@ -24,7 +24,7 @@ namespace SomerenUI
 
         private void SomerenUI_Load(object sender, EventArgs e)
         {
-            showPanel("LogIn");
+            showPanel("Dashboard");
         }
 
         private void showPanel(string panelName)
@@ -40,15 +40,14 @@ namespace SomerenUI
                 pnlErrorList.Hide();
                 pnlActivities.Hide();
                 pnlActivities.Hide();
-                pnlUserRegister.Hide();
-                pnlLogIn.Hide();
+              
                 // show dashboard
                 pnlDashboard.Show();
                 imgDashboard.Show();
             }
             else if(panelName == "DrinkSupply")
             {
-                pnlLogIn.Hide();
+                
                 pnlStudents.Hide();
                 pnlTeachers.Hide();
                 pnlRooms.Hide();
@@ -58,7 +57,7 @@ namespace SomerenUI
                 pnlErrorList.Hide();
                 pnlChangeActivity.Hide();
                 pnlActivities.Hide();
-                pnlUserRegister.Hide();
+                
                 pnlDrinkSupply.Show();
                 LoadSupplyList();
                
@@ -66,7 +65,7 @@ namespace SomerenUI
             else if (panelName == "Rooms")
             {
                 // hide all other panels
-                pnlLogIn.Hide();
+                
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlTeachers.Hide();
@@ -76,7 +75,7 @@ namespace SomerenUI
                 pnlErrorList.Hide();
                 pnlChangeActivity.Hide();
                 pnlActivities.Hide();
-                pnlUserRegister.Hide();
+                
                 // show rooms
                 pnlRooms.Show();
                 LoadRoomList();
@@ -84,7 +83,7 @@ namespace SomerenUI
             }
             else if (panelName == "Lectures")
             {
-                pnlLogIn.Hide();
+               
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlStudents.Hide();
@@ -94,7 +93,7 @@ namespace SomerenUI
                 pnlErrorList.Hide();
                 pnlChangeActivity?.Hide();
                 pnlActivities.Hide();
-                pnlUserRegister.Hide();
+               
                 //show teachers
                 pnlTeachers.Show();
                 LoadTeacherList();
@@ -103,7 +102,7 @@ namespace SomerenUI
             else if (panelName == "Students")
             {
                 // hide all other panels
-                pnlLogIn.Hide();
+          
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlTeachers.Hide();
@@ -113,7 +112,7 @@ namespace SomerenUI
                 pnlErrorList.Hide();
                 pnlChangeActivity.Hide();
                 pnlActivities.Hide();
-                pnlUserRegister.Hide();
+               
                 // show students
                 pnlStudents.Show();
                 LoadStudentList();
@@ -121,7 +120,7 @@ namespace SomerenUI
             else if (panelName == "Register")
             {
                 // hide all other panels
-                pnlLogIn.Hide();
+               
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlTeachers.Hide();
@@ -131,14 +130,14 @@ namespace SomerenUI
                 pnlErrorList.Hide();
                 pnlChangeActivity.Hide();
                 pnlActivities.Hide();
-                pnlUserRegister.Hide();
+                
                 // show register
                 pnlRegister.Show();
                 LoadRegisterList();
             }
             else if(panelName == "ErrorLog")
             {
-                pnlLogIn.Hide();
+          
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlTeachers.Hide();
@@ -148,13 +147,13 @@ namespace SomerenUI
                 pnlRegister.Hide();
                 pnlChangeActivity.Hide();
                 pnlActivities.Hide();
-                pnlUserRegister.Hide();
+             
                 pnlErrorList.Show();
                 LoadErrorList();
             }
             else if (panelName == "Activities")
             {
-                pnlLogIn.Hide();
+             
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlTeachers.Hide();
@@ -165,13 +164,13 @@ namespace SomerenUI
                 pnlErrorList.Hide();
                 pnlChangeActivity.Hide();
                 pnlActivities.Hide();
-                pnlUserRegister.Hide();
+             
                 pnlActivities.Show();
                 LoadActivitiesList();
             }
             else if (panelName == "ChangeActivity")
             {
-                pnlLogIn.Hide();
+            
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlTeachers.Hide();
@@ -181,14 +180,12 @@ namespace SomerenUI
                 pnlRegister.Hide();
                 pnlErrorList.Hide();
                 pnlActivities.Hide();
-                pnlUserRegister.Hide();
+              
 
                 pnlChangeActivity.Show();
             }else if(panelName == "RegisterUser")
             {
-                registerFirstPassTextBox.PasswordChar = '*';
-                registerSecondPassTextBox.PasswordChar = '*';
-                pnlLogIn.Hide();
+             
                 pnlDashboard.Hide();
                 imgDashboard.Hide();
                 pnlTeachers.Hide();
@@ -201,27 +198,9 @@ namespace SomerenUI
              
 
                 pnlChangeActivity.Hide();
-                pnlUserRegister.Show();
-            }else if(panelName == "LogIn")
-            {
-                passwordTextBox.PasswordChar = '*';
-                changePassFirstTextBox.PasswordChar= '*';
-                changePassSecondTextBox.PasswordChar= '*';  
-                pnlDashboard.Hide();
-                imgDashboard.Hide();
-                pnlTeachers.Hide();
-                pnlRooms.Hide();
-                pnlStudents.Hide();
-                pnlDrinkSupply.Hide();
-                pnlRegister.Hide();
-                pnlErrorList.Hide();
-                pnlActivities.Hide();
-
-
-                pnlChangeActivity.Hide();
-                pnlUserRegister.Hide();
-                pnlLogIn.Show();
+               
             }
+
         }
 
         /* ---------- Panel link clicks -----------*/
@@ -278,22 +257,19 @@ namespace SomerenUI
         {
             showPanel("Activities");
         }
-        private void registerLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            showPanel("RegisterUser");
-        }
+  
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string message = "Are sure you want to Log out";
             string title = "Log Out";
-
+            LoginUI loginUI = new LoginUI();
+              
             MessageBoxButtons button = MessageBoxButtons.YesNo;
             DialogResult result = MessageBox.Show(message, title, button);
             if (result == DialogResult.Yes)
             {
-                showPanel("LogIn");
-                wrongPassWarningLabel.Hide();
-                ChangePassLinkLabel.Hide();
+               SomerenUI.ActiveForm.Hide();
+               loginUI.Show();
             }
         }
 
@@ -852,143 +828,5 @@ namespace SomerenUI
             activityService.ChangeActivityDateTime(activityId, startDate, endDate);
             LoadActivitiesList();
         }
-
-        private void LoginButton_Click(object sender, EventArgs e)
-        {
-            UserService userService = new UserService();
-            List<User> users = userService.GetUsers();
-            HashSalt hashSalt = new HashSalt();
-          
-            foreach (User user in users)
-            {  
-                if (user.UserName == userNameTextBox.Text && user.Password == hashSalt.HashPassword(passwordTextBox.Text,
-                    user.Salt, hashSalt.Iterations, hashSalt.Hash))
-                { 
-                    showPanel("Dashboard");
-                    userNameTextBox.Clear();
-                    passwordTextBox.Clear();
-                    
-                }
-                else
-                {
-                    wrongPassWarningLabel.Show();
-                    ChangePassLinkLabel.Show();
-                }
-            } 
-        }
-
-        private void RegisterUserButton_Click(object sender, EventArgs e)
-        {
-            if (registerSecondPassTextBox.Text != registerFirstPassTextBox.Text)
-            {
-                registerPasswEnteredWarningLabel.Show();
-            }
-            else
-            {
-                registerPasswEnteredWarningLabel.Hide();
-            }
-
-            if (registerFirstPassTextBox.Text == registerSecondPassTextBox.Text && registerFirstPassTextBox.Text != string.Empty &&
-                registerAwnserTextBox.Text != string.Empty && registerQuestionTextBox.Text != string.Empty)
-            {
-                licenseKeyGroupBox.Show();
-            }
-            else
-            {
-                registerEnterAllFieldsWarningLabel.Show();
-            }
-        }
-
-        private void FinalAddUserButton_Click(object sender, EventArgs e)
-        { 
-            string licenseKey = "XsZAb - tgz3PsD - qYh69un - WQCEx";
-
-            UserService userService = new UserService();
-            if (compareLicenseTextBox.Text == licenseKey )
-            {
-                userService.CreateUser(registerUserNameTextBox.Text, registerFirstPassTextBox.Text,
-                    registerQuestionTextBox.Text, registerAwnserTextBox.Text);
-            }
-
-            MessageBox.Show("Registration complete");
-            showPanel("LogIn");
-        }
-
-        private void changePasswordButton_Click(object sender, EventArgs e)
-        {
-            UserService userService = new UserService();
-            List<User> users = userService.GetUsers();
-            foreach (User user in users)
-            {
-                // if the username and anwser of the secret question are correct and all fields are correctly filled 
-                // the password will be changed
-                if (changePassSecondTextBox.Text != changePassFirstTextBox.Text)
-                {
-                    changePassNoMatchWarningLabel.Show();
-                }
-                else
-                {
-                    changePassNoMatchWarningLabel.Hide();
-                }
-
-                if (changePassUserNameTextBox.Text == user.UserName && secretAwnserTextBox.Text == user.SecretAwnser
-                    && changePassFirstTextBox.Text == changePassSecondTextBox.Text && changePassFirstTextBox.Text != string.Empty)
-                {
-                    userService.ChangePassword(changePassUserNameTextBox.Text, secretAwnserTextBox.Text, changePassFirstTextBox.Text);
-                    MessageBox.Show("Your password has been changed.");
-                    logInGroupBox.Show();
-                    changePasswordGroupBox.Hide();
-                    changePassAllFieldsWarningLabel.Hide();
-                }
-                else
-                {
-                    changePassAllFieldsWarningLabel.Show();
-                }
-            }    
-        }
-
-        private void ReturnToLogInButton_Click(object sender, EventArgs e)
-        {
-            
-            showPanel("LogIn");
-            logInGroupBox.Show();
-            changePasswordGroupBox.Hide();
-            wrongPassWarningLabel.Hide();
-            ChangePassLinkLabel.Hide();
-        }
-
-        private void ChangePassBackToLogInButton_Click(object sender, EventArgs e)
-        {
-            changePasswordGroupBox.Hide();
-            logInGroupBox.Show();
-            wrongPassWarningLabel.Hide();
-            ChangePassLinkLabel.Hide();
-            changePassAllFieldsWarningLabel.Hide();
-        }
-
-        /* ------- Link Labels ------- */
-
-        private void ChangePassLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            logInGroupBox.Hide();
-            changePasswordGroupBox.Visible = true;
-            changePasswordGroupBox.Show();
-        }
-
-
-        /*---------- Textbox behavior -----------*/
-
-        private void changePassUserNameTextBox_TextChanged(object sender, EventArgs e)
-        {
-            UserService userService = new UserService();
-            List<User> users = userService.GetUsers();
-            foreach (User user in users)
-            {
-                if(user.UserName == changePassUserNameTextBox.Text)
-                {
-                    secretQuestionLabel.Text = user.SecretQuestion;
-                }
-            }
-        }    
     }
 }
